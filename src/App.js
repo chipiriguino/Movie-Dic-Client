@@ -19,7 +19,7 @@ class App extends Component {
 
   getMostPopular = async () => {
     let res = await service.getMostPopular();
-    console.log(res);
+    console.log('FUNCION GETMOSTPOPULAR APPJS', res.results);
     this.setState({movies: res})
   }
 
