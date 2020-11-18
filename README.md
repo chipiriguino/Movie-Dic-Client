@@ -6,16 +6,16 @@
 Movie dick is an application created where you can find the best movies, where as a user you can add more movies, and as a user you have the possibility of getting a random movie to watch, depending on the genre you prefer.
 
 <h3>User Stories</h3>
-404: As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault.
-Signup: As an anon I can sign up in the platform.
-Login: As a user I can login to the platform.
-Logout: As a user I can logout from the platform so no one else can use it.
-Add Movies As a user I can add a movies.
-Edit Movies As a user I can edit a movies.
-Edit your profiles As a user.
-View Random Movie As a user I can to see the random movies according to their gender that you decide.
-Fav Movies As a user I can add fav movies to my profile and remove this movie of my fav movies.
-Search Movies As a user I can search and see the details of all movies.
+404: As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault.<br>
+Signup: As an anon I can sign up in the platform.<br>
+Login: As a user I can login to the platform.<br>
+Logout: As a user I can logout from the platform so no one else can use it.<br>
+Add Movies As a user I can add a movies.<br>
+Edit Movies As a user I can edit a movies.<br>
+Edit your profiles As a user.<br>
+View Random Movie As a user I can to see the random movies according to their gender that you decide.<br>
+Fav Movies As a user I can add fav movies to my profile and remove this movie of my fav movies.<br>
+Search Movies As a user I can search and see the details of all movies.<br>git
 
 <h3>Backlog</h3>
 <ul>
