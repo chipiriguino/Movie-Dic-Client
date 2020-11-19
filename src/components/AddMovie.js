@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import service from "./api/service";
+import service from "../api/service";
 
 class AddMovie extends Component {
   state = {
-    title: "",
+    movie_title: "",
     description: "",
-    imageUrl: "",
+    poster: "",
+    genres: "",
+    director_name: ""
   };
 
   handleChange = (e) => {
@@ -19,15 +21,15 @@ class AddMovie extends Component {
     // creamos un nuevo objeto FormData
     const uploadData = new FormData();
 
-    // imageUrl (este nombre tiene que ser igual que en el modelo, ya que usaremos req.body como argumento del método .create() cuando creemos una nueva movie en la ruta POST '/api/movies/create')
-    uploadData.append("imageUrl", e.target.files[0]);
+    // poster (este nombre tiene que ser igual que en el modelo, ya que usaremos req.body como argumento del método .create() cuando creemos una nueva movie en la ruta POST '/api/movies/create')
+    uploadData.append("poster", e.target.files[0]);
 
     try {
       const res = await service.handleUpload(uploadData);
 
       console.log("response is", res);
 
-      this.setState({ imageUrl: res.secure_url });
+      this.setState({ poster: res.secure_url });
     } catch (error) {
       console.log("Error while uploading the file: ", error);
     }
@@ -41,14 +43,14 @@ class AddMovie extends Component {
       console.log("added", res);
 
       this.setState({
-        title: "",
+        movie_title: "",
         description: "",
-        imageUrl: ""
+        poster: ""
       });
 
-      this.props.getMovies()
+      // this.props.getMovies()
     } catch (error) {
-        console.log("Error while adding the movie: ", error);
+      console.log("Error while adding the movie: ", error);
     }
   };
 
@@ -60,8 +62,24 @@ class AddMovie extends Component {
           <label htmlFor="">Name</label>
           <input
             type="text"
-            name="title"
-            value={this.state.title}
+            name="movie_title"
+            value={this.state.movie_title}
+            onChange={(e) => this.handleChange(e)}
+          />
+          
+          <label htmlFor="">Gnere</label>
+          <input
+            type="text"
+            name="genres"
+            value={this.state.genres}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Director Name</label>
+          <input
+            type="text"
+            name="director_name"
+            value={this.state.director_name}
             onChange={(e) => this.handleChange(e)}
           />
 

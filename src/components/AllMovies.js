@@ -24,7 +24,7 @@ class MostPopular extends Component {
         return (
             <div className ="container">
                 <h1>All Movies PAGE</h1>
-                {this.state.movies.slice(0, 20).map((allMovie) => {
+                {this.state.movies.map((allMovie) => {
                     return (
                         <div key={allMovie._id}>
                             <h3>{allMovie.language}</h3>

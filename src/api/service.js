@@ -25,7 +25,7 @@ class Service {
     console.log("new thing is: ", newMovie);
 
     try {
-      const res = await this.service.post("/movies/create", newMovie);
+      const res = await this.service.post("/create", newMovie);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -51,6 +51,16 @@ class Service {
       console.log(error);
     }
   };
+
+  // getMovies = async () => {
+  //   try {
+  //     const res = await this.service.get("/movies");
+  //     console.log(res.data);
+  //     return res.data;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   getRandom = async () => {
     try {

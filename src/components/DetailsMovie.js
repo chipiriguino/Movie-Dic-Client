@@ -24,10 +24,13 @@ class DetailsMovie extends Component {
             <div className ="container">
                 <h1>DETAILS PAGE</h1>
                 <div key={movie._id}>
-                    <h3>{movie.language}</h3>
-                    <h4>{movie.director_name}</h4>
-                    <h4>{movie.movie_title}</h4>
-                    <img src={movie.poster} />
+                <img src={movie.poster} />
+                    <h3>Language:{movie.language}</h3>
+                    <h4>Director:{movie.director_name}</h4>
+                    <h4>Title:{movie.movie_title}</h4>
+                    <h4>Duration:{movie.duration} minutes</h4>
+                    <h4>Release year:{movie.title_year}</h4>
+                    <h4>Score:{movie.imdb_score}</h4>
                     <Link to="/details"><button>More Details</button></Link>
                 </div>
 
