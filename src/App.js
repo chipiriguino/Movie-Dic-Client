@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import MostPopular from "./components/MostPopular";
 import Random from "./components/Random";
 import AllMovies from "./components/AllMovies";
+import DetailsMovie from "./components/DetailsMovie";
 
 
 class App extends Component {
@@ -21,15 +22,15 @@ class App extends Component {
     movies: [],
   }
 
-  // getMostPopular = async () => {
-  //   let res = await service.getMostPopular();
-  //   console.log('FUNCION GETMOSTPOPULAR APPJS', res.data);
+  // getAllMovies = async () => {
+  //   let res = await service.getAllMovies();
+  //   console.log('FUNCION GETALLMOVIESAPP JS', res.data);
   //   this.setState({movies: res})
   //   console.log('ARRAY MOVIES?', this.state)
   // }
 
   // componentDidMount = () => {
-  //   this.getMostPopular();
+  //   this.getAllMovies();
   // }
 
   render() {
@@ -46,6 +47,7 @@ class App extends Component {
           <PrivateRoute path="/popular" component={MostPopular} />
           <PrivateRoute path="/random" component={Random} />
           <PrivateRoute path="/movies" component={AllMovies} />
+          <PrivateRoute path="/details/:id" component={DetailsMovie} />
           <PrivateRoute path="/private" component={Private} />
         </Switch>
         </div>
