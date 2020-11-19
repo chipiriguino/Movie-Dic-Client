@@ -23,14 +23,14 @@ class App extends Component {
     movies: [],
   }
 
-  getAllMovies = async () => {
-    const res = await service.getAllMovies();
+  getMovies = async () => {
+    const res = await service.getMovies();
     console.log(res);
     this.setState({movies: res})
   }
 
   componentDidMount = () => {
-    this.getAllMovies();
+    this.getMovies();
   }
 
   render() {
@@ -45,7 +45,7 @@ class App extends Component {
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
           {/* <AnonRoute path="/" component={Home} /> UPDATE <Route> to <AnonRoute> */}
           <PrivateRoute path="/popular" component={MostPopular} />
-          <AddMovie getMovies={this.getAllMovies}/>
+          <PrivateRoute path="/create" component={AddMovie} />
           <PrivateRoute path="/random" component={Random} />
           <PrivateRoute path="/movies" component={AllMovies} />
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
