@@ -3,7 +3,7 @@ import axios from "axios";
 class Service {
   constructor() {
     this.service = axios.create({
-      baseURL: "https://api.themoviedb.org/3",
+      baseURL: "http://localhost:4000/movies",
       // withCredentials: true
     });
   }
@@ -44,7 +44,7 @@ class Service {
 
   getMostPopular = async () => {
     try {
-      const res = await this.service.get("/movie/popular/" + this.apiKeyString);
+      const res = await this.service.get("/popular");
       console.log(res.data);
       return res.data;
     } catch (error) {
