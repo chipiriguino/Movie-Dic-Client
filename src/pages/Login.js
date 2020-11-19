@@ -21,18 +21,21 @@ class Login extends Component {
 
     return (
       <div>
-        <h1>Login</h1>
-
+        <div className="logo-inicio"><img src="/Logos/solotitulo.png" height="230" width="250"></img>
+        <h1 className="loginh1">Login</h1>
+        
         <form onSubmit={this.handleFormSubmit}>
           
-          <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange}/>
+          <label>User:</label>
+          <input type="text" name="username" value={username} onChange={this.handleChange}/><br></br>
 
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+          <label>Pass:</label>
+          <input type="password" name="password" value={password} onChange={this.handleChange} /><br></br>
 
-          <input type="submit" value="Login" />
+          <input className="botton-login" type="submit" value="Login" />
+          
         </form>
+        </div>
       </div>
     );
   }

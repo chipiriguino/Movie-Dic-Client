@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";			//	<-- UPDATE HERE
-import { Form, FormControl, Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 class Navbar extends Component {
   render() {
@@ -10,7 +10,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
             <Link to={'/'} id='home-btn'>
-          <h4>Home</h4>
+          <img className="logonav" src="logos/cola.png" width="40" height="40"></img>
         </Link>
         {
           isLoggedin ?
@@ -28,10 +28,7 @@ class Navbar extends Component {
             <Link to="/signup">
               <button className="navbar-button">Sign Up</button>
             </Link>
-            <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+      
           </>)
         }
       </nav>
@@ -40,4 +37,6 @@ class Navbar extends Component {
 }
 
 export default withAuth(Navbar);
+
+
 

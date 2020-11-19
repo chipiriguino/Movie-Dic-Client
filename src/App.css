@@ -7,6 +7,9 @@
   padding: 20px;;
 }
 
+
+/* NAVBAR */
+
 nav.navbar { 
   display: flex;
   padding: 20px;
@@ -25,7 +28,26 @@ button.navbar-button {
   margin: 0 10px;
 }
 
+
 #home-btn {
   color: white;
   text-decoration: none;
 }
+
+/* HOME SIN LOGIN */
+
+.logo-inicio{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.botton-login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin-left: 50px;
+
+}
+/* LOGIN */

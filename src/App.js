@@ -34,14 +34,13 @@ class App extends Component {
        
         <div className="container">
           <Navbar />
-          <h1>Basic React Authentication</h1>
+          
           
         <Switch>
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
           <PrivateRoute path="/private" component={Private} />
           <AnonRoute path="/top-rated" component={MostPopular} />
-          <Link to="/movies/top-rated">Top-Rated</Link>
         </Switch>
         </div>
         
