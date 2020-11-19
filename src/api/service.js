@@ -32,16 +32,6 @@ class Service {
     }
   };
 
-  getTopRated = async () => {
-    try {
-      const res = await this.service.get("/tv/top_rated/" + this.apiKeyString);
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   getMostPopular = async () => {
     try {
       const res = await this.service.get("/popular");
@@ -52,15 +42,27 @@ class Service {
     }
   };
 
-  getUpcoming = async () => {
+  getAllMovies = async () => {
     try {
-      const res = await this.service.get("/movie/upcoming" + this.apiKeyString);
+      const res = await this.service.get("/movies");
       console.log(res.data);
       return res.data;
     } catch (error) {
       console.log(error);
     }
   };
+
+  getRandom = async () => {
+    try {
+      const res = await this.service.get("/random");
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
 
 }
 

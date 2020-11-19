@@ -12,6 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import service from './api/service';
 import Home from './pages/Home';
 import MostPopular from "./components/MostPopular";
+import Random from "./components/Random";
+import AllMovies from "./components/AllMovies";
+
 
 class App extends Component {
   state = {
@@ -39,8 +42,10 @@ class App extends Component {
         <Switch>
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
-          <Route path="/" component={Home} /> {/* UPDATE <Route> to <AnonRoute> */}
+          {/* <AnonRoute path="/" component={Home} /> UPDATE <Route> to <AnonRoute> */}
           <PrivateRoute path="/popular" component={MostPopular} />
+          <PrivateRoute path="/random" component={Random} />
+          <PrivateRoute path="/movies" component={AllMovies} />
           <PrivateRoute path="/private" component={Private} />
         </Switch>
         </div>
