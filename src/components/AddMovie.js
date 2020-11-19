@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import service from "./api/service";
+import service from "../api/service";
 
 class AddMovie extends Component {
   state = {
