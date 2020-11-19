@@ -5,7 +5,7 @@ class AddMovie extends Component {
   state = {
     movie_title: "",
     description: "",
-    // poster: "",
+    poster: "",
     genres: "",
     director_name: ""
   };
@@ -15,25 +15,25 @@ class AddMovie extends Component {
     this.setState({ [name]: value });
   };
 
-  // handleFileUpload = async (e) => {
-  //   console.log("the file to be uploaded is: ", e.target.files[0]);
+  handleFileUpload = async (e) => {
+    console.log("the file to be uploaded is: ", e.target.files[0]);
 
-  //   // creamos un nuevo objeto FormData
-  //   const uploadData = new FormData();
+    // creamos un nuevo objeto FormData
+    const uploadData = new FormData();
 
-  //   // poster (este nombre tiene que ser igual que en el modelo, ya que usaremos req.body como argumento del método .create() cuando creemos una nueva movie en la ruta POST '/api/movies/create')
-  //   uploadData.append("poster", e.target.files[0]);
+    // poster (este nombre tiene que ser igual que en el modelo, ya que usaremos req.body como argumento del método .create() cuando creemos una nueva movie en la ruta POST '/api/movies/create')
+    uploadData.append("poster", e.target.files[0]);
 
-  //   try {
-  //     const res = await service.handleUpload(uploadData);
+    try {
+      const res = await service.handleUpload(uploadData);
 
-  //     console.log("response is", res);
+      console.log("response is", res);
 
-  //     this.setState({ poster: res.secure_url });
-  //   } catch (error) {
-  //     console.log("Error while uploading the file: ", error);
-  //   }
-  // };
+      this.setState({ poster: res.secure_url });
+    } catch (error) {
+      console.log("Error while uploading the file: ", error);
+    }
+  };
 
   handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,7 +48,7 @@ class AddMovie extends Component {
         poster: ""
       });
 
-      this.props.getMovies()
+      // this.props.getMovies()
     } catch (error) {
       console.log("Error while adding the movie: ", error);
     }
@@ -91,7 +91,7 @@ class AddMovie extends Component {
             onChange={(e) => this.handleChange(e)}
           />
 
-          {/* <input type="file" onChange={(e) => this.handleFileUpload(e)} /> */}
+          <input type="file" onChange={(e) => this.handleFileUpload(e)} />
           <button type="submit">Save new movie</button>
         </form>
       </div>

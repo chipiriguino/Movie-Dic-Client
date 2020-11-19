@@ -52,15 +52,15 @@ class Service {
     }
   };
 
-  getMovies = async () => {
-    try {
-      const res = await this.service.get("/movies");
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // getMovies = async () => {
+  //   try {
+  //     const res = await this.service.get("/movies");
+  //     console.log(res.data);
+  //     return res.data;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   getRandom = async () => {
     try {

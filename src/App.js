@@ -23,14 +23,14 @@ class App extends Component {
     movies: [],
   }
 
-  getMovies = async () => {
-    const res = await service.getMovies();
+  getAllMovies = async () => {
+    const res = await service.getAllMovies();
     console.log(res);
     this.setState({movies: res})
   }
 
   componentDidMount = () => {
-    this.getMovies();
+    this.getAllMovies();
   }
 
   render() {
