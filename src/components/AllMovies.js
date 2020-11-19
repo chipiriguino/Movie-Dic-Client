@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import service from '../api/service'
+import { Link} from "react-router-dom";
+
+
 class MostPopular extends Component {
     state = {
         movies: []
@@ -7,9 +10,9 @@ class MostPopular extends Component {
 
     getAllMovies = async () => {
         let res = await service.getAllMovies();
-        console.log('RESPUESTA ALLMOVIES', this.state.movies);
+        console.log('RESPUESTA ALLMOVIES', this.state);
         this.setState({ movies: res })
-        console.log('ARRAY LLENO ALLMOVIES?', this.state.movies)
+        console.log('ARRAY LLENO ALLMOVIES?', this.state)
     }
 
     componentDidMount = () => {
@@ -21,17 +24,17 @@ class MostPopular extends Component {
         return (
             <div className ="container">
                 <h1>All Movies PAGE</h1>
-                {/* {this.state.movies.map((allMovie) => {
+                {this.state.movies.slice(0, 20).map((allMovie) => {
                     return (
                         <div key={allMovie._id}>
                             <h3>{allMovie.language}</h3>
                             <h4>{allMovie.director_name}</h4>
                             <h4>{allMovie.movie_title}</h4>
                             <img src={allMovie.poster} />
-                            <hr />
+                            <Link to={`/details/${allMovie._id}`}><button>More Details</button></Link>
                         </div>
                     );
-                })} */}
+                })}
 
             </div>
         );

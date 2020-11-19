@@ -62,6 +62,15 @@ class Service {
     }
   };
 
+  getDetailsMovie = async (id) => {
+    try {
+      const res = await this.service.get("/details/"+ id);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 
 }
