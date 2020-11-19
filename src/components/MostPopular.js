@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
-import service from '../api/service';
-
+import service from '../api/service'
 class MostPopular extends Component {
     state = {
-        movies: [],
-        poster_path: "",
-        original_title: ""
-      }
+        movies: []
+    }
+
+    getMostPopular = async () => {
+        let res = await service.getMostPopular();
+        console.log('FUNCION GETMOSTPOPULAR APPJS', res.data);
+        this.setState({ movies: res })
+        console.log('ARRAY MOVIES?', this.state)
+    }
+
+    componentDidMount = () => {
+        this.getMostPopular();
+    }
+
     render() {
-        console.log('THIIIIIIIIIIIIISSSSS', this)
-        console.log('MOSTPOPULAR FUNCTION 1---this.state.poster_path', service.poster_path)
-        console.log('MOSTPOPULAR FUNCTION 2---', service.original_title)
+        console.log('THIISSSSSTATEEEEEEEEid', this.state.movies)
         return (
             <div>
-                <img alt="photosid">{this.poster_path}</img>
-                <h2>Title: {this.original_title}</h2>
+                <h1>MOST POPULAR PAGE</h1>
+                {this.state.movies.map((eachMovie) => {
+                    return (
+                        <div key={eachMovie._id}>
+                            <h3>{eachMovie.language}</h3>
+                            <h4>{eachMovie.director_name}</h4>
+                            <h4>{eachMovie.movie_title}</h4>
+                            <img src={eachMovie.poster} />
+                            <hr />
+                        </div>
+                    );
+                })}
+
             </div>
         );
     }

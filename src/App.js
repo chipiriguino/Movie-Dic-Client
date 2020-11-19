@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -14,18 +14,19 @@ import MostPopular from "./components/MostPopular";
 
 class App extends Component {
   state = {
-    movies: []
+    movies: [],
   }
 
-  getMostPopular = async () => {
-    let res = await service.getMostPopular();
-    console.log('FUNCION GETMOSTPOPULAR APPJS', res.results);
-    this.setState({movies: res})
-  }
+  // getMostPopular = async () => {
+  //   let res = await service.getMostPopular();
+  //   console.log('FUNCION GETMOSTPOPULAR APPJS', res.data);
+  //   this.setState({movies: res})
+  //   console.log('ARRAY MOVIES?', this.state)
+  // }
 
-  componentDidMount = () => {
-    this.getMostPopular();
-  }
+  // componentDidMount = () => {
+  //   this.getMostPopular();
+  // }
 
   render() {
     return (
@@ -34,14 +35,11 @@ class App extends Component {
        
         <div className="container">
           <Navbar />
-          <h1>Basic React Authentication</h1>
-          
         <Switch>
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
+          <PrivateRoute path="/popular" component={MostPopular} />
           <PrivateRoute path="/private" component={Private} />
-          <AnonRoute path="/top-rated" component={MostPopular} />
-          <Link to="/movies/top-rated">Top-Rated</Link>
         </Switch>
         </div>
         
