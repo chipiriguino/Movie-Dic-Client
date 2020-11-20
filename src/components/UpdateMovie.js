@@ -31,8 +31,8 @@ componentDidMount = () => {
   };
 
   handleFileUpload = async (e) => {
-    console.log("the file to be uploaded is: ", e.target.files[0]);
-
+    console.log("the file to be uploaded is: ", );
+let poster = e.target.files[0]
     // creamos un nuevo objeto FormData
     const uploadData = new FormData();
 
@@ -42,7 +42,7 @@ componentDidMount = () => {
     try {
       const res = await service.handleUpload(uploadData);
 
-      console.log("response is", res);
+      
 
       this.setState({ poster: res.secure_url });
     } catch (error) {
@@ -54,8 +54,7 @@ componentDidMount = () => {
     e.preventDefault();
 
     try {
-      const res = await service.updatedMovie(this.state);
-      console.log("added", res);
+      const res = await service.updatedMovie(this.state, this.props.match.params.id);
 
       this.setState({
         movie_title: "",

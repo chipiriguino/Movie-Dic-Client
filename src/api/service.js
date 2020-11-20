@@ -32,11 +32,11 @@ class Service {
     }
   };
 
-  updatedMovie = async (updatedMovie) => {
+  updatedMovie = async (updatedMovie, id) => {
     console.log("updated movie is: ", updatedMovie);
 
     try {
-      const res = await this.service.post("/upload", updatedMovie);
+      const res = await this.service.post("/upload/" + id, {updatedMovie});
       return res.data;
     } catch (error) {
       console.log(error);
