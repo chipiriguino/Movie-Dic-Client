@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service';
-import { Link} from "react-router-dom";
+import { Link, Redirect, useHistory} from "react-router-dom";
 
 
 class DetailsMovie extends Component {
@@ -13,13 +13,14 @@ class DetailsMovie extends Component {
     }
 
     deleteMovie = async () => {
+        
         await service.deleteMovie(this.props.match.params.id);
+        this.props.history.push("/popular");
     }
 
     componentDidMount = () => {
         this.getDetailsMovie();
     }
-
     
     render() {
         const{movie}= this.state
@@ -35,8 +36,7 @@ class DetailsMovie extends Component {
                     <h4>Duration:{movie.duration} minutes</h4>
                     <h4>Release year:{movie.title_year}</h4>
                     <h4>Score:{movie.imdb_score}</h4>
-                    <button type="submit"><Link to={`/delete/${movie._id}`}>Delete movie</Link></button>
-                    
+                    <button onClick={()=> this.deleteMovie()}>Delete Movie</button>
                 </div>
 
             </div>
