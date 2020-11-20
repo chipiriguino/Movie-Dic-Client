@@ -17,11 +17,14 @@ import AllMovies from "./components/AllMovies";
 import AddMovie from "./components/AddMovie";
 import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
+import SearchBar from "./components/SearchBar";
+import SearchResult from "./components/SearchResult";
 
 
 class App extends Component {
   state = {
     movies: [],
+    filterMovies : []
   }
 
   getAllMovies = async () => {
@@ -34,6 +37,20 @@ class App extends Component {
     this.getAllMovies();
   }
 
+  filterSearch = (value) => {
+    const copyFood = [...this.state.movies]
+    let filtrado = copyFood.filter(data=>{
+      let title = data.movie_title.toLowerCase().trim();
+      let valueLower = value.toLowerCase().trim();
+      return title.includes(valueLower)
+
+    })
+    this.setState({
+      filterMovies: filtrado
+    })
+    console.log('FILTRADO!!!!', filtrado)
+  }
+
   render() {
     return (
       // Envolvemos los componentes con AuthProvider
@@ -41,6 +58,11 @@ class App extends Component {
        
         <div className="container">
           <Navbar />
+          <SearchBar foodToColect={(e)=> this.filterSearch(e)}/>
+          {this.state.filterMovies.map((oneMovie, index)=> {
+            console.log('ONEMOVIEEEEEEE', oneMovie)
+          return <SearchResult key={index} theMovie={oneMovie} />
+        })}
         <Switch>
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}

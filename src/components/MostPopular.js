@@ -9,9 +9,7 @@ class MostPopular extends Component {
 
     getMostPopular = async () => {
         let res = await service.getMostPopular();
-        console.log('FUNCION GETMOSTPOPULAR APPJS', res.data);
         this.setState({ movies: res })
-        console.log('ARRAY MOVIES?', this.state)
     }
 
     componentDidMount = () => {
@@ -19,7 +17,6 @@ class MostPopular extends Component {
     }
 
     render() {
-        console.log('THIISSSSSTATEEEEEEEEid', this.state.movies)
         return (
             <div className ="container">
                 <h1>MOST POPULAR PAGE</h1>
