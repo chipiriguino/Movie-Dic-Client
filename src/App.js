@@ -56,7 +56,7 @@ class App extends Component {
       // Envolvemos los componentes con AuthProvider
       <AuthProvider>
        
-        <div className="container">
+        <div>
           <Navbar />
           <SearchBar foodToColect={(e)=> this.filterSearch(e)}/>
           {this.state.filterMovies.map((oneMovie, index)=> {

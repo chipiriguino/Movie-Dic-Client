@@ -27,7 +27,7 @@ class MostPopular extends Component {
                             <div className="info_section">
                                 <div className="movie_header">
                                     <img className="locandina" src={allMovie.poster} />
-                                    <h1>{allMovie.movie_title}</h1>
+                                    <h4>{allMovie.movie_title}</h4>
                                     <h4>{allMovie.title_year}, {allMovie.director_name}</h4>
                                     <span className="minutes">{allMovie.duration} min</span>
                                     <p className="type">{allMovie.genres}</p>
