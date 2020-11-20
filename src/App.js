@@ -15,6 +15,7 @@ import MostPopular from "./components/MostPopular";
 import Random from "./components/Random";
 import AllMovies from "./components/AllMovies";
 import AddMovie from "./components/AddMovie";
+import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
 
 
@@ -47,6 +48,7 @@ class App extends Component {
           <PrivateRoute path="/popular" component={MostPopular} />
           <PrivateRoute path="/create" component={AddMovie} />
           <PrivateRoute path="/random" component={Random} />
+          <PrivateRoute path="/upload/:id" component={UpdateMovie} />
           <PrivateRoute path="/movies" component={AllMovies} />
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
           <PrivateRoute path="/private" component={Private} />

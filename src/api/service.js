@@ -32,6 +32,17 @@ class Service {
     }
   };
 
+  updatedMovie = async (updatedMovie) => {
+    console.log("updated movie is: ", updatedMovie);
+
+    try {
+      const res = await this.service.post("/upload", updatedMovie);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   getMostPopular = async () => {
     try {
       const res = await this.service.get("/popular");
@@ -51,16 +62,6 @@ class Service {
       console.log(error);
     }
   };
-
-  // getMovies = async () => {
-  //   try {
-  //     const res = await this.service.get("/movies");
-  //     console.log(res.data);
-  //     return res.data;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   getRandom = async () => {
     try {
@@ -82,7 +83,15 @@ class Service {
     }
   };
 
-
+  deleteMovie = async (id) => {
+    try {
+      const res = await this.service.post("/delete/"+ id);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
 

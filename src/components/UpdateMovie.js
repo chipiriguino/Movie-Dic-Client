@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 import service from "../api/service";
 
-class AddMovie extends Component {
+class UpdateMovie extends Component {
   state = {
     movie_title: "",
     description: "",
     poster: "",
     genres: "",
-    director_name: ""
+    director_name: "",
+    // movie: {}
   };
+
+  getDetailsMovie = async () => {
+    let res = await service.getDetailsMovie(this.props.match.params.id);
+    this.setState({ movie_title: res.movie_title,
+    description: res.description,
+    poster: res.poster,
+    genres: res.genres,
+    director_name: res.director_name
+  })
+}
+
+componentDidMount = () => {
+    this.getDetailsMovie();
+}
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,13 +54,15 @@ class AddMovie extends Component {
     e.preventDefault();
 
     try {
-      const res = await service.saveNewMovie(this.state);
+      const res = await service.updatedMovie(this.state);
       console.log("added", res);
 
       this.setState({
         movie_title: "",
         description: "",
-        poster: ""
+        poster: "",
+        genres: "",
+        director_name: ""
       });
 
       // this.props.getMovies()
@@ -55,23 +72,20 @@ class AddMovie extends Component {
   };
 
   render() {
+    console.log('estas en updatemovieee', this.state)
     return (
       <div>
-        <h2>New Movie</h2>
+        <h2>Update the Movie</h2>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <label htmlFor="">Name</label>
-          <input
-            type="text"
-            name="movie_title"
-            value={this.state.movie_title}
-            onChange={(e) => this.handleChange(e)}
-          />
+          <input type="text" name="movie_title" value={this.state.movie_title} placeholder={this.state.movie_title} onChange={(e) => this.handleChange(e)}/>
           
           <label htmlFor="">Genre</label>
           <input
             type="text"
             name="genres"
             value={this.state.genres}
+            placeholder={this.state.genres}
             onChange={(e) => this.handleChange(e)}
           />
 
@@ -80,7 +94,9 @@ class AddMovie extends Component {
             type="text"
             name="director_name"
             value={this.state.director_name}
+            placeholder={this.state.director_name}
             onChange={(e) => this.handleChange(e)}
+            
           />
 
           <label htmlFor="">Description</label>
@@ -88,15 +104,16 @@ class AddMovie extends Component {
             type="text"
             name="description"
             value={this.state.description}
+            placeholder={this.state.description}
             onChange={(e) => this.handleChange(e)}
           />
 
           <input type="file" onChange={(e) => this.handleFileUpload(e)} />
-          <button type="submit">Save new movie</button>
+          <button type="submit">Update the movie</button>
         </form>
       </div>
     );
   }
 }
 
-export default AddMovie;
+export default UpdateMovie;

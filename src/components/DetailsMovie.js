@@ -12,6 +12,10 @@ class DetailsMovie extends Component {
         this.setState({ movie: res })
     }
 
+    deleteMovie = async () => {
+        await service.deleteMovie(this.props.match.params.id);
+    }
+
     componentDidMount = () => {
         this.getDetailsMovie();
     }
@@ -31,7 +35,8 @@ class DetailsMovie extends Component {
                     <h4>Duration:{movie.duration} minutes</h4>
                     <h4>Release year:{movie.title_year}</h4>
                     <h4>Score:{movie.imdb_score}</h4>
-                    <Link to="/details"><button>More Details</button></Link>
+                    <button type="submit"><Link to={`/delete/${movie._id}`}>Delete movie</Link></button>
+                    
                 </div>
 
             </div>

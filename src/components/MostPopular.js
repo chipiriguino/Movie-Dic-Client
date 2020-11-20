@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import service from '../api/service'
+import service from '../api/service';
+import { Link} from "react-router-dom";
+
 class MostPopular extends Component {
     state = {
         movies: []
@@ -28,7 +30,8 @@ class MostPopular extends Component {
                             <h4>{eachMovie.director_name}</h4>
                             <h4>{eachMovie.movie_title}</h4>
                             <img src={eachMovie.poster} />
-                            <hr />
+                            <Link to={`/details/${eachMovie._id}`}><button>More Details</button></Link>
+                            <Link to={`/upload/${eachMovie._id}`}><button>Upload the movie</button></Link>
                         </div>
                     );
                 })}
