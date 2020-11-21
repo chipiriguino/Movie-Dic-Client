@@ -1,32 +1,25 @@
 import React, { Component } from 'react';
 import service from '../api/service';
+import {withAuth} from '../lib/AuthProvider'
 
 class Favorites extends Component {
     state = {
-        movies: []
-      }
-    
-      getAllMovies = async () => {
-          let res = await service.getAllMovies();
-          this.setState({ movies: res })
-      }
-    
-      componentDidMount = () => {
-          this.getAllMovies();
-      }
+        favoriteArray: []
+    }
+
     render() {
-        console.log('CONSOLE LOG FAVORITES COMPONEEEEENT', this.props.user.favorites)
-        console.log('ARRAY MOVIES FAVORITES COMPONEEEEENT', this.state.movies)
+        console.log('CONSOLE LOG FAVORITES', this.state.favoriteArray)
+
         return (
             <div>
                 <h2>Your Favorites</h2>
-                {this.props.user.favorites.map(() => {
+                {/* {this.props.user.favorites.map(() => {
                     return (
                         <div className="movie_card" id="bright">
-                           <h3>hola</h3>
+                           <h3>{this.props.user.favorites}</h3>
                         </div>
                     );
-                })}
+                })} */}
             </div>
         );
     }

@@ -10,6 +10,7 @@ class MostPopular extends Component {
 
     getMostPopular = async () => {
         let res = await service.getMostPopular();
+        console.log('HOLIIIIIIII', res)
         this.setState({ movies: res })
     }
 
@@ -18,7 +19,7 @@ class MostPopular extends Component {
         console.log('USERID DE MOSTPOPULAAARRRRRR', userId)
         let res = await service.addToFavourite(movieId, userId);
         this.setState({ favorite: res })
-        console.log('FAVORITO STATE MOSTPOPULAR!!!!', this.state.favorite)
+        console.log('FAVORITO STATE MOSTPOPULAR!!!!', this.state)
     }
 
     componentDidMount = () => {

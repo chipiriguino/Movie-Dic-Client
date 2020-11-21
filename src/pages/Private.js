@@ -5,7 +5,9 @@ import service from '../api/service';
 import Favorites from '../components/Favorites';
 
 class Private extends Component {
-  
+  state= {
+    user: []
+  }
   getProfileUser = async () => {
     let res = await service.getProfileUser(this.props.user._id);
     this.setState({ movie: res })
@@ -17,7 +19,7 @@ class Private extends Component {
 
   render(props) {
     console.log('GET FAVORITES ARRAY RENDEEEERRRRRR', this.props.user)
-    console.log('ARRAY MOVIES PRIVATE COMPONEEEEENT', this.props.movies)
+
     return (
       <div>
           <div>
@@ -33,7 +35,7 @@ class Private extends Component {
           </div>
           <div>
             <Favorites 
-              user={this.props.user}
+              user={this.state.user}
             />
             
           </div>

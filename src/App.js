@@ -73,6 +73,7 @@ class App extends Component {
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
           <PrivateRoute 
             path="/private"
+            movies={this.state.movies}
             component={Private} 
             />
         </Switch>
