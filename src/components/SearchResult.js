@@ -6,7 +6,7 @@ class SearchResult extends Component {
         return (
             <div>
                 <h3>{this.props.theMovie.movie_title}</h3>
-                <img src={this.props.theMovie.poster} />
+                <img src={this.props.theMovie.poster} alt={this.props.theMovie.movie_title} />
             </div>
         );
     }

@@ -32,7 +32,7 @@ componentDidMount = () => {
 
   handleFileUpload = async (e) => {
     console.log("the file to be uploaded is: ", );
-let poster = e.target.files[0]
+    let poster = e.target.files[0]
     // creamos un nuevo objeto FormData
     const uploadData = new FormData();
 
@@ -108,7 +108,7 @@ let poster = e.target.files[0]
           />
 
           <input type="file" onChange={(e) => this.handleFileUpload(e)} />
-          <button type="submit">Update the movie</button>
+          <button className="boton azul" type="submit">Update the movie</button>
         </form>
       </div>
     );

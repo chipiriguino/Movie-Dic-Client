@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Route, Link} from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -61,10 +61,10 @@ class App extends Component {
           {this.state.filterMovies.map((oneMovie, index)=> {
           return <SearchResult key={index} theMovie={oneMovie} />
         })}
+        {/* <Route path="/" component={Home} /> */}
         <Switch>
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
-          {/* <AnonRoute path="/" component={Home} /> UPDATE <Route> to <AnonRoute> */}
           <PrivateRoute path="/popular" component={MostPopular} />
           <PrivateRoute path="/create" component={AddMovie} />
           <PrivateRoute path="/random" component={Random} />

@@ -3,30 +3,232 @@
   padding: 0;
 }
 
-.App {
-  padding: 20px;;
-}
-
 
 /* NAVBAR */
 
-nav.navbar { 
-  display: flex;
-  padding: 20px;
-  background:darkblue; 
-}
-
-nav.navbar .navbar-user{
-  margin-left: 10px;
-  color: white;
-}
-
-button.navbar-button {
-  padding: 5px 20px;
-  width: 100px;
-  border-radius: 3px;
-  margin: 0 10px;
-}
+/* header */
+.header {
+	background-color: #fff;
+	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+  }
+  .header ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	background-color: #fff;
+  }
+  .header li a {
+	display: block;
+	padding: 20px 20px;
+	border-right: 1px solid #F4F4F4;
+	text-decoration: none;
+  }
+  .header li a:hover,
+  .header .menu-btn:hover {
+	background-color: #F4F4F4;
+  }
+  .header .logo {
+	display: block;
+	float: left;
+	font-size: 2em;
+	padding: 10px 20px;
+	text-decoration: none;
+  }
+  /* menu */
+  .header .menu {
+	clear: both;
+	max-height: 0;
+	transition: max-height .2s ease-out;
+  }
+  /* menu icon */
+  .header .menu-icon {
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	padding: 28px 20px;
+	position: relative;
+	user-select: none;
+  }
+  .header .menu-icon .navicon {
+	background: #333;
+	display: block;
+	height: 2px;
+	position: relative;
+	transition: background .2s ease-out;
+	width: 18px;
+  }
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+	background: #333;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
+  }
+  .header .menu-icon .navicon:before {
+	top: 5px;
+  }
+  .header .menu-icon .navicon:after {
+	top: -5px;
+  }
+  /* menu btn */
+  .header .menu-btn {
+	display: none;
+  }
+  .header .menu-btn:checked ~ .menu {
+	max-height: 240px;
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+	background: transparent;
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+	transform: rotate(-45deg);
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+	transform: rotate(45deg);
+  }
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+	top: 0;
+  }
+  /* 48em = 768px */
+  @media (min-width: 48em) {
+	.header li {
+	  float: left;
+	}
+	.header li a {
+	  padding: 20px 30px;
+	}
+	.header .menu {
+	  clear: none;
+	  float: right;
+	  max-height: none;
+	}
+	.header .menu-icon {
+	  display: none;
+	}
+  }body {
+	margin: 0;
+	font-family: Helvetica, sans-serif;
+	background-color: #F4F4F4;
+  }
+  a {
+	color: #000;
+  }
+  /* header */
+  .header {
+	background-color: #fff;
+	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+  }
+  .header ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	background-color: #fff;
+  }
+  .header li a {
+	display: block;
+	padding: 20px 20px;
+	border-right: 1px solid #F4F4F4;
+	text-decoration: none;
+  }
+  .header li a:hover,
+  .header .menu-btn:hover {
+	background-color: #F4F4F4;
+  }
+  .header .logo {
+	display: block;
+	float: left;
+	font-size: 2em;
+	padding: 10px 20px;
+	text-decoration: none;
+  }
+  /* menu */
+  .header .menu {
+	clear: both;
+	max-height: 0;
+	transition: max-height .2s ease-out;
+  }
+  /* menu icon */
+  .header .menu-icon {
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	padding: 28px 20px;
+	position: relative;
+	user-select: none;
+  }
+  .header .menu-icon .navicon {
+	background: #333;
+	display: block;
+	height: 2px;
+	position: relative;
+	transition: background .2s ease-out;
+	width: 18px;
+  }
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+	background: #333;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
+  }
+  .header .menu-icon .navicon:before {
+	top: 5px;
+  }
+  .header .menu-icon .navicon:after {
+	top: -5px;
+  }
+  /* menu btn */
+  .header .menu-btn {
+	display: none;
+  }
+  .header .menu-btn:checked ~ .menu {
+	max-height: 240px;
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+	background: transparent;
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+	transform: rotate(-45deg);
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+	transform: rotate(45deg);
+  }
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+	top: 0;
+  }
+  /* 48em = 768px */
+  @media (min-width: 48em) {
+	.header li {
+	  float: left;
+	}
+	.header li a {
+	  padding: 20px 30px;
+	}
+	.header .menu {
+	  clear: none;
+	  float: right;
+	  max-height: none;
+	}
+	.header .menu-icon {
+	  display: none;
+	}
+  }
 
 
 #home-btn {
@@ -52,7 +254,239 @@ button.navbar-button {
 }
 /* LOGIN */
 
+.form-signin {
+	width: 100%;
+	max-width: 420px;
+	padding: 15px;
+	margin: auto;
+  }
+  
+  .body2 {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	padding-bottom: 20px;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+	  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxjQ6p0r6JFJJairZra4M-OGA8u8F6OzvOkQ&usqp=CAU") ;
+  }
+  
+  /* styles INPUTS*/
+  
+  .input-group-login {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	width: 100%;
+  }
+  .input-group-prepend-login {
+	margin-right: -1px;
+  }
+  .input-group-prepend-login {
+	display: -ms-flexbox;
+	display: flex;
+  }
+  
+  .input-group-login > .custom-select:not(:first-child),
+  .input-group-login > .form-control-login:not(:first-child) {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+  }
+  .input-group-login > .custom-file,
+  .input-group > .custom-select,
+  .input-group-login > .form-control-login {
+	position: relative;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	width: 1%;
+	min-width: 0;
+	margin-bottom: 0;
+  }
+  .mt-login {
+	margin-top: 0.25rem !important;
+  }
+  .border-0-login {
+	border: 0 !important;
+  }
+  .form-control-login {
+	display: block;
+	width: 300px;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #F0E5FD;
+	border-radius: 28px 28px 28px 28px;
+	-moz-border-radius: 28px 28px 28px 28px;
+	-webkit-border-radius: 28px 28px 28px 28px;
+	border: 0px solid #000000;
+  }
+  button,
+  input {
+	overflow: visible;
+  }
+  
+  .input-group-text {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0.375rem 0.75rem;
+	height: 45px;
+	margin-bottom: 0;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	white-space: nowrap;
+	border: 1px solid #ced4da;
+	border-radius: 28px 0px 0px 28px;
+  -moz-border-radius: 28px 0px 0px 28px;
+  -webkit-border-radius: 28px 0px 0px 28px;
+  border: 0px solid #000000;
+  }
+  
+  .input-border-none{/* eliminates the border when the input is active */
+	border: 1px solid red;
+	outline: none;
+  }
+  
+  .fondo-icon {
+	background: #F0E5FD;
+	
+  }
+  .text-center {
+	text-align: center;
+  }
 
+  
+  /* BUTTON SIGNUP */
+  .button-signup {
+	display: inline-block;
+	font-weight: 400;
+	color: #ffffff;
+	height: 45px;
+	width: 300px;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	/* BORDER RADIUS */
+	border-radius: 28px 28px 28px 28px;
+  -moz-border-radius: 28px 28px 28px 28px;
+  -webkit-border-radius: 28px 28px 28px 28px;
+  border: 0px solid #000000;
+  cursor: pointer;
+
+  margin-top:20px
+  }
+  .fondo-color-signup {
+	background: #A00836;
+  }
+  
+  
+  
+  /* BUTTON SOCIAL */
+  .icons-position {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  .icon-social{
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	background-color: white;
+	margin: 10px;
+  /* BORDER RADIUS */
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 0px solid #000000;
+  
+  /* SHAWDOW */
+  -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+  }
+/* SIGN UP */
+
+
+/* BOTONES */
+
+.boton{
+	text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+		  text-align:center;
+		  text-decoration: none;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	display:inline-block;
+		  color: #FFF;
+		  background: #7F8C8D;
+		  padding: 7px 20px;
+		  white-space: nowrap;
+		  -webkit-border-radius: 5px;
+		  -moz-border-radius: 5px;
+		  border-radius: 100px;
+		  margin: 10px 5px;
+		  -webkit-transition: all 0.2s ease-in-out;
+		  -ms-transition: all 0.2s ease-in-out;
+		  -moz-transition: all 0.2s ease-in-out;
+		  -o-transition: all 0.2s ease-in-out;
+		  transition: all 0.2s ease-in-out;
+}
+ 
+.azul{
+background: #3498DB;
+box-shadow: 0px 5px 0px 0px #2980B9;
+}
+
+.azul:hover{
+background: #39a0e5;
+}
+
+.azul:active{
+box-shadow: 0px 2px 0px 0px #2980B9;
+}
+.verde{
+	background: #2ECC71;
+	box-shadow: 0px 5px 0px 0px #27AE60;
+  }
+  
+  .verde:hover{
+	background: #32db78;
+  }
+  
+  .verde:active{
+	box-shadow: 0px 2px 0px 0px #27AE60;
+  }
+  
+  .rojo{
+	background: #E74C3C;
+	box-shadow: 0px 5px 0px 0px #C0392B;
+  }
+  
+  .rojo:hover{
+	background: #ff5242;
+  }
+  
+  .rojo:active{
+	box-shadow: 0px 2px 0px 0px #C0392B;
+  }
+  
 
 /* MY PROFILE */
 
@@ -232,4 +666,3 @@ button.navbar-button {
  .ave_back {
 	 background: url("https://www.gannett-cdn.com/-mm-/c03fd140debe8ad4c05cf81a5cad7ad61a12ce52/c=0-1580-2985-3266&r=x803&c=1600x800/local/-/media/2017/06/09/USATODAY/USATODAY/636326272873599176-Black-Panther-Teaser.jpg");
 }
- 

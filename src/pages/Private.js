@@ -30,7 +30,7 @@ class Private extends Component {
           <button>Edit profile</button>
           <button><Link to="/random">Random</Link></button>
           <button>Fav films</button>
-          {/* <button><Link to="/create">Add Movie!</Link></button> */}
+          <button><Link to="/create">Add Movie!</Link></button>
           </article>
           </div>
           <div>
