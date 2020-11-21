@@ -108,7 +108,7 @@ let poster = e.target.files[0]
           />
 
           <input type="file" onChange={(e) => this.handleFileUpload(e)} />
-          <button type="submit">Update the movie</button>
+          <button className="boton azul" type="submit">Update the movie</button>
         </form>
       </div>
     );

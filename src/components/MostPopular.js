@@ -30,8 +30,8 @@ class MostPopular extends Component {
                             <h4>{eachMovie.director_name}</h4>
                             <h4>{eachMovie.movie_title}</h4>
                             <img src={eachMovie.poster} />
-                            <Link to={`/details/${eachMovie._id}`}><button>More Details</button></Link>
-                            <Link to={`/upload/${eachMovie._id}`}><button>Upload the movie</button></Link>
+                            <Link to={`/details/${eachMovie._id}`}><button className="boton azul">More Details</button></Link>
+                            <Link to={`/upload/${eachMovie._id}`}><button className="boton azul">Upload the movie</button></Link>
                         </div>
                     );
                 })}

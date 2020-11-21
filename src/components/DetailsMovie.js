@@ -36,7 +36,7 @@ class DetailsMovie extends Component {
                     <h4>Duration:{movie.duration} minutes</h4>
                     <h4>Release year:{movie.title_year}</h4>
                     <h4>Score:{movie.imdb_score}</h4>
-                    <button onClick={()=> this.deleteMovie()}>Delete Movie</button>
+                    <button className="boton rojo" onClick={()=> this.deleteMovie()}>Delete Movie</button>
                 </div>
 
             </div>

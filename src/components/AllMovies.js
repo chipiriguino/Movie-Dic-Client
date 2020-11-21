@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service'
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class MostPopular extends Component {
@@ -10,9 +10,7 @@ class MostPopular extends Component {
 
     getAllMovies = async () => {
         let res = await service.getAllMovies();
-        console.log('RESPUESTA ALLMOVIES', this.state);
         this.setState({ movies: res })
-        console.log('ARRAY LLENO ALLMOVIES?', this.state)
     }
 
     componentDidMount = () => {
@@ -20,18 +18,34 @@ class MostPopular extends Component {
     }
 
     render() {
-        console.log('AllMoviesJS', this.state.movies)
         return (
-            <div className ="container">
+            <div className="container">
                 <h1>All Movies PAGE</h1>
                 {this.state.movies.map((allMovie) => {
                     return (
-                        <div key={allMovie._id}>
-                            <h3>{allMovie.language}</h3>
-                            <h4>{allMovie.director_name}</h4>
-                            <h4>{allMovie.movie_title}</h4>
-                            <img src={allMovie.poster} />
-                            <Link to={`/details/${allMovie._id}`}><button>More Details</button></Link>
+                        <div className="movie_card" id="bright">
+                            <div className="info_section">
+                                <div className="movie_header">
+                                    <img className="locandina" src={allMovie.poster} />
+                                    <h4>{allMovie.movie_title}</h4>
+                                    <h4>{allMovie.title_year}, {allMovie.director_name}</h4>
+                                    <span className="minutes">{allMovie.duration} min</span>
+                                    <p className="type">{allMovie.genres}</p>
+                                </div>
+                                <div className="movie_desc">
+                                    <p className="text">
+                                        Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.
+      </p>
+                                </div>
+                                <div className="movie_social">
+                                    <ul>
+                                        <li><i className="material-icons">share</i></li>
+                                        <li><i className="material-icons"></i></li>
+                                        <li><i className="material-icons">chat_bubble</i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="blur_back bright_back"></div>
                         </div>
                     );
                 })}
@@ -42,3 +56,12 @@ class MostPopular extends Component {
 }
 
 export default MostPopular;
+
+
+{/* <div key={allMovie._id}>
+                            <h3>{allMovie.language}</h3>
+                            <h4>{allMovie.director_name}</h4>
+                            <h4>{allMovie.movie_title}</h4>
+                            <img src={allMovie.poster} />
+                            <Link to={`/details/${allMovie._id}`}><button>More Details</button></Link>
+                        </div> */}

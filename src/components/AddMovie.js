@@ -92,7 +92,7 @@ class AddMovie extends Component {
           />
 
           <input type="file" onChange={(e) => this.handleFileUpload(e)} />
-          <button type="submit">Save new movie</button>
+          <button className="boton azul" type="submit">Save new movie</button>
         </form>
       </div>
     );
