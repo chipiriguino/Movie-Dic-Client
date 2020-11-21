@@ -56,12 +56,3 @@ class MostPopular extends Component {
 }
 
 export default MostPopular;
-
-
-{/* <div key={allMovie._id}>
-                            <h3>{allMovie.language}</h3>
-                            <h4>{allMovie.director_name}</h4>
-                            <h4>{allMovie.movie_title}</h4>
-                            <img src={allMovie.poster} />
-                            <Link to={`/details/${allMovie._id}`}><button>More Details</button></Link>
-                        </div> */}

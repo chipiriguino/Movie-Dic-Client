@@ -10,7 +10,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
             <Link to={'/'} id='home-btn'>
-          <img className="logonav" src="logos/cola.png" width="40" height="40"></img>
+          <img className="logonav" src="logos/cola.png" width="40" height="40" alt="phoooto"></img>
         </Link>
         {
           isLoggedin ?

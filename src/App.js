@@ -24,13 +24,12 @@ import SearchResult from "./components/SearchResult";
 class App extends Component {
   state = {
     movies: [],
-    filterMovies : [],
-    favoritesUser: []
+    user: [],
+    filterMovies : []
   }
 
   getAllMovies = async () => {
     const res = await service.getAllMovies();
-    console.log(res);
     this.setState({movies: res})
   }
 
@@ -49,7 +48,6 @@ class App extends Component {
     this.setState({
       filterMovies: filtrado
     })
-    console.log('FILTRADO!!!!', filtrado)
   }
 
   render() {
@@ -61,7 +59,6 @@ class App extends Component {
           <Navbar />
           <SearchBar foodToColect={(e)=> this.filterSearch(e)}/>
           {this.state.filterMovies.map((oneMovie, index)=> {
-            console.log('ONEMOVIEEEEEEE', oneMovie)
           return <SearchResult key={index} theMovie={oneMovie} />
         })}
         <Switch>
@@ -74,7 +71,10 @@ class App extends Component {
           <PrivateRoute path="/upload/:id" component={UpdateMovie} />
           <PrivateRoute path="/movies" component={AllMovies} />
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
-          <PrivateRoute path="/private" component={Private} />
+          <PrivateRoute 
+            path="/private"
+            component={Private} 
+            />
         </Switch>
         </div>
         
