@@ -52,27 +52,13 @@ class Signup extends Component {
     </p>
     <p className="text-center"></p>
     <p className="text-center"></p>
-      <div className="icons-position">
+    <div id="social">
+            <a class="facebookBtn smGlobalBtn" href="#" ></a>
+            <a class="twitterBtn smGlobalBtn" href="#" ></a>
+            <a class="googleplusBtn smGlobalBtn" href="#" ></a>
+            <a class="pinterestBtn smGlobalBtn" href="#" ></a>
 
-        <a href="#" className="icon-social">
-        <p className="text-center">
-          <i className="fab fa-facebook-f fa-lg" style={{color:"#A00836"}}></i>
-        </p>
-      </a>
-
-      <a href="#" className="icon-social">
-        <p className="text-center">
-          <i className="fab fa-github fa-lg" style={{color:"#A00836"}}></i>
-        </p>
-      </a>
-
-      <a href="#" className="icon-social">
-        <p className="text-center">
-          <i className="fab fa-google fa-lg" style={{color:"#A00836"}}></i>
-        </p>
-      </a>
-      
-      </div>
+          </div>
 
   </form>
       </div>

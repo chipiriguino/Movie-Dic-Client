@@ -24,7 +24,7 @@ class Private extends Component {
       <div>
           <div>
           <h1>Welcome {this.props.user.username}</h1>
-          <img src={this.props.user.image} alt="imagen"/>
+          <img src={this.props.user.image} alt="imagen" width="250" height="250"/>
           <p>Again around here <strong>{this.props.user.username} </strong>we are glad to see you again, you can now search our sea of ​​movies. Don't forget the wellies. </p>
           <article className="btn-myrpfile">
           <button>Edit profile</button>
