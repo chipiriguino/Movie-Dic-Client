@@ -24,7 +24,8 @@ import SearchResult from "./components/SearchResult";
 class App extends Component {
   state = {
     movies: [],
-    filterMovies : []
+    filterMovies : [],
+    favoritesUser: []
   }
 
   getAllMovies = async () => {

@@ -3,7 +3,13 @@ import { withAuth } from "../lib/AuthProvider";
 import { Link } from "react-router-dom";
 
 class Private extends Component {
+  
+  funcionFavorites =()=>{
+    console.log('FAVORITES ARRAY', this.props.user.favorites)
+  }
+
   render(props) {
+    
     return (
       <div>
         <h1>Welcome {this.props.user.username}</h1>
