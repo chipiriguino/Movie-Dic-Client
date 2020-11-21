@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Route, Link} from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -17,16 +17,19 @@ import AllMovies from "./components/AllMovies";
 import AddMovie from "./components/AddMovie";
 import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
+import SearchBar from "./components/SearchBar";
+import SearchResult from "./components/SearchResult";
 
 
 class App extends Component {
   state = {
     movies: [],
+    user: [],
+    filterMovies : []
   }
 
   getAllMovies = async () => {
     const res = await service.getAllMovies();
-    console.log(res);
     this.setState({movies: res})
   }
 
@@ -34,16 +37,32 @@ class App extends Component {
     this.getAllMovies();
   }
 
+  filterSearch = (value) => {
+    const copyFood = [...this.state.movies]
+    let filtrado = copyFood.filter(data=>{
+      let title = data.movie_title.toLowerCase().trim();
+      let valueLower = value.toLowerCase().trim();
+      return title.includes(valueLower)
+
+    })
+    this.setState({
+      filterMovies: filtrado
+    })
+  }
+
   render() {
     return (
       // Envolvemos los componentes con AuthProvider
       <AuthProvider>
        
-        <div className="container">
+        <div>
           <Navbar />
-       
-          <Route path="/" component={Home} />
-          <Switch> 
+          <SearchBar foodToColect={(e)=> this.filterSearch(e)}/>
+          {this.state.filterMovies.map((oneMovie, index)=> {
+          return <SearchResult key={index} theMovie={oneMovie} />
+        })}
+        {/* <Route path="/" component={Home} /> */}
+        <Switch>
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
           <PrivateRoute path="/popular" component={MostPopular} />
@@ -52,7 +71,11 @@ class App extends Component {
           <PrivateRoute path="/upload/:id" component={UpdateMovie} />
           <PrivateRoute path="/movies" component={AllMovies} />
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
-          <PrivateRoute path="/private" component={Private} />
+          <PrivateRoute 
+            path="/private"
+            movies={this.state.movies}
+            component={Private} 
+            />
         </Switch>
         </div>
         

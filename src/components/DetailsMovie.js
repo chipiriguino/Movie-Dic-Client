@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import service from '../api/service';
-import { Link, Redirect, useHistory} from "react-router-dom";
 
 
 class DetailsMovie extends Component {

@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import service from '../api/service';
 import { Link} from "react-router-dom";
+import {withAuth} from '../lib/AuthProvider'
 
 class MostPopular extends Component {
     state = {
-        movies: []
+        movies: [],
     }
 
     getMostPopular = async () => {
         let res = await service.getMostPopular();
-        console.log('FUNCION GETMOSTPOPULAR APPJS', res.data);
+        console.log('HOLIIIIIIII', res)
         this.setState({ movies: res })
-        console.log('ARRAY MOVIES?', this.state)
+    }
+
+    addToFavourite = async (movieId) => {
+        let userId = this.props.user._id;
+        console.log('USERID DE MOSTPOPULAAARRRRRR', userId)
+        let res = await service.addToFavourite(movieId, userId);
+        this.setState({ favorite: res })
+        console.log('FAVORITO STATE MOSTPOPULAR!!!!', this.state)
     }
 
     componentDidMount = () => {
@@ -19,7 +27,6 @@ class MostPopular extends Component {
     }
 
     render() {
-        console.log('THIISSSSSTATEEEEEEEEid', this.state.movies)
         return (
             <div className ="container">
                 <h1>MOST POPULAR PAGE</h1>
@@ -30,8 +37,9 @@ class MostPopular extends Component {
                             <h4>{eachMovie.director_name}</h4>
                             <h4>{eachMovie.movie_title}</h4>
                             <img src={eachMovie.poster} />
-                            <Link to={`/details/${eachMovie._id}`}><button className="boton azul">More Details</button></Link>
-                            <Link to={`/upload/${eachMovie._id}`}><button className="boton azul">Upload the movie</button></Link>
+                            <button onClick={()=> this.addToFavourite(eachMovie._id)}>Add movie to your Favorites</button>
+                            <Link to={`/details/${eachMovie._id}`}><button>More Details</button></Link>
+                            <Link to={`/upload/${eachMovie._id}`}><button>Upload the movie</button></Link>
                         </div>
                     );
                 })}
@@ -41,4 +49,4 @@ class MostPopular extends Component {
     }
 }
 
-export default MostPopular;
+export default withAuth(MostPopular);

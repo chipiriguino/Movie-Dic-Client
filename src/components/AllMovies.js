@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 class MostPopular extends Component {

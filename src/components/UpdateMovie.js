@@ -32,7 +32,7 @@ componentDidMount = () => {
 
   handleFileUpload = async (e) => {
     console.log("the file to be uploaded is: ", );
-let poster = e.target.files[0]
+    let poster = e.target.files[0]
     // creamos un nuevo objeto FormData
     const uploadData = new FormData();
 

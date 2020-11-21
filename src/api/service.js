@@ -92,6 +92,26 @@ class Service {
       console.log(error);
     }
   };
+
+  getProfileUser = async (id) => {
+    try {
+      const res = await this.service.get("/private/"+ id);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  addToFavourite = async (movieId, userId) => {
+    try {
+      const res = await this.service.post("/private/favorite", {movieId, userId});
+      console.log('AÑADIDO A FAVORITO? CONSOLE LOG RES.DATA DE SERVICE CLIENT', res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
 
