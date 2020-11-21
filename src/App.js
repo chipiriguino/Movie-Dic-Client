@@ -41,10 +41,11 @@ class App extends Component {
        
         <div className="container">
           <Navbar />
-        <Switch>
+       
+          <Route path="/" component={Home} />
+          <Switch> 
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
-          {/* <AnonRoute path="/" component={Home} /> UPDATE <Route> to <AnonRoute> */}
           <PrivateRoute path="/popular" component={MostPopular} />
           <PrivateRoute path="/create" component={AddMovie} />
           <PrivateRoute path="/random" component={Random} />

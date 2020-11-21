@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";	
-import Button from 'react-bootstrap/Button';
 
 class Signup extends Component {
   state = { username: "", password: "" };
@@ -9,8 +7,7 @@ class Signup extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
-    //  console.log('Signup -> form submit', { username, password });
-    this.props.signup({ username, password });			//	<-- UPDATE HERE
+    this.props.signup({ username, password });			
   };
 
 
