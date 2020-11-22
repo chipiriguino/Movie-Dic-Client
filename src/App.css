@@ -1141,3 +1141,322 @@ RRSS */
 	color: red;
 
 }
+
+/* CARRUSEL PRUEBA */
+.carusel {
+	background: #ddd;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	height: 53vh;
+	align-items: center;
+	font-family: Arial;
+	justify-content: center;
+	overflow-x: hidden;
+}
+/* mixins */
+/* SLIDER */
+/* <-- Here you may change only slide-count, and all will be work */
+#slider {
+	position: relative;
+	max-width: 768px;
+	max-height: 432px;
+	padding: 0.5%;
+	background: rgba(38, 50, 56, 0.5);
+}
+#slider input {
+	display: none;
+}
+/* Slider Setup */
+#slider #slide1:checked ~ .slides .inner {
+	margin-left: 0%;
+}
+#slider #slide2:checked ~ .slides .inner {
+	margin-left: -100%;
+}
+#slider #slide3:checked ~ .slides .inner {
+	margin-left: -200%;
+}
+#slider #slide4:checked ~ .slides .inner {
+	margin-left: -300%;
+}
+#slider #slide5:checked ~ .slides .inner {
+	margin-left: -400%;
+}
+#slider .overflow {
+	width: 100%;
+	overflow: hidden;
+}
+#slider .inner {
+	width: 500%;
+	line-height: 0;
+}
+#slider .slide {
+	position: relative;
+	width: 20%;
+	float: left;
+}
+#slider .slide img {
+	width: 100%;
+}
+/* Control Setup */
+#slider {
+   /* ARROWS */
+   /* RIGHT ARROW */
+   /* LEFT ARROW */
+   /* ACTIVE DOTTS */
+}
+#slider #controls {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 90%;
+	box-sizing: border-box;
+}
+#slider #controls label {
+	position: relative;
+	display: none;
+	width: 9%;
+	padding-top: 9%;
+   /* height same as width */
+	border-top: 0.9vw solid #263238;
+	border-left: 0.9vw solid #263238;
+	opacity: 0.3;
+}
+#slider #controls label:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+#slider #controls label:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	width: 400%;
+	height: 400%;
+}
+#slider #slide5:checked ~ #controls label:nth-child(1) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide1:checked ~ #controls label:nth-child(2) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide2:checked ~ #controls label:nth-child(3) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide3:checked ~ #controls label:nth-child(4) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide4:checked ~ #controls label:nth-child(5) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide1:checked ~ #controls label:nth-child(5) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide2:checked ~ #controls label:nth-child(1) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide3:checked ~ #controls label:nth-child(2) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide4:checked ~ #controls label:nth-child(3) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide5:checked ~ #controls label:nth-child(4) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #active {
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	text-align: center;
+}
+#slider #active label {
+	display: inline-block;
+	width: 3%;
+	padding-top: 3%;
+   /* height same as width */
+	border-radius: 50%;
+	margin: 1%;
+	background: rgba(38, 50, 56, 0.5);
+	vertical-align: middle;
+}
+#slider #active label:hover {
+	background: rgba(38, 50, 56, 0.3);
+	box-shadow: 0 0 0 0.2vw #263238;
+	cursor: pointer;
+}
+#slider #slide1:checked ~ #active label:nth-child(1) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide2:checked ~ #active label:nth-child(2) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide3:checked ~ #active label:nth-child(3) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide4:checked ~ #active label:nth-child(4) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide5:checked ~ #active label:nth-child(5) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+/* Info Box */
+#slider .info {
+	line-height: 20px;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-style: italic;
+	font-size: 1rem;
+	padding: 30px 30px;
+	opacity: 0;
+	color: #000;
+	text-align: center;
+}
+#slider .info h3 {
+	color: #333;
+	margin: 0 0 5px;
+	font-weight: normal;
+	font-size: 1.5rem;
+	font-style: normal;
+}
+/* Animation */
+#slider {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+#slider .inner {
+	-webkit-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+	-moz-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+	-o-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+	transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+   /* easeInOutQuart */
+}
+#slider #controls label {
+	-webkit-transition: opacity 0.2s ease-out;
+	-moz-transition: opacity 0.2s ease-out;
+	-o-transition: opacity 0.2s ease-out;
+	transition: opacity 0.2s ease-out;
+}
+#slider #slide1:checked ~ .slides .inner > div:nth-child(1) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide2:checked ~ .slides .inner > div:nth-child(2) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide3:checked ~ .slides .inner > div:nth-child(3) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide4:checked ~ .slides .inner > div:nth-child(4) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide5:checked ~ .slides .inner > div:nth-child(5) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider .info, #slider #controls, #slider .slides, #slider #active, #slider #active label, #slider .info h3 {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+@media only screen and (max-width: 500px) {
+	#slider .info {
+		opacity: 0 !important;
+   }
+}

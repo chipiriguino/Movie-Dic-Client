@@ -4,9 +4,9 @@ class SearchResult extends Component {
     render() {
         console.log('THIS.PROPS SERACH RESULTS', this.props)
         return (
-            <div>
-                <h3>{this.props.theMovie.movie_title}</h3>
+            <div className="align-random">
                 <img src={this.props.theMovie.poster} alt={this.props.theMovie.movie_title} />
+                <h3 className="align-txt-random">{this.props.theMovie.movie_title}</h3>  
             </div>
         );
     }
