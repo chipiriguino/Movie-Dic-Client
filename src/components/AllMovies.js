@@ -20,11 +20,10 @@ class MostPopular extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h1>All Movies PAGE</h1>
+            <div className="container2">
                 {this.state.movies.map((allMovie) => {
                     return (
-                        <div className="movie_card" id="bright">
+                        <div className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                             <div className="info_section">
                                 <div className="movie_header">
                                     <img className="locandina" src={allMovie.poster} />
@@ -34,9 +33,7 @@ class MostPopular extends Component {
                                     <p className="type">{allMovie.genres}</p>
                                 </div>
                                 <div className="movie_desc">
-                                    <p className="text">
-                                        Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.
-      </p>
+                                    <p className="text">{allMovie.description}</p>
                                 </div>
                                 <div className="movie_social">
                                     <ul>

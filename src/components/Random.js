@@ -19,17 +19,20 @@ class Random extends Component {
 
     render() {
         return (
-            <div className ="container">
-                <h1>Random</h1>
-                <div key={this.state.movies._id}>
-                    <h3>{this.state.movies.language}</h3>
-                    <h4>{this.state.movies.director_name}</h4>
-                    <h4>{this.state.movies.movie_title}</h4>
-                    <img src={this.state.movies.poster} alt={`${this.state.movies.movie_title} + photo`}/>
-                    <hr />
-                </div>
-                <div>
-                    <button onClick={()=> this.getRandom(this.state.movies._id)}>Another please!</button>
+            <div className="container">
+                <div className="align-random">
+                    <h1>Random</h1>
+                    <div key={this.state.movies._id}>
+                        <img  className="align-img-random" src={this.state.movies.poster} alt={`${this.state.movies.movie_title} + photo`} />
+                        <hr />
+                    </div>
+                    <div className="align-title-random">
+                        <h3 className="align-txt-random" >{this.state.movies.movie_title}</h3>
+                        <h4 className="align-txt-random">{this.state.movies.director_name}</h4>
+                    </div>
+                    <div>
+                        <button className="boton verde" onClick={() => this.getRandom(this.state.movies._id)}>Another please!</button>
+                    </div>
                 </div>
             </div>
         );

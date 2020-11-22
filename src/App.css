@@ -3,9 +3,20 @@
   padding: 0;
 }
 
-.container{
+.container2{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: space-between;
 	padding-top: 40px;
+	width: 100%;
+	padding: 5px;
+	margin-right: 0;
+	margin-left: 0;
 }
+
 
 .search-div{
 
@@ -33,7 +44,6 @@
 .header {
 	background-color: #fff;
 	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-	position: fixed;
 	width: 100%;
 
   }
@@ -556,6 +566,7 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 .p-align{
 	text-align: center;
 	margin:10px;
+	color: white;
 }
 
 
@@ -563,6 +574,8 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+	margin-bottom: 40px;
+	margin-top:-10px
 }
 
 
@@ -593,7 +606,7 @@ CARRUSEL */
 	 display: block;
 	 width: 800px;
 	 height: 350px;
-	 margin: 100px auto;
+	 margin: 15px auto;
 	 overflow: hidden;
 	 border-radius: 10px;
 	 transition: all 0.4s;
@@ -727,9 +740,7 @@ CARRUSEL */
  #bright:hover {
 	 box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
 }
- .bright_back {
-	 background: url("https://occ-0-2433-448.1.nflxso.net/art/cd5c9/3e192edf2027c536e25bb5d3b6ac93ced77cd5c9.jpg");
-}
+
  #tomb {
 	 box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
 }
@@ -848,137 +859,285 @@ RRSS */
 
 
 /* STYLE CARROUSEL HOME */
+/* CARDS MOST POPULAR */
 
-* {
-	margin: 0; 
-	padding: 0;
+ @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
+ body {
+	 background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg");
+	 background-position: center;
+	 background-size: cover;
+	 background-repeat: repeat;
 }
 
-body {
-	background-image: linear-gradient(to top, #13547a 0%, #80d0c7 100%); 
-	font-family: 'Roboto', sans-serif;
+ .cellphone-container {
+	 width: 375px;
+	 height: 650px;
+	 background-color: #1e1b26;
+	 margin: 60px auto 0 auto;
+	 box-shadow: 5px 5px 115px -14px black;
+	 border-radius: 4px;
 }
-
-.container {
-  width: 100%;
+ .menu2 {
+	 position: absolute;
+	 right: 12px;
+	 top: 6px;
+	 z-index: 999;
 }
-
-a {
-  text-decoration: none;
-  color: white; 
+ .menu i {
+	 font-size: 40px;
+	 color: #fe4141;
+	 filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, .5));
 }
-
-nav {
-  width: 100%;
-  height: 70px;
+ .movie-img {
+	 width: 100%;
+	 height: 380px;
+	 background-position: center;
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 z-index: 111 !important;
+	 border-top-left-radius: 4px;
+	 border-top-right-radius: 4px;
+	 mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 1)), color-stop(0.35, rgba(0, 0, 0, 1)), color-stop(0.5, rgba(0, 0, 0, 1)), color-stop(0.65, rgba(0, 0, 0, 1)), color-stop(0.85, rgba(0, 0, 0, 0.6)), color-stop(1, rgba(0, 0, 0, 0)));
+	 position: relative;
 }
-
-.nav-container {
-  width: 50%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ .movie {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+39,1e1b26+53&0+38,1+55 */
+	 background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, rgba(30, 27, 38, 1) 55%);
+	/* FF3.6-15 */
+	 background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, rgba(30, 27, 38, 1) 55%);
+	/* Chrome10-25,Safari5.1-6 */
+	 background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, rgba(30, 27, 38, 1) 55%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#1e1b26',GradientType=0);
+	/* IE6-9 */
+	 position: absolute;
+	 background-size: contain;
+	 background-size: cover;
+	 z-index: 1 !important;
+	 width: 375px;
+	 height: 660px;
+	 display: block;
+	 border-radius: 4px;
 }
-
-.nav-item {
-  flex: 1;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ .text-movie-cont {
+	 padding: 0px 12px;
+	 text-align: justify;
 }
-
-.subnav {
-  display: none;
-  position: absolute;
-  top: 100%;
-  color: white; 
-  width: 100%; 
-  animation: BobbySnuggles; 
-  animation-duration: .5s;
-  animation-function: ease-in-out; 
+ .action-btn {
+	 text-align: right;
 }
-
-.subnav li {
-  padding: 20px;
-  list-style: none;  
+ .action-btn i {
+	 color: #fe4141;
+	 font-size: 28px;
+	 text-align: right;
 }
-
-.nav-item.has-subnav:hover .subnav {
-  display: inherit;
+ .watch-btn {
+	 display: block;
+	 border: 1px solid #fe4141;
+	 border-radius: 5px;
+	 padding: 4px;
+	 width: 140px;
 }
-
-.nav-item.has-subnav {
-  position: relative; 
+ .watch-btn h3 i {
+	 font-size: 14px;
+	 margin-right: 2px;
+	 position: relative;
+	 float: left;
+	 line-height: 1;
 }
-
-/*Time to apply widths for accordian to work
-Width of image = 640px
-total images = 5
-so width of hovered image = 640px
-width of un-hovered image = 40px - you can set this to anything
-so total container width = 640 + 40*4 = 800px;
-default width = 800/5 = 160px;
-*/
-
-.accordion {
-	width: 800px; height: 320px;
-	overflow: hidden;
-	margin: 100px auto;
-	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+ .action-row {
+	 margin-top: 24px;
 }
-
-.accordion ul {
-	width: 2000px;
+ .summary-row {
+	 margin-top: 12px;
 }
-
-.accordion li {
-	position: relative;
-	display: block;
-	width: 160px;
-	float: left;
-	border-left: 1px solid #888;
-	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-	transition: all 0.5s;
+/* TYPOGRAPHY STARTS */
+/* Fonts */
+ h1, h2, h3, h4, h5 {
+	 font-family: 'Montserrat', sans-serif;
+	 color: #e7e7e7;
+	 margin: 0px;
 }
-
-.accordion ul:hover li {width: 40px;}
-.accordion ul li:hover {width: 640px;}
-.accordion li img {
-	display: block;
+ h1 {
+	 font-size: 36px;
+	 font-weight: 400;
 }
-
-.image_title {
-	background: rgba(0, 0, 0, 0.5);
-	position: absolute;
-	left: 0; bottom: 10px;	
-  width: 640px;	
-
+ h3 {
+	 font-size: 14px;
+	 font-weight: 400;
+	 color: #fe4141;
 }
-.image_title a {
-	display: block;
-  text-align: center; 
-	color: #fff;
-	text-decoration: none;
-	padding: 20px;
+ h5 {
+	 font-size: 12px;
+	 font-weight: 400;
 }
-
-@keyframes BobbySnuggles {
-  0% {
-    opacity: 0;
-    transform: rotate(15deg) scale(0);
-  }
-  100% {
-    opacity: 1; 
-    transform: rotate(0deg) scale(1);
-  }
+ .movie-gen, .movie-likes {
+	 margin: 0px;
+	 padding: 0px;
+}
+ .movie-gen li, .movie-likes li {
+	 font-family: 'Open Sans', sans-serif;
+	 font-size: 12px;
+	 color: #818181;
+	 width: auto;
+	 display: block;
+	 float: left;
+	 margin-right: 6px;
+	 font-weight: 600;
+}
+ .movie-likes {
+	 float: right;
+}
+ .movie-likes li {
+	 color: #fe4141;
+}
+ .movie-likes li:last-child {
+	 margin-right: 0px;
+}
+ .movie-likes li i {
+	 font-size: 14px;
+	 margin-right: 4px;
+	 position: relative;
+	 float: left;
+	 line-height: 1;
+}
+ .movie-details {
+	 font-family: 'Open Sans', sans-serif;
+	 font-size: 12px;
+	 font-weight: 300;
+	 color: #b4b4b4;
+}
+ .movie-description {
+	 font-family: 'Open Sans', sans-serif;
+	 font-size: 12px;
+	 font-weight: 400;
+	 color: #9b9b9b;
+	 text-align: justify;
+	 line-height: 1.3;
+}
+ .movie-actors {
+	 font-family: 'Open Sans', sans-serif;
+	 font-size: 12px;
+	 font-weight: 300;
+	 color: #e7e7e7;
+	 font-style: italic;
+}
+/* TYPOGRAPHY ENDS */
+/** GRID STARTS **/
+ .thegrid {
+	 margin: 0 auto;
+}
+ .elements-distance, .movie-details, .movie-description, .movie-actors {
+	 margin: 0px;
+}
+ .mr-grid {
+	 width: 100%;
+}
+ .mr-grid:before, .mr-grid:after {
+	 content: "";
+	 display: table;
+}
+ .mr-grid:after {
+	 clear: both;
+}
+ .mr-grid {
+	 *zoom: 1;
+}
+ .col1, .col2, .col3, .col3rest, .col4, .col4rest, .col5, .col5rest, .col6, .col6rest {
+	 margin: 0% 0.5% 0.5% 0.5%;
+	 padding: 1%;
+	 float: left;
+	 display: block;
+}
+/* Columns match, minus margin sum. E.G. margin-left+margin-right=1%, col2=50%-1% - added padding:1%*/
+ .col1 {
+	 width: 98%;
+}
+ .col2 {
+	 width: 47%;
+}
+ .col3 {
+	 width: 30.3333333333%;
+}
+ .col4 {
+	 width: 22%;
+}
+ .col5 {
+	 width: 17%;
+}
+ .col6 {
+	 width: 13.6666666667%;
+}
+/* Columns match with their individual number. E.G. col3+col3rest=full width row */
+ .col3rest {
+	 width: 63.6666666667%;
+}
+ .col4rest {
+	 width: 72%;
+}
+ .col5rest {
+	 width: 77%;
+}
+ .col6rest {
+	 width: 80.3333333333%;
+}
+ .dribbble-link {
+	 width: 50px;
+	 height: 50px;
+	 position: fixed;
+	 bottom: 15px;
+	 right: 15px;
+	 border-radius: 50px;
 }
 
 @media screen and (max-width: 500px) {
   nav {
     background: pink; 
   }
+}
+.title-most{
+	padding: 5px;
+}
+
+
+/* RANDOM */
+.align-random{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+.align-img-random{
+	display: flex;
+	align-items: center;
+	
+}
+
+.align-txt-random{
+	text-align: justify;
+	margin:8px
+}
+
+.align-title-random{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+/* DETAILS PAGE */
+
+.align-details{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.align-details > h1 {
+	color: red;
+
 }

@@ -8,18 +8,18 @@ class Navbar extends Component {
     const { user, logout, isLoggedin } = this.props;	//	<-- UPDATE HERE
     return (
       <header className="header">
-        <a href="/home" className="logo">Home</a>
+        <a href="/" className="logo">Home</a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
         <ul className="menu">
           {
             isLoggedin ?
               (<>
-                <li><a href="/movies">All Movies</a></li>
-                <li><a href="/private">My profile</a></li>
-                <li><a href="/random">Random</a></li>
-                <li><a href="#" className="navbar-button" onClick={logout}>Logout</a></li>
-                {/* <li><a href="/popular">Most Popular</a></li> */}
+              <li><a href="/popular">Most Popular</a></li>
+              <li><a href="/movies">All Movies</a></li>
+              <li><a href="/private">My profile</a></li>
+              <li><a href="/random">Random</a></li>
+              <li><a href="#" className="navbar-button" onClick={logout}>Logout</a></li>
               </>) :
               (
                 <>

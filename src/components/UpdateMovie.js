@@ -103,7 +103,7 @@ componentDidMount = () => {
             type="text"
             name="description"
             value={this.state.description}
-            placeholder={this.state.description}
+            textarea={this.state.description}
             onChange={(e) => this.handleChange(e)}
           />
 
