@@ -116,3 +116,4 @@ componentDidMount = () => {
 }
 
 export default UpdateMovie;
+

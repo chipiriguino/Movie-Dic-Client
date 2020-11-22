@@ -26,7 +26,7 @@ class Login extends Component {
         
       <form className="form-signin" onSubmit={this.handleFormSubmit}>
     <p className="text-center">
-      <img src="http://pngimg.com/uploads/whale/whale_PNG19238.png" style={{ width:"100%"}} />
+      <img src="http://pngimg.com/uploads/whale/whale_PNG19238.png" style={{ width:"70%"}} />
     </p>
     <div className="input-group-login sombreado-input">
       <div className="input-group-prepend-login">
@@ -42,7 +42,6 @@ class Login extends Component {
     <div className="input-group-login sombreado-input">
       <div className="input-group-prepend-login">
         <span className="input-group-text fondo-icon">
-          <i className="fas fa-lock"></i>
         </span>
       </div>
       <input  className="border-0-login form-control-login input-border-none" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password"
