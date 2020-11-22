@@ -22,39 +22,39 @@ class Login extends Component {
 
     return (
       <div className="body2">
+        
+        
+      <form className="form-signin" onSubmit={this.handleFormSubmit}>
+    <p className="text-center">
+      <img src="http://pngimg.com/uploads/whale/whale_PNG19238.png" style={{ width:"100%"}} />
+    </p>
+    <div className="input-group-login sombreado-input">
+      <div className="input-group-prepend-login">
+        <span className="input-group-text fondo-icon">
+          
+        </span>
+      </div>
+      <input className="border-0-login form-control-login input-border-none" type="text" name="username" value={username} onChange={this.handleChange} placeholder="User"
+        aria-label="Username"/>
+    </div>
 
-
-        <form className="form-signin" onSubmit={this.handleFormSubmit}>
-          <p className="text-center">
-            <img src="http://pngimg.com/uploads/whale/whale_PNG19238.png" style={{ width: "100%" }} />
-          </p>
-          <div className="input-group-login sombreado-input">
-            <div className="input-group-prepend-login">
-              <span className="input-group-text fondo-icon">
-
-              </span>
-            </div>
-            <input className="border-0-login form-control-login input-border-none" type="text" name="username" value={username} onChange={this.handleChange} placeholder="User"
-              aria-label="Username" />
-          </div>
-
-          <br />
-          <div className="input-group-login sombreado-input">
-            <div className="input-group-prepend-login">
-              <span className="input-group-text fondo-icon">
-                <i className="fas fa-lock"></i>
-              </span>
-            </div>
-            <input className="border-0-login form-control-login input-border-none" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password"
-              aria-label="Username" />
-          </div>
-          <p className="text-center">
-            <input className="button-signup fondo-color-signup" type="submit" value="Login" className="button-signup fondo-color-signup" />
-
-          </p>
-          <p className="text-center"></p>
-          <p className="text-center"></p>
-          <div id="social">
+    <br />
+    <div className="input-group-login sombreado-input">
+      <div className="input-group-prepend-login">
+        <span className="input-group-text fondo-icon">
+          <i className="fas fa-lock"></i>
+        </span>
+      </div>
+      <input  className="border-0-login form-control-login input-border-none" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password"
+        aria-label="Username" />
+    </div>
+    <p className="text-center">
+    <input className="button-signup fondo-color-signup" type="submit" value="Log in" className="button-signup fondo-color-signup" />
+  
+    </p>
+    <p className="text-center"></p>
+    <p className="text-center"></p>
+    <div id="social">
             <a class="facebookBtn smGlobalBtn" href="#" ></a>
             <a class="twitterBtn smGlobalBtn" href="#" ></a>
             <a class="googleplusBtn smGlobalBtn" href="#" ></a>
@@ -62,7 +62,7 @@ class Login extends Component {
 
           </div>
 
-        </form>
+  </form>
       </div>
 
     );

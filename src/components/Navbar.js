@@ -1,18 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";			//	<-- UPDATE HERE
-import { Button } from 'react-bootstrap'
+
 
 class Navbar extends Component {
   render() {
 
     const { user, logout, isLoggedin } = this.props;	//	<-- UPDATE HERE
     return (
-      <header class="header">
-        <a href="/" class="logo">Home</a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
+      <header className="header">
+        <a href="/home" className="logo">Home</a>
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+        <ul className="menu">
           <li><a href="/popular">Most Popular</a></li>
           <li><a href="/movies">All Movies</a></li>
           <li><a href="/private">My profile</a></li>
@@ -20,8 +19,8 @@ class Navbar extends Component {
           {
             isLoggedin ?
               (<>
-                <li><a className="navbar-user">Welcome, {user.username}</a></li>
-                <li><a className="navbar-button" onClick={logout}>Logout</a></li>
+                <li><a href="#" className="navbar-user">Welcome, {user.username}</a></li>
+                <li><a href="#" className="navbar-button" onClick={logout}>Logout</a></li>
               </>) :
               (
                 <>
