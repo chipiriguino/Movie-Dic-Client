@@ -5,6 +5,55 @@
 
 .edit-form {
 	color: white;
+	width: 100%;
+	padding: 10px;
+}
+
+.edit-form input{
+	width: 100%;
+	border: unset;
+	border-bottom: 2px solid red;
+	border-radius: 8px;
+	color: #454747;
+	height: 30px;
+}
+
+.edit-form textarea{
+	width: 94%;
+	margin: 10px;
+}
+
+.edit-form h2 {
+	text-align: center;
+	color: white;
+}
+
+@media (min-width: 800px ){
+	.edit-form {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		align-content: space-around;
+		color: white;
+		width: 100%;
+		padding: 10px;
+	}
+	
+	.edit-form input{
+		width: 400px;
+		border: unset;
+		border-bottom: 2px solid red;
+		border-radius: 8px;
+		color: #454747;
+		height: 30px;
+	}
+
+	.edit-form textarea{
+		width: 29%;
+		margin: 10px;
+	}
 }
 
 .container2{
@@ -21,24 +70,35 @@
 	margin-left: 0;
 }
 
+.container2 h2{
+	margin: 10px;
+	text-align: center;
+	width: 100%;
+	color: white;
+}
 
 .search-div{
-
-	padding: 10px;
-
+	padding: 0 10px;
 }
+
 
 .search-div input{
 	width: 100%;
+	max-width: 400px;
 	height: 39px;
 	border-radius: 10px;
 	border: 1px solid gray;
-	margin-top: 50px;
+	margin-top: 20px;
 	display: flex;
 	align-items: center;
+	box-shadow: rgb(184, 12, 12);
 }
 
 /* NAVBAR */
+
+.logo-movie{
+	padding: 0;
+}
 
 /* header */
 .header {
@@ -150,10 +210,10 @@
 	margin: 0;
 	font-family: Helvetica, sans-serif;
 	background-color: #F4F4F4;
-	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg");
-	 background-position: center;
-	 background-size: cover;
-	 background-repeat: repeat;
+	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://www.desktopbackground.org/download/o/2012/08/22/440874_silent-hill-movie-dark-house-wallpapers-horror-movies-wallpapers_1024x768_h.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: repeat;
   }
   a {
 	color: #000;
@@ -162,8 +222,12 @@
 #home-btn {
   color: white;
   text-decoration: none;
+} */
+  
+a {
+	color: #000;
 }
-
+  
 /* HOME SIN LOGIN */
 
 .logo-inicio{
@@ -199,7 +263,6 @@
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 	  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
 	  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxjQ6p0r6JFJJairZra4M-OGA8u8F6OzvOkQ&usqp=CAU") ;
   }
   
   /* styles INPUTS*/
@@ -278,7 +341,7 @@
 	border: 1px solid #ced4da;
 	border-radius: 28px 0px 0px 28px;
   -moz-border-radius: 28px 0px 0px 28px;
-  -webkit-border-radius: 28px 0px 0px 28px;
+ 
   border: 0px solid #000000;
   }
   
@@ -417,7 +480,29 @@ box-shadow: 0px 2px 0px 0px #2980B9;
   
 
 /* MY PROFILE */
+.img-align-profile{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.h1-align{
+	text-align: center;
+}
+.p-align{
+	text-align: center;
+	margin:10px;
+	color: white;
+}
 
+
+.align-btn-profile{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-bottom: 40px;
+	margin-top:-10px
+}
 
 /* CARDS MOVIES */
 
@@ -567,6 +652,108 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 #tomb:hover {
 	box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
 }
+/* 
+RRSS */
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+#social {
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.smGlobalBtn { /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border:2px solid #ddd; /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius:27px;
+	-webkit-border-radius:27px;
+	margin: 5px;
+}
+
+/* facebook button class*/
+.facebookBtn{
+    background: #4060A5;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+    border-color: #4060A5; /* change the border color on mouse hover */
+}
+
+/* twitter button class*/
+.twitterBtn{
+    background: #00ABE3;
+}
+
+.twitterBtn:before{
+      font-family: "FontAwesome";
+      content: "\f099"; /* add twitter icon */
+      
+}
+
+.twitterBtn:hover{
+      color: #00ABE3;
+      background: #fff;
+      border-color: #00ABE3;
+}
+
+/* google plus button class*/
+.googleplusBtn{
+    background: #e64522;
+}
+
+.googleplusBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d5"; /* add googleplus icon */
+}
+
+.googleplusBtn:hover{
+      color: #e64522;
+      background: #fff;
+      border-color: #e64522;
+}
+/* pinterest button class*/
+.pinterestBtn{
+    background: #cb2027;
+}
+
+.pinterestBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d2"; /* add pinterest icon */
+}
+
+.pinterestBtn:hover{
+      color: #cb2027;
+      background: #fff;
+      border-color: #cb2027;
+}
+
+
+
+/* STYLE CARROUSEL HOME */
+/* CARDS MOST POPULAR */
+
+ @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
 
 #ave {
 	box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.7);
@@ -576,3 +763,366 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 	box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
 }
 
+@media screen and (max-width: 500px) {
+  nav {
+    background: pink; 
+  }
+}
+.title-most{
+	padding: 5px;
+}
+
+
+/* RANDOM */
+.align-random{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+.align-img-random{
+	display: flex;
+	align-items: center;
+	
+}
+
+.align-txt-random{
+	text-align: justify;
+	margin:8px
+}
+
+.align-title-random{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+/* DETAILS PAGE */
+
+.align-details{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.align-details > h1 {
+	color: red;
+
+}
+
+/* CARRUSEL PRUEBA */
+.carusel {
+	background: #ddd;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	height: 53vh;
+	align-items: center;
+	font-family: Arial;
+	justify-content: center;
+	overflow-x: hidden;
+}
+/* mixins */
+/* SLIDER */
+/* <-- Here you may change only slide-count, and all will be work */
+#slider {
+	position: relative;
+	max-width: 768px;
+	max-height: 432px;
+	padding: 0.5%;
+	background: rgba(38, 50, 56, 0.5);
+}
+#slider input {
+	display: none;
+}
+/* Slider Setup */
+#slider #slide1:checked ~ .slides .inner {
+	margin-left: 0%;
+}
+#slider #slide2:checked ~ .slides .inner {
+	margin-left: -100%;
+}
+#slider #slide3:checked ~ .slides .inner {
+	margin-left: -200%;
+}
+#slider #slide4:checked ~ .slides .inner {
+	margin-left: -300%;
+}
+#slider #slide5:checked ~ .slides .inner {
+	margin-left: -400%;
+}
+#slider .overflow {
+	width: 100%;
+	overflow: hidden;
+}
+#slider .inner {
+	width: 500%;
+	line-height: 0;
+}
+#slider .slide {
+	position: relative;
+	width: 20%;
+	float: left;
+}
+#slider .slide img {
+	width: 100%;
+}
+
+#slider #controls {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 90%;
+	box-sizing: border-box;
+}
+#slider #controls label {
+	position: relative;
+	display: none;
+	width: 9%;
+	padding-top: 9%;
+   /* height same as width */
+	border-top: 0.9vw solid #263238;
+	border-left: 0.9vw solid #263238;
+	opacity: 0.3;
+}
+#slider #controls label:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+#slider #controls label:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	width: 400%;
+	height: 400%;
+}
+#slider #slide5:checked ~ #controls label:nth-child(1) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide1:checked ~ #controls label:nth-child(2) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide2:checked ~ #controls label:nth-child(3) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide3:checked ~ #controls label:nth-child(4) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide4:checked ~ #controls label:nth-child(5) {
+	display: block;
+	float: right;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#slider #slide1:checked ~ #controls label:nth-child(5) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide2:checked ~ #controls label:nth-child(1) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide3:checked ~ #controls label:nth-child(2) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide4:checked ~ #controls label:nth-child(3) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #slide5:checked ~ #controls label:nth-child(4) {
+	display: block;
+	float: left;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#slider #active {
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	text-align: center;
+}
+#slider #active label {
+	display: inline-block;
+	width: 3%;
+	padding-top: 3%;
+   /* height same as width */
+	border-radius: 50%;
+	margin: 1%;
+	background: rgba(38, 50, 56, 0.5);
+	vertical-align: middle;
+}
+#slider #active label:hover {
+	background: rgba(38, 50, 56, 0.3);
+	box-shadow: 0 0 0 0.2vw #263238;
+	cursor: pointer;
+}
+#slider #slide1:checked ~ #active label:nth-child(1) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide2:checked ~ #active label:nth-child(2) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide3:checked ~ #active label:nth-child(3) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide4:checked ~ #active label:nth-child(4) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+#slider #slide5:checked ~ #active label:nth-child(5) {
+	background: #263238;
+	box-shadow: 0 0 0 0.2vw #263238;
+}
+/* Info Box */
+#slider .info {
+	line-height: 20px;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-style: italic;
+	font-size: 1rem;
+	padding: 30px 30px;
+	opacity: 0;
+	color: #000;
+	text-align: center;
+}
+#slider .info h3 {
+	color: #333;
+	margin: 0 0 5px;
+	font-weight: normal;
+	font-size: 1.5rem;
+	font-style: normal;
+}
+/* Animation */
+#slider {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+#slider .inner {
+	-webkit-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+	-moz-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+	-o-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+	transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+   /* easeInOutQuart */
+}
+#slider #controls label {
+	-webkit-transition: opacity 0.2s ease-out;
+	-moz-transition: opacity 0.2s ease-out;
+	-o-transition: opacity 0.2s ease-out;
+	transition: opacity 0.2s ease-out;
+}
+#slider #slide1:checked ~ .slides .inner > div:nth-child(1) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide2:checked ~ .slides .inner > div:nth-child(2) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide3:checked ~ .slides .inner > div:nth-child(3) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide4:checked ~ .slides .inner > div:nth-child(4) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider #slide5:checked ~ .slides .inner > div:nth-child(5) .info {
+	opacity: 1;
+	-webkit-transition: all 1s ease-out 0.6s;
+	-moz-transition: all 1s ease-out 0.6s;
+	-o-transition: all 1s ease-out 0.6s;
+	transition: all 1s ease-out 0.6s;
+}
+#slider .info, #slider #controls, #slider .slides, #slider #active, #slider #active label, #slider .info h3 {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+@media only screen and (max-width: 500px) {
+	#slider .info {
+		opacity: 0 !important;
+   }
+}

@@ -93,8 +93,8 @@ componentDidMount = () => {
     console.log('estas en updatemovieee', this.state)
     return (
       <div>
-        <h2>Update the Movie</h2>
         <form onSubmit={(e) => this.handleSubmit(e)} className="edit-form">
+        <h2>Update the Movie</h2>
           <label htmlFor="">Name</label>
           <input type="text" name="movie_title" value={this.state.movie_title} placeholder={this.state.movie_title} onChange={(e) => this.handleChange(e)}/>
           
@@ -118,8 +118,9 @@ componentDidMount = () => {
           />
 
           <label htmlFor="">Description: </label>
-          <input
-            type="text"
+          <textarea
+            type="textarea"
+            rows="10" cols="50"
             name="description"
             value={this.state.description}
             textarea={this.state.description}
@@ -216,3 +217,4 @@ componentDidMount = () => {
 }
 
 export default UpdateMovie;
+

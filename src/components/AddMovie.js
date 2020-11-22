@@ -57,8 +57,8 @@ class AddMovie extends Component {
   render() {
     return (
       <div>
-        <h2>New Movie</h2>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+        <form onSubmit={(e) => this.handleSubmit(e)} className="edit-form">
+          <h2>New Movie</h2>
           <label htmlFor="">Name</label>
           <input
             type="text"

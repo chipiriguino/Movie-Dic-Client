@@ -29,7 +29,7 @@ class MostPopular extends Component {
     render() {
         return (
         <div className="container2">
-                <h1>MOST POPULAR PAGE</h1>
+                <h2>MOST POPULAR PAGE</h2>
             {this.state.movies.map((eachMovie) => {
                 return (
                     <div className="movie_card" id="bright" style={{backgroundImage: `url(${eachMovie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>

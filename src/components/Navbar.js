@@ -23,8 +23,8 @@ class Navbar extends Component {
               </>) :
               (
                 <>
-                <li><a href="/login">LogIn</a></li>
-                <li><a href="/signup">Sign Up</a></li>
+                  <li><a href="/login">LogIn</a></li>
+                  <li><a href="/signup">Sign Up</a></li>
                 </>)
           }
         </ul>
