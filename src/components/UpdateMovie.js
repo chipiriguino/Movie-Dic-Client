@@ -8,7 +8,12 @@ class UpdateMovie extends Component {
     poster: "",
     genres: "",
     director_name: "",
-    // movie: {}
+    content_rating: "",
+    country: "",
+    language: "",
+    movie_imdb_link: "",
+    title_year:  "",
+    imdb_score:  ""
   };
 
   getDetailsMovie = async () => {
@@ -17,7 +22,16 @@ class UpdateMovie extends Component {
     description: res.description,
     poster: res.poster,
     genres: res.genres,
-    director_name: res.director_name
+    director_name: res.director_name,
+    content_rating: res.content_rating,
+    country: res.country,
+    language: res.language,
+    movie_imdb_link: res.movie_imdb_link,
+    actor_1_name: res.actor_1_name,
+    actor_2_name: res.actor_2_name,
+    actor_3_name: res.actor_3_name,
+    title_year: res.title_year,
+    imdb_score: res.imdb_score
   })
 }
 
@@ -35,15 +49,11 @@ componentDidMount = () => {
     let poster = e.target.files[0]
     // creamos un nuevo objeto FormData
     const uploadData = new FormData();
-
     // poster (este nombre tiene que ser igual que en el modelo, ya que usaremos req.body como argumento del método .create() cuando creemos una nueva movie en la ruta POST '/api/movies/create')
     uploadData.append("poster", e.target.files[0]);
 
     try {
       const res = await service.handleUpload(uploadData);
-
-      
-
       this.setState({ poster: res.secure_url });
     } catch (error) {
       console.log("Error while uploading the file: ", error);
@@ -61,7 +71,16 @@ componentDidMount = () => {
         description: "",
         poster: "",
         genres: "",
-        director_name: ""
+        director_name: "",
+        content_rating: "",
+        country: "",
+        language: "",
+        movie_imdb_link: "",
+        actor_1_name: "",
+        actor_2_name: "",
+        actor_3_name: "",
+        title_year: "",
+        imdb_score: ""
       });
 
       // this.props.getMovies()
@@ -75,7 +94,7 @@ componentDidMount = () => {
     return (
       <div>
         <h2>Update the Movie</h2>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+        <form onSubmit={(e) => this.handleSubmit(e)} className="edit-form">
           <label htmlFor="">Name</label>
           <input type="text" name="movie_title" value={this.state.movie_title} placeholder={this.state.movie_title} onChange={(e) => this.handleChange(e)}/>
           
@@ -88,7 +107,7 @@ componentDidMount = () => {
             onChange={(e) => this.handleChange(e)}
           />
 
-          <label htmlFor="">Director Name</label>
+          <label htmlFor="">Director Name: </label>
           <input
             type="text"
             name="director_name"
@@ -98,12 +117,93 @@ componentDidMount = () => {
             
           />
 
-          <label htmlFor="">Description</label>
+          <label htmlFor="">Description: </label>
           <input
             type="text"
             name="description"
             value={this.state.description}
             textarea={this.state.description}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Rating: </label>
+          <input
+            type="text"
+            name="content_rating"
+            value={this.state.content_rating}
+            placeholder={this.content_rating}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Country: </label>
+          <input
+            type="text"
+            name="country"
+            value={this.state.country}
+            placeholder={this.country}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Language: </label>
+          <input
+            type="text"
+            name="language"
+            value={this.state.language}
+            placeholder={this.language}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">IMDB Link:</label>
+          <input
+            type="text"
+            name="movie_imdb_link"
+            value={this.state.movie_imdb_link}
+            placeholder={this.movie_imdb_link}
+            onChange={(e) => this.handleChange(e)}
+          />
+          
+          <label htmlFor="">Actor 1 name:</label>
+          <input
+            type="text"
+            name="actor_1_name"
+            value={this.state.actor_1_name}
+            placeholder={this.actor_1_name}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Actor 2 name:</label>
+          <input
+            type="text"
+            name="actor_2_name"
+            value={this.state.actor_2_name}
+            placeholder={this.actor_2_name}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Actor 3 name:</label>
+          <input
+            type="text"
+            name="actor_3_name"
+            value={this.state.actor_3_name}
+            placeholder={this.actor_3_name}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">IMDB Score:</label>
+          <input
+            type="text"
+            name="imdb_score"
+            value={this.state.imdb_score}
+            placeholder={this.imdb_score}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Year:</label>
+          <input
+            type="text"
+            name="title_year"
+            value={this.state.title_year}
+            placeholder={this.title_year}
             onChange={(e) => this.handleChange(e)}
           />
 
