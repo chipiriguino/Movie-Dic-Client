@@ -62,7 +62,6 @@ class App extends Component {
           return <SearchResult key={index} theMovie={oneMovie} />
         })}
         <Switch>
-          <Route path="/home" component={Home} />
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
           <PrivateRoute 
@@ -78,6 +77,7 @@ class App extends Component {
             movies={this.state.movies}
             component={Private} 
             />
+          <Route path="/" component={Home} />
         </Switch>
         </>
         
