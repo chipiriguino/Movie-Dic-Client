@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service'
+import {withAuth} from '../lib/AuthProvider'
 // import { Link } from "react-router-dom";
 
 
@@ -39,9 +40,8 @@ class MostPopular extends Component {
                                 </div>
                                 <div className="movie_social">
                                     <ul>
-                                        <li><i className="material-icons">share</i></li>
-                                        <li><i className="material-icons"></i></li>
-                                        <li><i className="material-icons">chat_bubble</i></li>
+                                        <li><a href={`/upload/${allMovie._id}`} className="material-icons">Edit Movie</a></li>
+                                        <li><a href={`/details/${allMovie._id}`} className="material-icons">More Details</a></li>
                                     </ul>
                                 </div>
                             </div>

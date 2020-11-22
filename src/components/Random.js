@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service';
-import { Link} from "react-router-dom";
-
+// import { Link} from "react-router-dom";
 
 class Random extends Component {
     state = {
@@ -26,11 +25,11 @@ class Random extends Component {
                     <h3>{this.state.movies.language}</h3>
                     <h4>{this.state.movies.director_name}</h4>
                     <h4>{this.state.movies.movie_title}</h4>
-                    <img src={this.state.movies.poster} />
+                    <img src={this.state.movies.poster} alt={`${this.state.movies.movie_title} + photo`}/>
                     <hr />
                 </div>
                 <div>
-                    <Link to="/random">Siguiente</Link>
+                    <button onClick={()=> this.getRandom(this.state.movies._id)}>Another please!</button>
                 </div>
             </div>
         );

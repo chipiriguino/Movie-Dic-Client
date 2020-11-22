@@ -8,8 +8,6 @@ class Service {
     });
   }
 
-  apiKeyString = "?api_key=7ce566a9d36bbc6542be89e8fee7397a"
-
   handleUpload = async (theFile) => {
     console.log("file in service: ", theFile);
 
@@ -95,7 +93,17 @@ class Service {
 
   getProfileUser = async (id) => {
     try {
-      const res = await this.service.get("/private/"+ id);
+      const res = await this.service.get("/private");
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getFavId = async (id) => {
+    try {
+      const res = await this.service.get("/private");
       console.log(res.data);
       return res.data;
     } catch (error) {

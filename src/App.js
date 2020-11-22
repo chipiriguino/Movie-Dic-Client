@@ -55,17 +55,19 @@ class App extends Component {
       // Envolvemos los componentes con AuthProvider
       <AuthProvider>
        
-        <div>
+        <>
           <Navbar />
           <SearchBar foodToColect={(e)=> this.filterSearch(e)}/>
           {this.state.filterMovies.map((oneMovie, index)=> {
           return <SearchResult key={index} theMovie={oneMovie} />
         })}
-        {/* <Route path="/" component={Home} /> */}
         <Switch>
+          <Route path="/home" component={Home} />
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
-          <PrivateRoute path="/popular" component={MostPopular} />
+          <PrivateRoute 
+            user={this.props.user}
+          path="/popular" component={MostPopular} />
           <PrivateRoute path="/create" component={AddMovie} />
           <PrivateRoute path="/random" component={Random} />
           <PrivateRoute path="/upload/:id" component={UpdateMovie} />
@@ -77,7 +79,7 @@ class App extends Component {
             component={Private} 
             />
         </Switch>
-        </div>
+        </>
         
       </AuthProvider>
       // Envolvemos los componentes con AuthProvider

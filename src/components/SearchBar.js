@@ -10,10 +10,10 @@ const SearchBar = (props) =>{
     }
 
     return(
-        <>
+        <div className="search-div">
             <label htmlFor="search">Search food</label>
             <input type="text" name="name" onChange={(e) =>handleChange(e)}></input>
-        </>
+        </div>
     )
 
 }

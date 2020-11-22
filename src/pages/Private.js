@@ -6,19 +6,26 @@ import Favorites from '../components/Favorites';
 
 class Private extends Component {
   state= {
+    movies: [],
     user: []
   }
   getProfileUser = async () => {
     let res = await service.getProfileUser(this.props.user._id);
-    this.setState({ movie: res })
+    this.setState({ user: this.props.user })
   }
+
+  getAllMovies = async () => {
+    let res = await service.getAllMovies();
+    this.setState({ movies: res })
+    console.log('MOVIES PRIVATE JS', this.state.movies)
+}
 
   componentDidMount = () => {
     this.getProfileUser();
+    this.getAllMovies();
   }
 
-  render(props) {
-    console.log('GET FAVORITES ARRAY RENDEEEERRRRRR', this.props.user)
+  render() {
 
     return (
       <div>
@@ -30,12 +37,13 @@ class Private extends Component {
           <button>Edit profile</button>
           <button><Link to="/random">Random</Link></button>
           <button>Fav films</button>
-          <button><Link to="/create">Add Movie!</Link></button>
+          {/* <button><Link to="/create">Add Movie!</Link></button> */}
           </article>
           </div>
           <div>
             <Favorites 
-              user={this.state.user}
+              user={this.props.user}
+              movies={this.state.movies}
             />
             
           </div>
