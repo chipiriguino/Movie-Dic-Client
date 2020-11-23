@@ -126,7 +126,7 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	overflow: hidden;
+	overflow:hidden;
 	background-color: #fff;
   }
   .header li a {
@@ -211,7 +211,7 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		overflow: none;
+		overflow: visible;
 		background-color: #fff;
 	  }
 	.header li {
