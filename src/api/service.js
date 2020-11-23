@@ -103,7 +103,7 @@ class Service {
 
   getFavId = async (id) => {
     try {
-      const res = await this.service.get("/private");
+      const res = await this.service.get(`/private/favorite/${id}`);
       console.log(res.data);
       return res.data;
     } catch (error) {

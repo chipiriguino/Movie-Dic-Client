@@ -46,3 +46,4 @@ class DetailsMovie extends Component {
 }
 
 export default DetailsMovie;
+
