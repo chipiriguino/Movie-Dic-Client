@@ -49,7 +49,6 @@ class DetailsMovie extends Component {
                             <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                         </fieldset>
                         <span class="tag">{movie.genres}</span>
-                        
                     </div>
 
                     <div class="column2">
@@ -68,7 +67,7 @@ class DetailsMovie extends Component {
                             <a href="#" data-tooltip="Person 3" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
                             </a>
-
+                            <button onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
                         </div>
                     </div>
                 </div>
