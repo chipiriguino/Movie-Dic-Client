@@ -53,13 +53,33 @@ class Service {
 
   getAllMovies = async () => {
     try {
-      const res = await this.service.get("/movies");
+      const res = await this.service.get("/allmovies");
       console.log(res.data);
       return res.data;
     } catch (error) {
       console.log(error);
     }
   };
+
+  searchMovie = async (query) => {
+    try {
+      const res = await this.service.get("/search?find=" + query);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getDBmovies = async () => {
+    try {
+      const res = await this.service.get("/movies");
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }; 
 
   getRandom = async () => {
     try {

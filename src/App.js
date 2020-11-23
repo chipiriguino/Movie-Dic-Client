@@ -28,43 +28,8 @@ class App extends Component {
     filterMovies : []
   }
 
-  getAllMovies = async () => {
-    const res = await service.getAllMovies();
-    this.setState({movies: res})
-  }
-
-  componentDidMount = () => {
-    this.getAllMovies();
-  }
-
-  filterSearch = (value) => {
-    const copyFood = [...this.state.movies]
-    let filtrado = copyFood.filter(data=>{
-      let title = data.movie_title.toLowerCase().trim();
-      let valueLower = value.toLowerCase().trim();
-      return title.includes(valueLower)
-
-    })
-    this.setState({
-      filterMovies: filtrado
-    })
-  }
-
-  //FILTER SERACH NUEVO!!!!
-  // filterSearch = (searchTerm) => {
-  //   // convertimos la palabra buscada en minúsculas
-  //   const searchedTerm = searchTerm.toLowerCase();
-
-  //   // filtramos una copia de la lista original de comidas para devolver únicamente las comidas cuyo nombre (en minúsculas también) corresponden al término de búsqueda
-  //   const filteredList = [...this.state.movies].filter( movieObj => {
-  //     return movieObj.name.toLowerCase().includes(searchedTerm);
-  //   })
-
-  //   // actualizamos la lista de comidas filtradas (la que vamos a mostrar en el render())
-  //   this.setState({filterMovies: filteredList})
-  // }
-
   render() {
+    console.log('PELIS APP.JS STATE', this.state.movies)
     return (
       // Envolvemos los componentes con AuthProvider
       <div className="appjs">
@@ -72,10 +37,10 @@ class App extends Component {
        
         <>
           <Navbar />
-          <SearchBar filterSearch={(e)=> this.filterSearch(e)}/>
+          {/* <SearchBar filterSearch={(e)=> this.filterSearch(e)}/>
           {this.state.filterMovies.map((oneMovie, index)=> {
           return <SearchResult key={index} theMovie={oneMovie} />
-        })}
+        })} */}
         <Switch>
           <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
           <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
@@ -89,7 +54,7 @@ class App extends Component {
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
           <PrivateRoute 
             path="/private"
-            movies={this.state.movies}
+            // movies={this.state.movies}
             component={Private} 
             />
           <Route path="/" component={Home} />

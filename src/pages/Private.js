@@ -44,7 +44,7 @@ class Private extends Component {
           <div>
             <Favorites 
               user={this.props.user}
-              movies={this.state.movies}
+              // movies={this.state.movies}
             />
             
           </div>

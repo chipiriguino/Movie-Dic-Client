@@ -19,8 +19,8 @@ class MostPopular extends Component {
     }
 
     render() {
+        console.log('ALLMOVIES STATE???', this.state.movies)
         return (
-            
             <div className="container2">
                 <h2>All Movies</h2>
                 {this.state.movies.map((allMovie) => {
