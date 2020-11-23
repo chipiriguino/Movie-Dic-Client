@@ -3,8 +3,62 @@
   padding: 0;
 }
 
+
 .edit-form {
 	color: white;
+	width: 100%;
+	padding: 10px;
+}
+
+.edit-form input{
+	width: 100%;
+	border: unset;
+	border-bottom: 2px solid red;
+	border-radius: 8px;
+	color: #454747;
+	height: 30px;
+}
+
+.edit-form textarea{
+	width: 94%;
+	margin: 10px;
+}
+
+.edit-form h2 {
+	text-align: center;
+	color: white;
+}
+
+@media (min-width: 800px ){
+	.edit-form {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		align-content: space-around;
+		color: white;
+		width: 100%;
+		padding: 10px;
+	}
+	
+	.edit-form input{
+		width: 400px;
+		border: unset;
+		border-bottom: 2px solid red;
+		border-radius: 8px;
+		color: #454747;
+		height: 30px;
+	}
+
+	.edit-form textarea{
+		width: 29%;
+		margin: 10px;
+	}
+}
+
+.container{
+	margin-top: 35px;
 }
 
 .container2{
@@ -21,27 +75,35 @@
 	margin-left: 0;
 }
 
+.container2 h2{
+	margin: 10px;
+	text-align: center;
+	width: 100%;
+	color: white;
+}
 
 .search-div{
-
-	padding: 10px;
-
+	padding: 0 10px;
 }
+
 
 .search-div input{
 	width: 100%;
+	max-width: 400px;
 	height: 39px;
 	border-radius: 10px;
 	border: 1px solid gray;
-	margin-top: 50px;
+	margin-top: 20px;
 	display: flex;
 	align-items: center;
+	box-shadow: rgb(184, 12, 12);
 }
 
 /* NAVBAR */
 
-.logo-movie{
-	padding: 0;
+.logo{
+	display: flex;
+	flex-direction: row;
 }
 
 /* header */
@@ -154,10 +216,10 @@
 	margin: 0;
 	font-family: Helvetica, sans-serif;
 	background-color: #F4F4F4;
-	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg");
-	 background-position: center;
-	 background-size: cover;
-	 background-repeat: repeat;
+	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://www.desktopbackground.org/download/o/2012/08/22/440874_silent-hill-movie-dark-house-wallpapers-horror-movies-wallpapers_1024x768_h.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: repeat;
   }
   a {
 	color: #000;
@@ -167,148 +229,11 @@
   color: white;
   text-decoration: none;
 } */
-
-body {
-	margin: 0;
-	font-family: Helvetica, sans-serif;
-	background-color: #f4f4f4;
-  }
   
-  a {
+a {
 	color: #000;
-  }
+}
   
-  /* header */
-  
-  .header {
-	background-color: #fff;
-	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-	position: fixed;
-	width: 100%;
-	z-index: 3;
-  }
-  
-  .header ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	overflow: hidden;
-	background-color: #fff;
-  }
-  
-  .header li a {
-	display: block;
-	padding: 20px 20px;
-	border-right: 1px solid #f4f4f4;
-	text-decoration: none;
-  }
-  
-  .header li a:hover,
-  .header .menu-btn:hover {
-	background-color: #f4f4f4;
-  }
-  
-  .header .logo {
-	display: block;
-	float: left;
-	font-size: 2em;
-	padding: 10px 20px;
-	text-decoration: none;
-  }
-  
-  /* menu */
-  
-  .header .menu {
-	clear: both;
-	max-height: 0;
-	transition: max-height .2s ease-out;
-  }
-  
-  /* menu icon */
-  
-  .header .menu-icon {
-	cursor: pointer;
-	display: inline-block;
-	float: right;
-	padding: 28px 20px;
-	position: relative;
-	user-select: none;
-  }
-  
-  .header .menu-icon .navicon {
-	background: #333;
-	display: block;
-	height: 2px;
-	position: relative;
-	transition: background .2s ease-out;
-	width: 18px;
-  }
-  
-  .header .menu-icon .navicon:before,
-  .header .menu-icon .navicon:after {
-	background: #333;
-	content: '';
-	display: block;
-	height: 100%;
-	position: absolute;
-	transition: all .2s ease-out;
-	width: 100%;
-  }
-  
-  .header .menu-icon .navicon:before {
-	top: 5px;
-  }
-  
-  .header .menu-icon .navicon:after {
-	top: -5px;
-  }
-  
-  /* menu btn */
-  
-  .header .menu-btn {
-	display: none;
-  }
-  
-  .header .menu-btn:checked ~ .menu {
-	max-height: 240px;
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon {
-	background: transparent;
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon:before {
-	transform: rotate(-45deg);
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon:after {
-	transform: rotate(45deg);
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-	top: 0;
-  }
-  
-  /* 48em = 768px */
-  
-  @media (min-width: 48em) {
-	.header li {
-	  float: left;
-	}
-	.header li a {
-	  padding: 20px 30px;
-	}
-	.header .menu {
-	  clear: none;
-	  float: right;
-	  max-height: none;
-	}
-	.header .menu-icon {
-	  display: none;
-	}
-  }
-
 /* HOME SIN LOGIN */
 
 .logo-inicio{
@@ -344,7 +269,6 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 	  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
 	  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	  background-image:url("") ;
   }
   
   /* styles INPUTS*/
@@ -570,6 +494,7 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 }
 .h1-align{
 	text-align: center;
+	color: white;
 }
 .p-align{
 	text-align: center;
@@ -585,15 +510,6 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 	margin-bottom: 40px;
 	margin-top:-10px
 }
-
-
-
-/* FORM */
-
-
-
-/* 
-CARRUSEL */
 
 /* CARDS MOVIES */
 
@@ -743,6 +659,108 @@ CARRUSEL */
 #tomb:hover {
 	box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
 }
+/* 
+RRSS */
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+#social {
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.smGlobalBtn { /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border:2px solid #ddd; /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius:27px;
+	-webkit-border-radius:27px;
+	margin: 5px;
+}
+
+/* facebook button class*/
+.facebookBtn{
+    background: #4060A5;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+    border-color: #4060A5; /* change the border color on mouse hover */
+}
+
+/* twitter button class*/
+.twitterBtn{
+    background: #00ABE3;
+}
+
+.twitterBtn:before{
+      font-family: "FontAwesome";
+      content: "\f099"; /* add twitter icon */
+      
+}
+
+.twitterBtn:hover{
+      color: #00ABE3;
+      background: #fff;
+      border-color: #00ABE3;
+}
+
+/* google plus button class*/
+.googleplusBtn{
+    background: #e64522;
+}
+
+.googleplusBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d5"; /* add googleplus icon */
+}
+
+.googleplusBtn:hover{
+      color: #e64522;
+      background: #fff;
+      border-color: #e64522;
+}
+/* pinterest button class*/
+.pinterestBtn{
+    background: #cb2027;
+}
+
+.pinterestBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d2"; /* add pinterest icon */
+}
+
+.pinterestBtn:hover{
+      color: #cb2027;
+      background: #fff;
+      border-color: #cb2027;
+}
+
+
+
+/* STYLE CARROUSEL HOME */
+/* CARDS MOST POPULAR */
+
+ @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
 
 #ave {
 	box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.7);
@@ -774,11 +792,15 @@ CARRUSEL */
 	display: flex;
 	align-items: center;
 	
+	
 }
 
 .align-txt-random{
 	text-align: justify;
-	margin:8px
+	margin:8px;
+	color: white;
+	
+	
 }
 
 .align-title-random{
@@ -796,11 +818,15 @@ CARRUSEL */
 	align-items: center;
 	flex-direction: column;
 	text-align: center;
+	color: white;
+	
 }
 
 .align-details > h1 {
-	color: red;
-
+	color: red;	
+}
+.h1-color-details{
+	color: white;
 }
 
 /* CARRUSEL PRUEBA */
@@ -814,13 +840,14 @@ CARRUSEL */
 	font-family: Arial;
 	justify-content: center;
 	overflow-x: hidden;
+	width: 100%;
 }
 /* mixins */
 /* SLIDER */
 /* <-- Here you may change only slide-count, and all will be work */
 #slider {
 	position: relative;
-	max-width: 768px;
+	max-width: 100%;
 	max-height: 432px;
 	padding: 0.5%;
 	background: rgba(38, 50, 56, 0.5);
@@ -860,13 +887,7 @@ CARRUSEL */
 #slider .slide img {
 	width: 100%;
 }
-/* Control Setup */
-#slider {
-   /* ARROWS */
-   /* RIGHT ARROW */
-   /* LEFT ARROW */
-   /* ACTIVE DOTTS */
-}
+
 #slider #controls {
 	position: absolute;
 	top: 50%;
@@ -1120,4 +1141,99 @@ CARRUSEL */
 	#slider .info {
 		opacity: 0 !important;
    }
+}
+
+/* NEW CARROUSEL HOME */
+
+.contain {
+  width: 100%;
+}
+.row {
+  overflow: scroll;
+  width: 100%;
+}
+.row__inner {
+  transition: 550ms transform;
+  font-size: 18px;
+  white-space: wrap;
+  padding-bottom: 10px;
+  margin: 22px;
+}
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 250px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+}
+.tile__img {
+  width: 150px;
+  height: 250px;
+  object-fit: cover;
+}
+.tile__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  transition: 450ms opacity;
+}
+.tile__details:after,
+.tile__details:before {
+  content: '';
+  position: relative;
+  top: 50%;
+  left: 50%;
+  display: #000;
+}
+.tile__details:after {
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ecf0f1;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.tile__details:before {
+  content: '▶';
+  left: 0;
+  width: 90%;
+  font-size: 30px;
+  margin-left: 7px;
+  margin-top: -18px;
+  text-align: center;
+  z-index: 2;
+}
+.tile:hover .tile__details {
+  opacity: 1;
+}
+.tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+.row__inner:hover {
+  transform: translate3d(20px, 5, 50);
+}
+.row__inner:hover .tile {
+  opacity: 0.2;
+}
+.row__inner:hover .tile:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  /* transform: translate3d(10px, 0, 0); */
 }

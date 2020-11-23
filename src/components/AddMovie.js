@@ -7,7 +7,16 @@ class AddMovie extends Component {
     description: "",
     poster: "",
     genres: "",
-    director_name: ""
+    director_name: "",
+    content_rating: "",
+    country: "",
+    language: "",
+    movie_imdb_link: "",
+    title_year:  "",
+    imdb_score:  "",
+    actor_1_name:  "",
+    actor_2_name:  "",
+    actor_3_name:  ""
   };
 
   handleChange = (e) => {
@@ -45,7 +54,18 @@ class AddMovie extends Component {
       this.setState({
         movie_title: "",
         description: "",
-        poster: ""
+        poster: "",
+        genres: "",
+        director_name: "",
+        content_rating: "",
+        country: "",
+        language: "",
+        movie_imdb_link: "",
+        title_year:  "",
+        imdb_score:  "",
+        actor_1_name:  "",
+        actor_2_name:  "",
+        actor_3_name:  ""
       });
 
       // this.props.getMovies()
@@ -57,8 +77,8 @@ class AddMovie extends Component {
   render() {
     return (
       <div>
-        <h2>New Movie</h2>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+        <form onSubmit={(e) => this.handleSubmit(e)} className="edit-form">
+          <h2>New Movie</h2>
           <label htmlFor="">Name</label>
           <input
             type="text"
@@ -72,22 +92,108 @@ class AddMovie extends Component {
             type="text"
             name="genres"
             value={this.state.genres}
+            placeholder={this.state.genres}
             onChange={(e) => this.handleChange(e)}
           />
 
-          <label htmlFor="">Director Name</label>
+          <label htmlFor="">Director Name: </label>
           <input
             type="text"
             name="director_name"
             value={this.state.director_name}
+            placeholder={this.state.director_name}
+            onChange={(e) => this.handleChange(e)}
+            
+          />
+
+          <label htmlFor="">Description: </label>
+          <textarea
+            type="textarea"
+            rows="10" cols="50"
+            name="description"
+            value={this.state.description}
+            textarea={this.state.description}
             onChange={(e) => this.handleChange(e)}
           />
 
-          <label htmlFor="">Description</label>
+          <label htmlFor="">Rating: </label>
           <input
             type="text"
-            name="description"
-            value={this.state.description}
+            name="content_rating"
+            value={this.state.content_rating}
+            placeholder={this.content_rating}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Country: </label>
+          <input
+            type="text"
+            name="country"
+            value={this.state.country}
+            placeholder={this.country}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Language: </label>
+          <input
+            type="text"
+            name="language"
+            value={this.state.language}
+            placeholder={this.language}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">IMDB Link:</label>
+          <input
+            type="text"
+            name="movie_imdb_link"
+            value={this.state.movie_imdb_link}
+            placeholder={this.movie_imdb_link}
+            onChange={(e) => this.handleChange(e)}
+          />
+          
+          <label htmlFor="">Actor 1 name:</label>
+          <input
+            type="text"
+            name="actor_1_name"
+            value={this.state.actor_1_name}
+            placeholder={this.actor_1_name}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Actor 2 name:</label>
+          <input
+            type="text"
+            name="actor_2_name"
+            value={this.state.actor_2_name}
+            placeholder={this.actor_2_name}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Actor 3 name:</label>
+          <input
+            type="text"
+            name="actor_3_name"
+            value={this.state.actor_3_name}
+            placeholder={this.actor_3_name}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">IMDB Score:</label>
+          <input
+            type="text"
+            name="imdb_score"
+            value={this.state.imdb_score}
+            placeholder={this.imdb_score}
+            onChange={(e) => this.handleChange(e)}
+          />
+
+          <label htmlFor="">Year:</label>
+          <input
+            type="text"
+            name="title_year"
+            value={this.state.title_year}
+            placeholder={this.title_year}
             onChange={(e) => this.handleChange(e)}
           />
 

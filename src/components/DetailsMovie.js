@@ -27,7 +27,7 @@ class DetailsMovie extends Component {
         return (
             <div className="container">
                 <div className="align-details">
-                <h1>DETAILS PAGE</h1>
+                <h1 className="h1-color-details">DETAILS PAGE</h1>
                 <div key={movie._id}>
                     <img src={movie.poster} />
                     <h2>Title:{movie.movie_title}</h2>

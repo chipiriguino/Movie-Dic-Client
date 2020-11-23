@@ -21,7 +21,7 @@ class Random extends Component {
         return (
             <div className="container">
                 <div className="align-random">
-                    <h1>Random</h1>
+                    <h1 className="h1-color-details">Random</h1>
                     <div key={this.state.movies._id}>
                         <img  className="align-img-random" src={this.state.movies.poster} alt={`${this.state.movies.movie_title} + photo`} />
                         <hr />

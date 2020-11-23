@@ -50,6 +50,20 @@ class App extends Component {
     })
   }
 
+  //FILTER SERACH NUEVO!!!!
+  // filterSearch = (searchTerm) => {
+  //   // convertimos la palabra buscada en minúsculas
+  //   const searchedTerm = searchTerm.toLowerCase();
+
+  //   // filtramos una copia de la lista original de comidas para devolver únicamente las comidas cuyo nombre (en minúsculas también) corresponden al término de búsqueda
+  //   const filteredList = [...this.state.movies].filter( movieObj => {
+  //     return movieObj.name.toLowerCase().includes(searchedTerm);
+  //   })
+
+  //   // actualizamos la lista de comidas filtradas (la que vamos a mostrar en el render())
+  //   this.setState({filterMovies: filteredList})
+  // }
+
   render() {
     return (
       // Envolvemos los componentes con AuthProvider
@@ -57,7 +71,7 @@ class App extends Component {
        
         <>
           <Navbar />
-          <SearchBar foodToColect={(e)=> this.filterSearch(e)}/>
+          <SearchBar filterSearch={(e)=> this.filterSearch(e)}/>
           {this.state.filterMovies.map((oneMovie, index)=> {
           return <SearchResult key={index} theMovie={oneMovie} />
         })}

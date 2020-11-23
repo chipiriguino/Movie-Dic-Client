@@ -8,7 +8,7 @@ class Navbar extends Component {
     const { user, logout, isLoggedin } = this.props;	//	<-- UPDATE HERE
     return (
       <header className="header">
-        <a href="/" className="logo">Home</a>
+        <a href="/" className="logo"><img className="logo-nav" src="Logos/cola.png" width="40" height="40"></img></a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
         <ul className="menu">
