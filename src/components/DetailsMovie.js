@@ -27,7 +27,7 @@ class DetailsMovie extends Component {
                 <a  className="backg-details" href="#"><img src={movie.poster} alt="cover" class="cover" /></a>
                 <div className="hero" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                     <div className="details">
-                        <div className="title1"><h3 className="title2">{movie.movie_title}</h3></div>
+                        <div className="title1"><h3 className="title3">{movie.movie_title}</h3></div>
                         {/* <div class="title2">The Battle of the Five Armies</div> */}
                         
                         <span class="likes"><strong>{movie.movie_facebook_likes} likes</strong></span>
@@ -48,7 +48,7 @@ class DetailsMovie extends Component {
                             <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
                             <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                         </fieldset>
-                        <span class="tag">{movie.genres}</span>
+                        <span class="tag "><i className="genre1">{movie.genres}</i></span>
                         
                     </div>
 

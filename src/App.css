@@ -878,13 +878,38 @@ RRSS */
 		margin: 0 90px;
 		padding-bottom: 30px;
 	}
-/* .tag{
-	padding: 23px 28px;
-	 font-size: 24px;
-} */
+.rating{
+	margin-left: 650px;
+	display: flex;
+	flex-direction: row;
+}
 
 .boton{
 	width: 200px;
+}
+
+.container2{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tag{
+	display: flex;
+	align-items: flex-end;
+	margin-left: 650px;
+	width: 300px;
+	
+}
+
+.title3{
+	font-size: 85px;
+}
+.likes{
+	font-size: 28px;
+}
+.genre1{
+	font-size: 21px;
 }
 
 }
