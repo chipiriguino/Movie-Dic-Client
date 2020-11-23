@@ -53,9 +53,19 @@ class DetailsMovie extends Component {
                     </div>
 
                     <div class="column2">
-                        <p>Bilbo Baggins is swept into a quest to reclaim the lost Dwarf Kingdom of Erebor from the fearsome dragon Smaug. Approached out of the blue by the wizard Gandalf the Grey, Bilbo finds himself joining a company of thirteen dwarves led by the legendary warrior, Thorin Oakenshield. Their journey will take them into the Wild; through... <a href="#">read more</a></p>
-
-                        <div class="avatars">
+                        
+                        <p>{movie.description}<a href="#">read more</a></p>
+                        <div className="align-details1">
+                        <p>Language: {movie.language}</p>
+                        <p>Duration: {movie.duration} minutes</p>
+                        <p>Year title: {movie.title_year}</p>
+                        <p>Director: {movie.director_name}</p>
+                        <p>Principal actor: {movie.actor_2_name}</p>
+                        <p>Secundary actor: {movie.actor_3_name}</p>
+                        
+                        </div>
+                        
+                        {/* <div class="avatars">
                             <a href="#" data-tooltip="Person 1" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
                             </a>
@@ -68,8 +78,10 @@ class DetailsMovie extends Component {
                             <a href="#" data-tooltip="Person 3" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
                             </a>
-
-                        </div>
+                            
+                        </div> */}
+                        <div className="align-delete"><button className="boton rojo" onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
+                        <a href="#"><button className="boton azul">View</button></a></div>
                     </div>
                 </div>
             </div>
