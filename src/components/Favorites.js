@@ -33,10 +33,27 @@ class Favorites extends Component {
                 <h2>Your Favorites</h2>
                 {this.state.favorites.map((eachFav) => {
                         return (
-                            <div key={eachFav._id} className="movie_card" id="bright">
-                               <h3>{eachFav.movie_title}</h3>
-                               <img src={eachFav.poster} />
+                            <div className="movie_card" id="bright" style={{backgroundImage: `url(${eachFav.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                            <div className="info_section">
+                                <div className="movie_header">
+                                    <img className="locandina" src={eachFav.poster} />
+                                    <h4>{eachFav.movie_title}</h4>
+                                    <h4>{eachFav.title_year}, {eachFav.director_name}</h4>
+                                    <span className="minutes">{eachFav.duration} min</span>
+                                    <p className="type">{eachFav.genres}</p>
+                                </div>
+                                <div className="movie_desc">
+                                    <p className="text">{eachFav.description}</p>
+                                </div>
+                                <div className="movie_social">
+                                    <ul>
+                                        <li><a href={`/upload/${eachFav._id}`} className="material-icons">Update movie</a></li>
+                                        <li><a href={`/details/${eachFav._id}`} className="material-icons">More Details</a></li>
+                                    </ul>
+                                </div>
                             </div>
+                            <div className="blur_back bright_back"></div>
+                        </div>
                         );
                 })
             }  
