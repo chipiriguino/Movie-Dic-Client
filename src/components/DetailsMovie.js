@@ -27,7 +27,7 @@ class DetailsMovie extends Component {
                 <a  className="backg-details" href="#"><img src={movie.poster} alt="cover" class="cover" /></a>
                 <div class="hero" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                     <div class="details">
-                        <div class="title1">{movie.movie_title}<span>PG-13</span></div>
+                        <div class="title1"><h3>{movie.movie_title}</h3></div>
                         {/* <div class="title2">The Battle of the Five Armies</div> */}
                         
                         <span class="likes"><strong>{movie.movie_facebook_likes} likes</strong></span>
