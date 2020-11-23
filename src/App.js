@@ -67,6 +67,7 @@ class App extends Component {
   render() {
     return (
       // Envolvemos los componentes con AuthProvider
+      <div className="appjs">
       <AuthProvider>
        
         <>
@@ -96,6 +97,7 @@ class App extends Component {
         </>
         
       </AuthProvider>
+      </div>
       // Envolvemos los componentes con AuthProvider
     );
   }
