@@ -68,6 +68,7 @@ class DetailsMovie extends Component {
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
                             </a>
                             <button onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
+                            <button><a href={`/upload/${movie._id}`} className="material-icons">Edit Movie</a></button>
                         </div>
                     </div>
                 </div>

@@ -11,15 +11,6 @@ class Home extends Component {
 		filterMovies: []
 	}
 
-	getDBmovies = async () => {
-		const res = await service.getDBmovies();
-		this.setState({ movies: res })
-	}
-
-	componentDidMount = () => {
-		this.getDBmovies();
-	}
-
 	clearSearch = ()=>{
 		this.setState({ filterMovies: [] })
 	}
@@ -43,11 +34,13 @@ class Home extends Component {
 	}
 
 	render() {
-		console.log('STATE MOVIES DE HOME', this.state.movies) 
-		console.log('STATE FILTERMOVIES DE HOME', this.state.filterMovies)
 		return (
 			<div className="container2">
-				<SearchBar filterSearch={this.filterSearch} clearSearch={this.clearSearch}/>
+				<div className="home-section">
+					<h1>Bienvenidos!</h1>
+					<h3>Millones de películas, programas de televisión y personas por descubrir. Explora ahora.</h3>
+					<SearchBar filterSearch={this.filterSearch} clearSearch={this.clearSearch}/>
+				</div>
 				{this.state.filterMovies && this.state.filterMovies.map((oneMovie, index) => {
 					return <SearchResult key={index} theMovie={oneMovie} />
 				})}
