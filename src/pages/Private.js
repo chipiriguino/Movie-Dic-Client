@@ -36,7 +36,7 @@ class Private extends Component {
           <article className="btn-myrpfile">
             <div className="align-btn-profile">
           <button className="boton azul">Edit profile</button>
-          <button className="boton azul">Fav films</button>
+          <a href="/random"><button className="boton azul">Random</button></a>
           {/* <button><Link to="/create">Add Movie!</Link></button> */}
           </div>
           </article>

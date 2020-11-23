@@ -18,7 +18,6 @@ class Navbar extends Component {
               <li><a href="/popular">Most Popular</a></li>
               <li><a href="/movies">All Movies</a></li>
               <li><a href="/private">My profile</a></li>
-              <li><a href="/random">Random</a></li>
               <li><a href="#" className="navbar-button" onClick={logout}>Logout</a></li>
               </>) :
               (
