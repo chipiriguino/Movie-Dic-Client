@@ -25,9 +25,9 @@ class DetailsMovie extends Component {
         return (
             <div class="container2">
                 <a  className="backg-details" href="#"><img src={movie.poster} alt="cover" class="cover" /></a>
-                <div class="hero" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
-                    <div class="details">
-                        <div class="title1"><h3>{movie.movie_title}</h3></div>
+                <div className="hero" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                    <div className="details">
+                        <div className="title1"><h3 className="title2">{movie.movie_title}</h3></div>
                         {/* <div class="title2">The Battle of the Five Armies</div> */}
                         
                         <span class="likes"><strong>{movie.movie_facebook_likes} likes</strong></span>
@@ -54,7 +54,7 @@ class DetailsMovie extends Component {
 
                     <div class="column2">
                         
-                        <p>{movie.description}<a href="#">read more</a></p>
+                        <p className="media-details">{movie.description}<a href="#">read more</a></p>
                         <div className="align-details1">
                         <p>Language: {movie.language}</p>
                         <p>Duration: {movie.duration} minutes</p>

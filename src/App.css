@@ -836,6 +836,10 @@ RRSS */
 
 /* DETAILS PAGE */
 
+.media-details{
+	text-align: center;
+}
+
 .align-details1{
 	display: flex;
 	align-items: center;
@@ -863,6 +867,29 @@ RRSS */
 .h1-color-details{
 	color: white;
 }
+
+@media (min-width: 800px ){
+	.align-details1{
+		font-size: 30px;
+	}
+
+	.media-details{
+		font-size: 25px;
+		margin: 0 90px;
+		padding-bottom: 30px;
+	}
+/* .tag{
+	padding: 23px 28px;
+	 font-size: 24px;
+} */
+
+.boton{
+	width: 200px;
+}
+
+}
+
+
 
 /* CARRUSEL PRUEBA */
 .carusel {

@@ -35,7 +35,7 @@ class Private extends Component {
           <p className="p-align">Again around here <strong>{this.props.user.username} </strong>we are glad to see you again, you can now search our sea of ​​movies. Don't forget the wellies. </p>
           <article className="btn-myrpfile">
             <div className="align-btn-profile">
-          <button className="boton azul">Edit profile</button>
+            <a href="/create"><button className="boton azul">Add movie</button></a>
           <a href="/random"><button className="boton azul">Random</button></a>
           {/* <button><Link to="/create">Add Movie!</Link></button> */}
           </div>
