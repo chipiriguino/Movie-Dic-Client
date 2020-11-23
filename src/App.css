@@ -56,6 +56,10 @@
 	}
 }
 
+.container{
+	margin-top: 35px;
+}
+
 .container2{
 	display: flex;
 	flex-direction: row;
@@ -825,13 +829,14 @@ RRSS */
 	font-family: Arial;
 	justify-content: center;
 	overflow-x: hidden;
+	width: 100%;
 }
 /* mixins */
 /* SLIDER */
 /* <-- Here you may change only slide-count, and all will be work */
 #slider {
 	position: relative;
-	max-width: 768px;
+	max-width: 100%;
 	max-height: 432px;
 	padding: 0.5%;
 	background: rgba(38, 50, 56, 0.5);
@@ -1125,4 +1130,98 @@ RRSS */
 	#slider .info {
 		opacity: 0 !important;
    }
+}
+
+/* NEW CARROUSEL HOME */
+
+.contain {
+  width: 100%;
+}
+.row {
+  overflow: scroll;
+  width: 100%;
+}
+.row__inner {
+  transition: 550ms transform;
+  font-size: 18px;
+  white-space: wrap;
+  padding-bottom: 10px;
+}
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 250px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+}
+.tile__img {
+  width: 150px;
+  height: 250px;
+  object-fit: cover;
+}
+.tile__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  transition: 450ms opacity;
+}
+.tile__details:after,
+.tile__details:before {
+  content: '';
+  position: relative;
+  top: 50%;
+  left: 50%;
+  display: #000;
+}
+.tile__details:after {
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ecf0f1;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.tile__details:before {
+  content: '▶';
+  left: 0;
+  width: 90%;
+  font-size: 30px;
+  margin-left: 7px;
+  margin-top: -18px;
+  text-align: center;
+  z-index: 2;
+}
+.tile:hover .tile__details {
+  opacity: 1;
+}
+.tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+.row__inner:hover {
+  transform: translate3d(20px, 5, 50);
+}
+.row__inner:hover .tile {
+  opacity: 0.2;
+}
+.row__inner:hover .tile:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  /* transform: translate3d(10px, 0, 0); */
 }

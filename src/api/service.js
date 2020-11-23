@@ -120,6 +120,16 @@ class Service {
       console.log(error);
     }
   };
+
+  getCarrouselMovies = async () => {
+    try {
+      const res = await this.service.get("/movies/carrousel");
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
 
