@@ -19,6 +19,17 @@ class Service {
     }
   };
 
+  handleUpload2 = async (theFile) => {
+    console.log("file in service: ", theFile);
+
+    try {
+      const res = await this.service.post("/upload2", theFile);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   saveNewMovie = async (newMovie) => {
     console.log("new thing is: ", newMovie);
 

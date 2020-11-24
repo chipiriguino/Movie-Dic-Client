@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import service from '../api/service'
 import {withAuth} from '../lib/AuthProvider'
+import Paginacion from './Paginacion';
 // import { Link } from "react-router-dom";
 
 
@@ -19,7 +20,7 @@ class MostPopular extends Component {
     }
 
     render() {
-        console.log('ALLMOVIES STATE???', this.state.movies)
+        console.log('PROPS ALLMOVIES???', this.props)
         return (
             <div className="container2">
                 <h2>All Movies</h2>
@@ -48,7 +49,12 @@ class MostPopular extends Component {
                         </div>
                     );
                 })}
-
+                <div>
+                    <Paginacion 
+                        paginaAnterior= {this.props.paginaAnterior()}
+                        paginaSiguiente= {this.props.paginaSiguiente()}
+                    />
+                </div>
             </div>
         );
     }

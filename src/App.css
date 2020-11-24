@@ -828,6 +828,8 @@ RRSS */
 	width: 170px;
 	height: 268px;
 	margin: 10px 5px;
+	background-position: center;
+	background-size: cover;
 }
 
 .cover-movie:hover{
@@ -1338,6 +1340,8 @@ RRSS */
 	 top: 160px;
 	 left: 40px;
 	 z-index: 2;
+	 width: 200px;
+	 height: 280px;
 }
  .details {
 	 padding: 80px 0 3;

@@ -11,26 +11,17 @@ class Home extends Component {
 		filterMovies: []
 	}
 
-	clearSearch = ()=>{
-		this.setState({ filterMovies: [] })
-	}
-
-	
-
 	filterSearch = async (searchTerm) => {
-		// convertimos la palabra buscada en minúsculas
 		const searchedTerm = searchTerm.toLowerCase();
-
-		// filtramos una copia de la lista original de comidas para devolver únicamente las comidas cuyo nombre (en minúsculas también) corresponden al término de búsqueda
 		const filteredList = await service.searchMovie(searchedTerm)
-
-		console.log('searchTermmmmmmm', searchTerm)
+		
 		if(searchTerm){
 			this.setState({ filterMovies: filteredList})
 		}
-		// actualizamos la lista de comidas filtradas (la que vamos a mostrar en el render())
-		// this.setState({ filterMovies: filteredList })
-		
+	}
+
+	clearSearch = ()=>{
+		this.setState({ filterMovies: [] })
 	}
 
 	render() {

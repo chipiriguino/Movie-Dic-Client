@@ -25,7 +25,7 @@ class DetailsMovie extends Component {
         return (
             <div class="container2">
                 <a  className="backg-details" href="#"><img src={movie.poster} alt="cover" class="cover" /></a>
-                <div class="hero" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                <div class="hero" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                     <div class="details">
                         <div class="title1"><h3>{movie.movie_title}</h3></div>
                         {/* <div class="title2">The Battle of the Five Armies</div> */}
@@ -52,7 +52,7 @@ class DetailsMovie extends Component {
                     </div>
 
                     <div class="column2">
-                        <p>Bilbo Baggins is swept into a quest to reclaim the lost Dwarf Kingdom of Erebor from the fearsome dragon Smaug. Approached out of the blue by the wizard Gandalf the Grey, Bilbo finds himself joining a company of thirteen dwarves led by the legendary warrior, Thorin Oakenshield. Their journey will take them into the Wild; through... <a href="#">read more</a></p>
+                        <p>{movie.description}<a href="#">read more</a></p>
 
                         <div class="avatars">
                             <a href="#" data-tooltip="Person 1" data-placement="top">
