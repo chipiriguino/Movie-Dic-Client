@@ -496,6 +496,13 @@ a {
 
 /* BOTONES */
 
+.button-random{
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+
 .boton{
 	text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 		  text-align:center;
@@ -612,7 +619,7 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 
 /* CARDS MOVIES */
 
-.movie2{
+.movie{
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, rgba(30, 27, 38, 1) 55%);
     background-size: auto;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#1e1b26',GradientType=0);
@@ -620,8 +627,9 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 	background-size: contain;
 	background-size: cover;
 	z-index: 1 !important;
-	width: 386px;
+	width: 360px;
 	height: 850px;
+	margin: 0 5px;
 	display: block;
 	border-radius: 13px;
 }
@@ -748,9 +756,9 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 }
 @media screen and (max-width: 768px) {
 	.movie_card {
-		width: 95%;
-		margin: 15px auto;
-		min-height: 350px;
+		width: 100%;
+		margin: 10px;
+		height: 350px;
 		height: auto;
    }
 	.blur_back {
@@ -942,84 +950,6 @@ RRSS */
 	align-items: center;
 	flex-direction: column;
 }
-
-
-/* DETAILS PAGE */
-
-.media-details{
-	text-align: center;
-}
-
-.align-details1{
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
-
-.align-delete{
-	display:flex;
-	justify-content: center;
-}
-
-.align-details{
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	text-align: center;
-	color: white;
-	
-}
-
-.align-details > h1 {
-	color: red;	
-}
-.h1-color-details{
-	color: white;
-}
-
-@media (min-width: 800px ){
-	.align-details1{
-		font-size: 30px;
-	}
-
-	.media-details{
-		font-size: 25px;
-		margin: 0 90px;
-		padding-bottom: 30px;
-		/* max-width: 1200px; */
-	}
-.rating{
-	margin-left: 650px;
-	display: flex;
-	flex-direction: row;
-}
-
-.boton{
-	width: 200px;
-}
-
-.tag{
-	display: flex;
-	align-items: flex-end;
-	margin-left: 650px;
-	width: 300px;
-	
-}
-
-.title3{
-	font-size: 85px;
-}
-.likes{
-	font-size: 28px;
-}
-.genre1{
-	font-size: 21px;
-}
-
-}
-
-
 
 /* CARRUSEL PRUEBA */
 .carusel {
@@ -1417,19 +1347,23 @@ RRSS */
 
 /* DETAILS PAGE */
 
- @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
- @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
- body {
-	 background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg");
+ .background-details {
+	 padding-bottom: 5px;
 }
  .container2 {
 	 width: 100%;
 }
+
+.background-details{
+	width: 100%;
+	height: 100%;
+}
+
  .cellphone-container {
-	 width: 375px;
+	 width: 350px;
 	 height: 650px;
 	 background-color: #1e1b26;
-	 margin: 60px auto 0 auto;
+	 margin: auto;
 	 box-shadow: 5px 5px 115px -14px black;
 	 border-radius: 4px;
 }
@@ -1447,17 +1381,13 @@ RRSS */
  .movie-img {
 	 width: 100%;
 	 height: 380px;
-	 background-image: url(https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg);
-	 background-position: center;
-	 background-repeat: no-repeat;
-	 background-size: cover;
 	 z-index: 111 !important;
 	 border-top-left-radius: 4px;
 	 border-top-right-radius: 4px;
-	 -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 1)), color-stop(0.35, rgba(0, 0, 0, 1)), color-stop(0.5, rgba(0, 0, 0, 1)), color-stop(0.65, rgba(0, 0, 0, 1)), color-stop(0.85, rgba(0, 0, 0, 0.6)), color-stop(1, rgba(0, 0, 0, 0)));
+	 mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 1)), color-stop(0.35, rgba(0, 0, 0, 1)), color-stop(0.5, rgba(0, 0, 0, 1)), color-stop(0.65, rgba(0, 0, 0, 1)), color-stop(0.85, rgba(0, 0, 0, 0.6)), color-stop(1, rgba(0, 0, 0, 0)));
 	 position: relative;
 }
- .movie {
+ .movie2 {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+39,1e1b26+53&0+38,1+55 */
 	 background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, rgba(30, 27, 38, 1) 55%);
 	/* FF3.6-15 */
@@ -1467,11 +1397,8 @@ RRSS */
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#1e1b26',GradientType=0);
 	/* IE6-9 */
-	 position: absolute;
-	 background-size: contain;
 	 background-size: cover;
 	 z-index: 1 !important;
-	 width: 375px;
 	 height: 660px;
 	 display: block;
 	 border-radius: 4px;
@@ -1648,23 +1575,12 @@ RRSS */
 }
  
 
-
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* html, body {
-  height: 100%;
-} */
-
-/* body {
-  background: radial-gradient(ellipse at top left, #334455 0%, #112233 100%);
-  overflow: hidden;
-} */
 
 .wrapper {
   position: absolute;

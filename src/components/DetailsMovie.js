@@ -23,10 +23,10 @@ class DetailsMovie extends Component {
     render() {
         const { movie } = this.state
         return (
+            <div classname="background-details" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                 <div class="cellphone-container">
                     <div class="movie2">
-                        <div class="menu"><i class="material-icons"></i></div>
-                        <div class="movie-img" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `100%`, backgroundRepeat: `no-repeat`}}></div>
+                        <div class="movie-img" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `cover`, backgroundRepeat: `no-repeat`}}></div>
                         <div class="text-movie-cont">
                             <div class="mr-grid">
                                 <div class="coll1">
@@ -63,6 +63,7 @@ class DetailsMovie extends Component {
                         </div>
                     </div>
                 </div>
+            </div>
         );
     }
 }

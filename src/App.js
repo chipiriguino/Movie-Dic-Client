@@ -59,7 +59,7 @@ class App extends Component {
             </Switch>
           </>
         </AuthProvider>
-          {/* <Footer/> */}
+          <Footer/>
       </div>
       // Envolvemos los componentes con AuthProvider
     );
