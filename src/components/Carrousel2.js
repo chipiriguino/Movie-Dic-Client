@@ -27,10 +27,8 @@ class Carrousel2 extends Component {
             <div className="tile__media">
               <img className="tile__img" src={eachMovie.poster} alt="" />
             </div>
-            <div className="tile__details">
               <div className="tile__title">
               <a href={`/details/${eachMovie._id}`}>More Details</a>
-              </div>
             </div>
           </div>
         )
