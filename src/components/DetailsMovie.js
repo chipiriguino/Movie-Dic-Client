@@ -54,25 +54,19 @@ class DetailsMovie extends Component {
 
                     <div class="column2">
                         
-                        <p className="media-details">{movie.description}<a href="#">read more</a></p>
+                        <p className="media-details">{movie.description}</p>
                         <div className="align-details1">
+                            <ul>
                         <p>Language: {movie.language}</p>
                         <p>Duration: {movie.duration} minutes</p>
                         <p>Year title: {movie.title_year}</p>
                         <p>Director: {movie.director_name}</p>
                         <p>Principal actor: {movie.actor_2_name}</p>
                         <p>Secundary actor: {movie.actor_3_name}</p>
-                        
+                        </ul>
                         </div>
                         
-                         <div class="avatars">
-                        <span class="tag">{movie.genres}</span>
-                    </div>
-
-                    {/* <div class="column2">
-                        <p>{movie.description}<a href="#">read more</a></p>
-
-                        <div class="avatars">
+                        {/* <div class="avatars">
                             <a href="#" data-tooltip="Person 1" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
                             </a>
@@ -84,11 +78,12 @@ class DetailsMovie extends Component {
 
                             <a href="#" data-tooltip="Person 3" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
-                            </a> */}
-                            <a href="#"><button className="boton azul">View</button></a></div>
-                            <button onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
-                            <button><a href={`/upload/${movie._id}`} className="material-icons">Edit Movie</a></button>
-                        
+                            </a>
+                            
+                        </div> */}
+                        <div className="align-delete"><button className="boton rojo" onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
+                        <a href="/credits"><button className="boton azul">View</button></a></div>
+                    </div>
                 </div>
             </div>
         );

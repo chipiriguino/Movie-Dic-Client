@@ -28,8 +28,8 @@ class Home extends Component {
 		return (
 			<div className="container2">
 				<div className="home-section">
-					<h1>Bienvenidos!</h1>
-					<h3>Millones de películas, programas de televisión y personas por descubrir. Explora ahora.</h3>
+					<h1>WELCOME!</h1>
+					<h3>The best movies in the world are now within your reach!</h3>
 					<SearchBar filterSearch={this.filterSearch} clearSearch={this.clearSearch}/>
 				</div>
 				{this.state.filterMovies && this.state.filterMovies.map((oneMovie, index) => {

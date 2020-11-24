@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -26,15 +26,15 @@ class App extends Component {
   state = {
     movies: [],
     user: [],
-    filterMovies : []
+    filterMovies: []
   }
 
   paginaAnterior = () => {
     console.log('Anterior....')
-}
+  }
 
   paginaSiguiente = () => {
-      console.log('Siguiente....')
+    console.log('Siguiente....')
   }
 
   render() {
@@ -42,39 +42,56 @@ class App extends Component {
     return (
       // Envolvemos los componentes con AuthProvider
       <div className="appjs">
-      <AuthProvider>
-       
-        <>
-          <Navbar />
-          {/* <SearchBar filterSearch={(e)=> this.filterSearch(e)}/>
+        <AuthProvider>
+
+          <>
+            <Navbar />
+            {/* <SearchBar filterSearch={(e)=> this.filterSearch(e)}/>
           {this.state.filterMovies.map((oneMovie, index)=> {
           return <SearchResult key={index} theMovie={oneMovie} />
         })} */}
-        <Switch>
-          <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
-          <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
-          <PrivateRoute 
-            user={this.props.user}
-          path="/popular" component={MostPopular} />
-          <PrivateRoute path="/credits" component={Credits} />
-          <PrivateRoute path="/create" component={AddMovie} />
-          <PrivateRoute path="/random" component={Random} />
-          <PrivateRoute path="/upload/:id" component={UpdateMovie} />
-          <PrivateRoute 
-            paginaAnterior= {this.paginaAnterior()}
-            paginaSiguiente= {this.paginaSiguiente()}
-            path="/movies" component={AllMovies} />
-          <PrivateRoute path="/details/:id" component={DetailsMovie} />
-          <PrivateRoute 
-            path="/private"
-            // movies={this.state.movies}
-            component={Private} 
-            />
-          <Route path="/" component={Home} />
-        </Switch>
-        </>
-        
-      </AuthProvider>
+            <Switch>
+              <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
+              <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
+              <PrivateRoute
+                user={this.props.user}
+                path="/popular" component={MostPopular} />
+              <PrivateRoute path="/credits" component={Credits} />
+              <PrivateRoute path="/create" component={AddMovie} />
+              <PrivateRoute path="/random" component={Random} />
+              <PrivateRoute path="/upload/:id" component={UpdateMovie} />
+              {/* <PrivateRoute
+                path='/movies'
+                render={(props) => (
+                  <AllMovies {...props}
+                  paginaAnterior={this.paginaAnterior}
+                  paginaSiguiente={this.paginaSiguiente} />
+                )}
+              /> */}
+
+              {/* <PrivateRoute
+                paginaAnterior={this.paginaAnterior}
+                paginaSiguiente={this.paginaSiguiente}
+                path="/movies" component={AllMovies}
+              /> */}
+
+              <PrivateRoute
+                path='/movies'
+                component={() => <AllMovies
+                  paginaAnterior={this.paginaAnterior}
+                  paginaSiguiente={this.paginaSiguiente}
+                />}
+              />
+
+
+              <PrivateRoute path="/details/:id" component={DetailsMovie} />
+              <PrivateRoute
+                path="/private" component={Private} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </>
+
+        </AuthProvider>
       </div>
       // Envolvemos los componentes con AuthProvider
     );
