@@ -29,7 +29,7 @@ class Private extends Component {
 
     return (
       <div>
-          <div>
+          <div className="media-profile">
           <h1 className="h1-align">Welcome {this.props.user.username}</h1>
          <div className="img-align-profile" > <img src={this.props.user.image} alt="imagen" width="250" height="250"/></div>
           <p className="p-align">Again around here <strong>{this.props.user.username} </strong>we are glad to see you again, you can now search our sea of ​​movies. Don't forget the wellies. </p>
@@ -44,7 +44,7 @@ class Private extends Component {
           <div>
             <Favorites 
               user={this.props.user}
-              movies={this.state.movies}
+              // movies={this.state.movies}
             />
             
           </div>

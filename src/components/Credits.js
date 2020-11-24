@@ -11,11 +11,11 @@ Directed By : </div>
 <div class='name'>
 CARLOS CURTIDO AND JOSE LUIS BLASCO</div>
 <div class='job'>
-Production:</div>
+Code master:</div>
 <div class='name'>
 DANIEL DE SOUSA</div>
 <div class='job'>
-Lightings:</div>
+In the lightings:</div>
 <div class='name'>
 Marina Urbano</div>
 <div class='job'>
@@ -53,7 +53,7 @@ Marc Sadurní</div>
 <div class='job'>
 Y agradecer a todos los compañeros</div>
 <div class='job'>
-sin vosotros no hubiera sido posible:</div>
+sin vosotros esto no hubiera sido posible:</div>
 <div class='name'>Erifily</div>
 <div class='name'>Christian</div>
 <div class='name'>Esteve</div>

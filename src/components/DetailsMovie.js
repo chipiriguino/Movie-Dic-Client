@@ -25,9 +25,9 @@ class DetailsMovie extends Component {
         return (
             <div class="container2">
                 <a  className="backg-details" href="#"><img src={movie.poster} alt="cover" class="cover" /></a>
-                <div className="hero" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
-                    <div className="details">
-                        <div className="title1"><h3 className="title3">{movie.movie_title}</h3></div>
+                <div class="hero" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                    <div class="details">
+                        <div class="title1"><h3>{movie.movie_title}</h3></div>
                         {/* <div class="title2">The Battle of the Five Armies</div> */}
                         
                         <span class="likes"><strong>{movie.movie_facebook_likes} likes</strong></span>
@@ -65,7 +65,14 @@ class DetailsMovie extends Component {
                         
                         </div>
                         
-                        {/* <div class="avatars">
+                         <div class="avatars">
+                        <span class="tag">{movie.genres}</span>
+                    </div>
+
+                    {/* <div class="column2">
+                        <p>{movie.description}<a href="#">read more</a></p>
+
+                        <div class="avatars">
                             <a href="#" data-tooltip="Person 1" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
                             </a>
@@ -77,12 +84,11 @@ class DetailsMovie extends Component {
 
                             <a href="#" data-tooltip="Person 3" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
-                            </a>
-                            
-                        </div> */}
-                        <div className="align-delete"><button className="boton rojo" onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
-                        <a href="#"><button className="boton azul">View</button></a></div>
-                    </div>
+                            </a> */}
+                            <a href="#"><button className="boton azul">View</button></a></div>
+                            <button onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
+                            <button><a href={`/upload/${movie._id}`} className="material-icons">Edit Movie</a></button>
+                        
                 </div>
             </div>
         );
@@ -91,20 +97,5 @@ class DetailsMovie extends Component {
 
 export default DetailsMovie;
 
-{/* <div className="container">
-                <div className="align-details">
-                <h1 className="h1-color-details">DETAILS PAGE</h1>
-                <div key={movie._id}>
-                    <img src={movie.poster} />
-                    <h2>Title:{movie.movie_title}</h2>
-                    <h4>Director:{movie.director_name}</h4>
-                    <h4>Duration:{movie.duration} minutes</h4>
-                    <h4>Language:{movie.language}</h4>
-                    <h4>Release year:{movie.title_year}</h4>
-                    <h4>Number of likes received on social networks: {movie.movie_facebook_likes}</h4>
-                    <h4>Score:{movie.imdb_score}</h4>
-                    <button className="boton rojo" onClick={() => this.deleteMovie()}>Delete Movie</button>
-                </div>
-                </div>
-            </div> */}
+
 

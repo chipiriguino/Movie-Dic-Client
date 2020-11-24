@@ -99,14 +99,24 @@
 
 .search-div input{
 	width: 100%;
-	max-width: 400px;
+	max-width: 600px;
 	height: 39px;
 	border-radius: 10px;
 	border: 1px solid gray;
-	margin-top: 20px;
+	margin: 20px auto;
 	display: flex;
 	align-items: center;
 	box-shadow: rgb(184, 12, 12);
+}
+
+/* HOME */
+
+.home-section{
+	width: 100%;
+	height: 270px;
+	background-image: url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/2lBOQK06tltt8SQaswgb8d657Mv.jpg');
+	background-position: center;
+	background-size: cover;
 }
 
 /* NAVBAR */
@@ -207,6 +217,7 @@
   }
   /* 48em = 768px */
   @media (min-width: 48em) {
+
 	.header ul {
 		margin: 0;
 		padding: 0;
@@ -383,6 +394,14 @@ a {
 	text-align: center;
   }
 
+  @media (min-width: 800px ){
+	  /* .form-signin{
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+	  } */
+  }
+
   
   /* BUTTON SIGNUP */
   .button-signup {
@@ -533,6 +552,21 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 	justify-content: space-around;
 	margin-bottom: 40px;
 	margin-top:-10px
+}
+
+@media (min-width: 800px ){
+	.media-profile{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	.media-profile1{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+	}
 }
 
 /* CARDS MOVIES */
@@ -809,22 +843,35 @@ RRSS */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: row;
 
 }
+
+.cover-movie{
+	width: 170px;
+	height: 268px;
+	margin: 10px 5px;
+	background-position: center;
+	background-size: cover;
+}
+
+.cover-movie:hover{
+	width: 170px;
+	height: 266px;
+	background-color: black;
+	opacity: 0.5;
+}
+
 .align-img-random{
 	display: flex;
 	align-items: center;
-	
-	
 }
 
-.align-txt-random{
-	text-align: justify;
-	margin:8px;
+.align-random .cover-movie a{
+	text-align: center;
+	margin: 8px;
 	color: white;
-	
-	
+	padding-top: 190px;
 }
 
 .align-title-random{
@@ -1379,6 +1426,8 @@ RRSS */
 	 top: 160px;
 	 left: 40px;
 	 z-index: 2;
+	 width: 200px;
+	 height: 280px;
 }
  .details {
 	 padding: 80px 0 3;
