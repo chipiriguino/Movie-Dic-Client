@@ -18,6 +18,8 @@ import AddMovie from "./components/AddMovie";
 import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
 import Credits from "./components/Credits";
+import Footer from "./components/Footer";
+
 
 
 class App extends Component {
@@ -34,13 +36,8 @@ class App extends Component {
       // Envolvemos los componentes con AuthProvider
       <div className="appjs">
         <AuthProvider>
-
           <>
             <Navbar />
-            {/* <SearchBar filterSearch={(e)=> this.filterSearch(e)}/>
-          {this.state.filterMovies.map((oneMovie, index)=> {
-          return <SearchResult key={index} theMovie={oneMovie} />
-        })} */}
             <Switch>
               <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
               <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
@@ -61,8 +58,8 @@ class App extends Component {
               <Route path="/" component={Home} />
             </Switch>
           </>
-
         </AuthProvider>
+          <Footer/>
       </div>
       // Envolvemos los componentes con AuthProvider
     );
