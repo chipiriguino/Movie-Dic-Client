@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import service from "../api/service";
+import Footer from "./Footer";
 
 class UpdateMovie extends Component {
   state = {

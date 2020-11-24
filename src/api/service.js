@@ -52,10 +52,9 @@ class Service {
     }
   };
 
-  getMostPopular = async () => {
+  getMostPopular = async (pagina= 0) => {
     try {
-      const res = await this.service.get("/popular");
-      console.log(res.data);
+      const res = await this.service.get(`/popular?page=` + pagina);
       return res.data;
     } catch (error) {
       console.log(error);

@@ -22,18 +22,26 @@ class AllMovies extends Component {
     paginaAnterior = () => {
         console.log('Anterior....')
         let pagina = this.state.pagina
-        if(pagina === 1) return null;
+        if(pagina === 0) return null;
         pagina --;
         this.setState({ pagina: pagina })
       }
     
-      paginaSiguiente = () => {
+    paginaSiguiente = () => {
         console.log('Siguiente....')
-        console.log('STATE PAGINA ANTES', this.state.pagina)
+        console.log('PROPS USER ALLMOVIES', this.props)
         let pagina = this.state.pagina
         pagina ++;
         this.setState({ pagina: pagina })
-      }
+    }
+
+    addToFavourite = async (movieId) => {
+        let userId = this.props.user._id;
+        console.log('USERID DE ALLMOVIES', this.props.user)
+        let res = await service.addToFavourite(movieId, userId);
+        this.setState({ favorite: res })
+        console.log('FAVORITO STATE ALLMOVIES!!!!!!', this.state)
+    }
 
     componentDidMount = () => {
         this.getAllMovies();
