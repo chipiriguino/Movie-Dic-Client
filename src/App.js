@@ -27,6 +27,7 @@ class App extends Component {
     filterMovies: [],
   }
 
+
   render() {
     console.log('STATE PAGINA DESPUÉS', this.state.pagina)
     return (
@@ -51,9 +52,8 @@ class App extends Component {
               <PrivateRoute path="/random" component={Random} />
               <PrivateRoute path="/upload/:id" component={UpdateMovie} />
               <PrivateRoute
-                path='/movies'
-                component={() => <AllMovies
-                />}
+                user={this.props.user}
+                path='/movies'component={() => <AllMovies/>}
               />
               <PrivateRoute path="/details/:id" component={DetailsMovie} />
               <PrivateRoute
