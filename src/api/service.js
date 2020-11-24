@@ -62,7 +62,7 @@ class Service {
     }
   };
 
-  getAllMovies = async (pagina= 1) => {
+  getAllMovies = async (pagina= 0) => {
     try {
       const res = await this.service.get(`/allmovies?page=` + pagina );
       return res.data;
