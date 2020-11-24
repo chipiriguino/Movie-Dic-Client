@@ -59,9 +59,10 @@ class App extends Component {
           <PrivateRoute path="/random" component={Random} />
           <PrivateRoute path="/upload/:id" component={UpdateMovie} />
           <PrivateRoute 
-            paginaAnterior= {this.paginaAnterior()}
-            paginaSiguiente= {this.paginaSiguiente()}
-            path="/movies" component={AllMovies} />
+            paginaAnterior={this.paginaAnterior}
+            paginaSiguiente={this.paginaSiguiente}
+            path="/movies" component={AllMovies}
+            />
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
           <PrivateRoute 
             path="/private"

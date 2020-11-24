@@ -51,8 +51,8 @@ class MostPopular extends Component {
                 })}
                 <div>
                     <Paginacion 
-                        paginaAnterior= {this.props.paginaAnterior()}
-                        paginaSiguiente= {this.props.paginaSiguiente()}
+                        // paginaAnterior= {this.props.paginaAnterior}
+                        // paginaSiguiente= {this.props.paginaSiguiente}
                     />
                 </div>
             </div>
