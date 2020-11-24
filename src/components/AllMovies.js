@@ -54,12 +54,8 @@ class AllMovies extends Component {
     render() {
         return (
             <div className="container2">
-                <h2>All Movies</h2>
                
-                <Paginacion 
-                        paginaAnterior= {this.paginaAnterior}
-                        paginaSiguiente= {this.paginaSiguiente}
-                    />
+            <h2>All Movies</h2>
                 {this.state.movies.map((allMovie) => {
                     return (
                         <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat`}}>
@@ -87,8 +83,11 @@ class AllMovies extends Component {
                     );
                 })}
                 <div>
-                    
                 </div>
+                <Paginacion 
+                        paginaAnterior= {this.paginaAnterior}
+                        paginaSiguiente= {this.paginaSiguiente}
+                    /> 
             </div>
         );
     }

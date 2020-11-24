@@ -19,6 +19,7 @@ class Random extends Component {
 
     render() {
         return (
+            <div class="movie-card">
             <div className="container">
                 <div className="align-random">
                     <h1 className="h1-color-random">Random</h1>
@@ -34,6 +35,7 @@ class Random extends Component {
                         <button className="boton verde" onClick={() => this.getRandom(this.state.movies._id)}>Another please!</button>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }
