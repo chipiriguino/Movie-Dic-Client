@@ -5,7 +5,7 @@ import { withAuth } from "../lib/AuthProvider";			//	<-- UPDATE HERE
 class Navbar extends Component {
   render() {
 
-    const { user, logout, isLoggedin } = this.props;	//	<-- UPDATE HERE
+    const {logout, isLoggedin } = this.props;	//	<-- UPDATE HERE
     return (
       <header className="header">
         <a href="/" className="logo"><img className="logo-nav" src="Logos/cola.png" width="40" height="40"></img></a>

@@ -916,6 +916,14 @@ RRSS */
 	flex-direction: column;
 }
 
+@media screen and (min-width: 800px) {
+	.h1-color-random{
+		font-size:56px
+	}
+	.align-img-random{
+		width: 100%;
+	}
+}
 
 /* DETAILS PAGE */
 
@@ -1443,7 +1451,7 @@ RRSS */
 	padding-top: 40px;
 	width: 100%;
 	padding: 5px;
-	 height: 342px;
+	 height: 480px;
 	 margin: 0;
 	 position: absolute;
 	 overflow: hidden;
@@ -1451,6 +1459,14 @@ RRSS */
 	 border-top-left-radius: 5px;
 	 border-top-right-radius: 5px;
 }
+
+@media (min-width: 800px ){
+	.rating{
+		padding-top: 40px;
+	}
+}
+
+
  .hero:before {
 	 content: '';
 	 width: 100%;
