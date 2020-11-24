@@ -17,8 +17,6 @@ import AllMovies from "./components/AllMovies";
 import AddMovie from "./components/AddMovie";
 import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
-import SearchBar from "./components/SearchBar";
-import SearchResult from "./components/SearchResult";
 import Credits from "./components/Credits";
 
 
@@ -26,19 +24,11 @@ class App extends Component {
   state = {
     movies: [],
     user: [],
-    filterMovies: []
-  }
-
-  paginaAnterior = () => {
-    console.log('Anterior....')
-  }
-
-  paginaSiguiente = () => {
-    console.log('Siguiente....')
+    filterMovies: [],
   }
 
   render() {
-    console.log('PELIS APP.JS STATE', this.state.movies)
+    console.log('STATE PAGINA DESPUÉS', this.state.pagina)
     return (
       // Envolvemos los componentes con AuthProvider
       <div className="appjs">
@@ -60,30 +50,11 @@ class App extends Component {
               <PrivateRoute path="/create" component={AddMovie} />
               <PrivateRoute path="/random" component={Random} />
               <PrivateRoute path="/upload/:id" component={UpdateMovie} />
-              {/* <PrivateRoute
-                path='/movies'
-                render={(props) => (
-                  <AllMovies {...props}
-                  paginaAnterior={this.paginaAnterior}
-                  paginaSiguiente={this.paginaSiguiente} />
-                )}
-              /> */}
-
-              {/* <PrivateRoute
-                paginaAnterior={this.paginaAnterior}
-                paginaSiguiente={this.paginaSiguiente}
-                path="/movies" component={AllMovies}
-              /> */}
-
               <PrivateRoute
                 path='/movies'
                 component={() => <AllMovies
-                  paginaAnterior={this.paginaAnterior}
-                  paginaSiguiente={this.paginaSiguiente}
                 />}
               />
-
-
               <PrivateRoute path="/details/:id" component={DetailsMovie} />
               <PrivateRoute
                 path="/private" component={Private} />

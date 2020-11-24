@@ -5,25 +5,51 @@ import Paginacion from './Paginacion';
 // import { Link } from "react-router-dom";
 
 
-class MostPopular extends Component {
+class AllMovies extends Component {
     state = {
-        movies: []
+        movies: [],
+        pagina: ""
     }
 
     getAllMovies = async () => {
-        let res = await service.getAllMovies();
-        this.setState({ movies: res })
+        let res = await service.getAllMovies(this.state.pagina);
+        this.setState({
+          movies: res,
+        })
     }
+
+    paginaAnterior = () => {
+        console.log('Anterior....')
+        let pagina = this.state.pagina
+        if(pagina === 1) return null;
+        pagina --;
+        this.setState({ pagina: pagina })
+      }
+    
+      paginaSiguiente = () => {
+        console.log('Siguiente....')
+        console.log('STATE PAGINA ANTES', this.state.pagina)
+        let pagina = this.state.pagina
+        pagina ++;
+        this.setState({ pagina: pagina })
+      }
 
     componentDidMount = () => {
         this.getAllMovies();
     }
 
+    componentDidUpdate = () => {
+        this.getAllMovies();
+    }
+
     render() {
-        console.log('PROPS ALLMOVIES???', this.props)
         return (
             <div className="container2">
                 <h2>All Movies</h2>
+                <Paginacion 
+                        paginaAnterior= {this.paginaAnterior}
+                        paginaSiguiente= {this.paginaSiguiente}
+                    />
                 {this.state.movies.map((allMovie) => {
                     return (
                         <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
@@ -52,8 +78,8 @@ class MostPopular extends Component {
                 })}
                 <div>
                     <Paginacion 
-                        // paginaAnterior= {this.props.paginaAnterior()}
-                        // paginaSiguiente= {this.props.paginaSiguiente()}
+                        paginaAnterior= {this.props.paginaAnterior()}
+                        paginaSiguiente= {this.props.paginaSiguiente()}
                     />
                 </div>
             </div>
@@ -61,13 +87,4 @@ class MostPopular extends Component {
     }
 }
 
-export default MostPopular;
-
-
-{/* <div key={allMovie._id}>
-                            <h3>{allMovie.language}</h3>
-                            <h4>{allMovie.director_name}</h4>
-                            <h4>{allMovie.movie_title}</h4>
-                            <img src={allMovie.poster} />
-                            <Link to={`/details/${allMovie._id}`}><button>More Details</button></Link>
-                        </div> */}
+export default AllMovies;
