@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import service from '../api/service';
-import { Link} from "react-router-dom";
 import {withAuth} from '../lib/AuthProvider'
 
 class MostPopular extends Component {
@@ -32,10 +31,10 @@ class MostPopular extends Component {
                 <h2>MOST POPULAR PAGE</h2>
             {this.state.movies.map((eachMovie) => {
                 return (
-                    <div className="movie_card" id="bright" style={{backgroundImage: `url(${eachMovie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                    <div className="movie_card" id="bright" style={{backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                             <div className="info_section">
                                 <div className="movie_header">
-                                    <img className="locandina" src={eachMovie.poster} />
+                                    <img className="locandina" src={eachMovie.poster} alt={eachMovie.movie_title}/>
                                     <h4>{eachMovie.movie_title}</h4>
                                     <h4>{eachMovie.title_year}, {eachMovie.director_name}</h4>
                                     <span className="minutes">{eachMovie.duration} min</span>

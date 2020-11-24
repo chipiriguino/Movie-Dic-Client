@@ -26,7 +26,7 @@ class Login extends Component {
         
       <form className="form-signin" onSubmit={this.handleFormSubmit}>
     <p className="text-center">
-      <img src="http://pngimg.com/uploads/whale/whale_PNG19238.png" style={{ width:"70%"}} />
+      <img src="http://pngimg.com/uploads/whale/whale_PNG19238.png" style={{ width:"70%"}} alt="Profile"/>
     </p>
     <div className="input-group-login sombreado-input">
       <div className="input-group-prepend-login">

@@ -62,10 +62,9 @@ class Service {
     }
   };
 
-  getAllMovies = async () => {
+  getAllMovies = async (pagina= 1) => {
     try {
-      const res = await this.service.get("/allmovies");
-      console.log(res.data);
+      const res = await this.service.get(`/allmovies?page=` + pagina );
       return res.data;
     } catch (error) {
       console.log(error);
