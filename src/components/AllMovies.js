@@ -18,6 +18,7 @@ class AllMovies extends Component {
         })
     }
 
+
     paginaAnterior = () => {
         console.log('Anterior....')
         let pagina = this.state.pagina
@@ -46,6 +47,7 @@ class AllMovies extends Component {
         return (
             <div className="container2">
                 <h2>All Movies</h2>
+               
                 <Paginacion 
                         paginaAnterior= {this.paginaAnterior}
                         paginaSiguiente= {this.paginaSiguiente}
@@ -77,10 +79,7 @@ class AllMovies extends Component {
                     );
                 })}
                 <div>
-                    <Paginacion 
-                        paginaAnterior= {this.props.paginaAnterior()}
-                        paginaSiguiente= {this.props.paginaSiguiente()}
-                    />
+                    
                 </div>
             </div>
         );

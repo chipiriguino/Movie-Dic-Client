@@ -421,6 +421,7 @@ a {
 	  width: 100%;
 	  max-width: 820px;
 	  padding: 15px;
+	  margin-left: 22rem;
 	}
 }
 
@@ -584,7 +585,7 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left:15rem;
+		margin-left:18rem;
 		flex-direction: column;
 		
 
@@ -595,6 +596,9 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 		flex-direction: column;
 		align-content: center;
 		
+	}
+	.media-fav-profile{
+		margin-left: 280px;
 	}
 }
 
@@ -1311,6 +1315,12 @@ RRSS */
 }
 
 /* NEW CARROUSEL HOME */
+
+.home-txt-carrousel{
+	color: white;
+	text-align: center;
+
+}
 
 .contain {
   width: 100%;
