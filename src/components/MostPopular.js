@@ -69,7 +69,7 @@ class MostPopular extends Component {
                                     <ul>
                                         <li><a href={`/upload/${eachMovie._id}`} className="material-icons">Update movie</a></li>
                                         <li><a href={`/details/${eachMovie._id}`} className="material-icons">More Details</a></li>
-                                       <li><a onClick={()=> this.addToFavourite(eachMovie._id)}>Add to fav</a></li>
+                                       <li><a onClick={()=> this.addToFavourite(eachMovie._id)} className="material-fav">Add to fav</a></li>
                                     </ul>
                                 </div>
                             </div>

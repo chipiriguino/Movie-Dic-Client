@@ -54,15 +54,16 @@ class DetailsMovie extends Component {
 
                     <div class="column2">
                         
-                        <p className="media-details">{movie.description}<a href="#">read more</a></p>
+                        <p className="media-details">{movie.description}</p>
                         <div className="align-details1">
+                            <ul>
                         <p>Language: {movie.language}</p>
                         <p>Duration: {movie.duration} minutes</p>
                         <p>Year title: {movie.title_year}</p>
                         <p>Director: {movie.director_name}</p>
                         <p>Principal actor: {movie.actor_2_name}</p>
                         <p>Secundary actor: {movie.actor_3_name}</p>
-                        
+                        </ul>
                         </div>
                         
                         {/* <div class="avatars">
@@ -81,7 +82,7 @@ class DetailsMovie extends Component {
                             
                         </div> */}
                         <div className="align-delete"><button className="boton rojo" onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
-                        <a href="#"><button className="boton azul">View</button></a></div>
+                        <a href="/credits"><button className="boton azul">View</button></a></div>
                     </div>
                 </div>
             </div>
@@ -90,4 +91,6 @@ class DetailsMovie extends Component {
 }
 
 export default DetailsMovie;
+
+
 

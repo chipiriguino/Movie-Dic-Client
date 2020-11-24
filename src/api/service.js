@@ -159,8 +159,28 @@ class Service {
       console.log(error);
     }
   };
-}
 
+
+getCarrouselMovies2 = async () => {
+  try {
+    const res = await this.service.get("/movies/carrousel2");
+    console.log(res.data);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+getCarrouselMovies3 = async () => {
+  try {
+    const res = await this.service.get("/movies/carrousel3");
+    console.log(res.data);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+}
 
 const axiosRequestFunctions = new Service();
 

@@ -18,6 +18,7 @@ class AllMovies extends Component {
         })
     }
 
+
     paginaAnterior = () => {
         console.log('Anterior....')
         let pagina = this.state.pagina
@@ -54,6 +55,7 @@ class AllMovies extends Component {
         return (
             <div className="container2">
                 <h2>All Movies</h2>
+               
                 <Paginacion 
                         paginaAnterior= {this.paginaAnterior}
                         paginaSiguiente= {this.paginaSiguiente}
@@ -76,7 +78,7 @@ class AllMovies extends Component {
                                     <ul>
                                         <li><a href={`/upload/${allMovie._id}`} className="material-icons">Edit Movie</a></li>
                                         <li><a href={`/details/${allMovie._id}`} >More Details</a></li>
-                                        <li><a onClick={()=> this.addToFavourite(allMovie._id)} className="material-icons">Add to fav</a></li>
+                                        <li><a onClick={()=> this.addToFavourite(allMovie._id)} className="material-fav">Add to fav</a></li>
                                     </ul>
                                 </div>
                             </div>
