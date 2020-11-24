@@ -21,53 +21,37 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div className="body2">
-        
-        
-      <form className="form-signin" onSubmit={this.handleFormSubmit}>
-    <p className="text-center">
-      <img src="http://pngimg.com/uploads/whale/whale_PNG19238.png" style={{ width:"70%"}} alt="Profile"/>
-    </p>
-    <div className="input-group-login sombreado-input">
-      <div className="input-group-prepend-login">
-        <span className="input-group-text fondo-icon">
-          
-        </span>
-      </div>
-      <input className="border-0-login form-control-login input-border-none" type="text" name="username" value={username} onChange={this.handleChange} placeholder="User"
-        aria-label="Username"/>
-    </div>
-
-    <br />
-    <div className="input-group-login sombreado-input">
-      <div className="input-group-prepend-login">
-        <span className="input-group-text fondo-icon">
-        </span>
-      </div>
-      <input  className="border-0-login form-control-login input-border-none" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password"
-        aria-label="Username" />
-    </div>
-    <p className="text-center">
-    <input className="button-signup fondo-color-signup" type="submit" value="Log in" className="button-signup fondo-color-signup" />
-  
-    </p>
-    <p className="text-center"></p>
-    <p className="text-center"></p>
-    <div id="social">
-            <a class="facebookBtn smGlobalBtn" href="#" ></a>
-            <a class="twitterBtn smGlobalBtn" href="#" ></a>
-            <a class="googleplusBtn smGlobalBtn" href="#" ></a>
-            <a class="pinterestBtn smGlobalBtn" href="#" ></a>
-
+      <div class="container">
+        <div class="img">
+          <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/82b8d8efd3b0ac6382b9d0d71a99c6cf9dcefa23/img/bg.svg" />
+        </div>
+        <div class="login-content">
+          <form action="index.html" onSubmit={this.handleFormSubmit}>
+            <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/82b8d8efd3b0ac6382b9d0d71a99c6cf9dcefa23/img/avatar.svg" />
+              <h2 class="title">Welcome</h2>
+              <div class="input-div one">
+                <div class="i">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                  <input type="text" class="input" type="text" name="username" value={username} onChange={this.handleChange} placeholder="Username" />
+                </div>
+              </div>
+              <div class="input-div pass">
+                <div class="i">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                  <input type="password" class="input" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password" />
+                </div>
+              </div>
+              <a href="/signup">You don't have an account? Sign In!!</a>
+              <input type="submit" class="btn" type="submit" value="Log in" />
+            </form>
+            </div>
           </div>
-
-  </form>
-      </div>
-
     );
   }
 }
 
 export default withAuth(Login);
-
-

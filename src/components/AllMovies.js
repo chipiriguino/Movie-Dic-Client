@@ -53,8 +53,7 @@ class AllMovies extends Component {
 
     render() {
         return (
-            <div className="container2">
-               
+            <div className="container2">  
             <h2>All Movies</h2>
                 {this.state.movies.map((allMovie) => {
                     return (
