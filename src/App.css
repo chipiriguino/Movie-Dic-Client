@@ -153,7 +153,7 @@
 	display: block;
 	float: left;
 	font-size: 2em;
-	padding: 10px 20px;
+	padding: 5px 20px;
 	text-decoration: none;
   }
   /* menu */
@@ -860,6 +860,21 @@ RRSS */
 
 /* DETAILS PAGE */
 
+.media-details{
+	text-align: center;
+}
+
+.align-details1{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.align-delete{
+	display:flex;
+	justify-content: center;
+}
+
 .align-details{
 	display:flex;
 	justify-content: center;
@@ -876,6 +891,54 @@ RRSS */
 .h1-color-details{
 	color: white;
 }
+
+@media (min-width: 800px ){
+	.align-details1{
+		font-size: 30px;
+	}
+
+	.media-details{
+		font-size: 25px;
+		margin: 0 90px;
+		padding-bottom: 30px;
+	}
+.rating{
+	margin-left: 650px;
+	display: flex;
+	flex-direction: row;
+}
+
+.boton{
+	width: 200px;
+}
+
+.container2{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tag{
+	display: flex;
+	align-items: flex-end;
+	margin-left: 650px;
+	width: 300px;
+	
+}
+
+.title3{
+	font-size: 85px;
+}
+.likes{
+	font-size: 28px;
+}
+.genre1{
+	font-size: 21px;
+}
+
+}
+
+
 
 /* CARRUSEL PRUEBA */
 .carusel {
@@ -1509,4 +1572,79 @@ RRSS */
 	 left: 20px;
 	 margin-bottom: 4px;
 }
- 
+
+/* CREDITS */
+
+/* GRADIEND */
+.ap {
+position: fixed;
+right: 0;
+bottom: 0;
+left: 0;
+height: 40px;
+margin: auto;
+font-family: Arial, sans-serif;
+font-size: 14px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+color: #333;
+background: #222;
+border-top: 2px solid #f0f;
+z-index: 9999;
+}  
+/*END*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html, body {
+  height: 100%;
+} */
+
+/* body {
+  background: radial-gradient(ellipse at top left, #334455 0%, #112233 100%);
+  overflow: hidden;
+} */
+
+.wrapper {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  font: 300 30px/1 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  animation: 60s credits linear infinite;
+}
+
+.movie {
+  margin-bottom: 50px;
+  font-size: 50px;
+}
+
+.job {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.name {
+  margin-bottom: 50px;
+  font-size: 35px;
+}
+
+@keyframes credits {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -500%;
+  }
+}

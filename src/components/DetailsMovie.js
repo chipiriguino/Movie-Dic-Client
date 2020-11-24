@@ -48,13 +48,24 @@ class DetailsMovie extends Component {
                             <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
                             <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                         </fieldset>
-                        <span class="tag">{movie.genres}</span>
+                        <span class="tag "><i className="genre1">{movie.genres}</i></span>
+                        
                     </div>
 
                     <div class="column2">
-                        <p>{movie.description}<a href="#">read more</a></p>
-
-                        <div class="avatars">
+                        
+                        <p className="media-details">{movie.description}<a href="#">read more</a></p>
+                        <div className="align-details1">
+                        <p>Language: {movie.language}</p>
+                        <p>Duration: {movie.duration} minutes</p>
+                        <p>Year title: {movie.title_year}</p>
+                        <p>Director: {movie.director_name}</p>
+                        <p>Principal actor: {movie.actor_2_name}</p>
+                        <p>Secundary actor: {movie.actor_3_name}</p>
+                        
+                        </div>
+                        
+                        {/* <div class="avatars">
                             <a href="#" data-tooltip="Person 1" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
                             </a>
@@ -67,9 +78,10 @@ class DetailsMovie extends Component {
                             <a href="#" data-tooltip="Person 3" data-placement="top">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
                             </a>
-                            <button onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
-                            <button><a href={`/upload/${movie._id}`} className="material-icons">Edit Movie</a></button>
-                        </div>
+                            
+                        </div> */}
+                        <div className="align-delete"><button className="boton rojo" onClick={()=> this.deleteMovie(movie._id)}>Delete</button>
+                        <a href="#"><button className="boton azul">View</button></a></div>
                     </div>
                 </div>
             </div>

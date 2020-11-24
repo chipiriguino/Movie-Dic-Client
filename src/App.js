@@ -19,6 +19,7 @@ import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
 import SearchBar from "./components/SearchBar";
 import SearchResult from "./components/SearchResult";
+import Credits from "./components/Credits";
 
 
 class App extends Component {
@@ -30,7 +31,7 @@ class App extends Component {
 
   paginaAnterior = () => {
     console.log('Anterior....')
-}
+  }
 
   paginaSiguiente = () => {
       console.log('Siguiente....')
@@ -55,6 +56,7 @@ class App extends Component {
           <PrivateRoute 
             user={this.props.user}
           path="/popular" component={MostPopular} />
+          <PrivateRoute path="/credits" component={Credits} />
           <PrivateRoute path="/create" component={AddMovie} />
           <PrivateRoute path="/random" component={Random} />
           <PrivateRoute path="/upload/:id" component={UpdateMovie} />
@@ -65,10 +67,7 @@ class App extends Component {
             />
           <PrivateRoute path="/details/:id" component={DetailsMovie} />
           <PrivateRoute 
-            path="/private"
-            // movies={this.state.movies}
-            component={Private} 
-            />
+            path="/private" component={Private} />
           <Route path="/" component={Home} />
         </Switch>
         </>

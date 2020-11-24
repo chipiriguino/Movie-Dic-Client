@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Paginacion = props => {
-    
+    console.log('PROPS PAGINACION', props)
     return(
         <div className="button-page">
             {/* <button onClick={props.paginaAnterior} type="button" classname="btn">Anterior &larr;</button>
