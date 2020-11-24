@@ -26,7 +26,7 @@ class MostPopular extends Component {
                 <h2>All Movies</h2>
                 {this.state.movies.map((allMovie) => {
                     return (
-                        <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.poster})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                        <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                             <div className="info_section">
                                 <div className="movie_header">
                                     <img className="locandina" src={allMovie.poster} />
@@ -41,7 +41,8 @@ class MostPopular extends Component {
                                 <div className="movie_social">
                                     <ul>
                                         <li><a href={`/upload/${allMovie._id}`} className="material-icons">Edit Movie</a></li>
-                                        <li><a href={`/details/${allMovie._id}`} className="material-icons">More Details</a></li>
+                                        <li><a href={`/details/${allMovie._id}`} >More Details</a></li>
+                                        <li><a onClick={()=> this.addToFavourite(allMovie._id)} className="material-icons">Add to fav</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -217,6 +217,12 @@
   }
   /* 48em = 768px */
   @media (min-width: 48em) {
+	.header {
+		background-color: #fff;
+		box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+		width: 100%;
+		height: 70px;
+	  }
 
 	.header ul {
 		margin: 0;
