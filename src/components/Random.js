@@ -31,8 +31,8 @@ class Random extends Component {
                                     <h1>{movie.movie_title}</h1>
                                     <ul class="movie-gen">
                                         <li>PG-13  /</li>
-                                        <li>2h 49min  /</li>
-                                        <li>Adventure, Drama, Sci-Fi,</li>
+                                        <li>{movie.duration}min  /</li>
+                                        <li>{movie.genres}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -54,7 +54,9 @@ class Random extends Component {
                             </div>
                             <div class="mr-grid actors-row">
                                 <div class="col1">
-                                    <p class="movie-actors">Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
+                                <p class="movie-actors">Director: {movie.director_name}</p>
+                                    <p class="movie-actors">Actors: {movie.actor_2_name}, {movie.actor_3_name}</p>
+                                    <p class="movie-actors">Language: {movie.language}</p>
                                 </div>
                             </div>
                         </div>

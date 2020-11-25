@@ -83,10 +83,12 @@ class AllMovies extends Component {
                 })}
                 <div>
                 </div>
+                <div className="btn-paginacion">
                 <Paginacion 
                         paginaAnterior= {this.paginaAnterior}
                         paginaSiguiente= {this.paginaSiguiente}
                     /> 
+                    </div>
             </div>
         );
     }

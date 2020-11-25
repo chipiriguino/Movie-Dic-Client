@@ -33,8 +33,8 @@ class DetailsMovie extends Component {
                                     <h1>{movie.movie_title}</h1>
                                     <ul class="movie-gen">
                                         <li>PG-13  /</li>
-                                        <li>2h 49min  /</li>
-                                        <li>Adventure, Drama, Sci-Fi,</li>
+                                        <li>{movie.duration}min  /</li>
+                                        <li>{movie.genres}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -51,13 +51,15 @@ class DetailsMovie extends Component {
                             </div>
                             <div class="mr-grid">
                                 <div class="col1">
-                                    <p class="movie-description">A group of elderly people are giving interviews about having lived in a climate of crop blight and constant dust reminiscent of The Great
-              Depression of the 1930's. The first one seen is an elderly woman stating her father was a farmer, but did not start out that way. </p>
+                                    <p class="movie-description">{movie.description} </p>
                                 </div>
                             </div>
                             <div class="mr-grid actors-row">
                                 <div class="col1">
-                                    <p class="movie-actors">Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
+                                <p class="movie-actors">Director: {movie.director_name}</p>
+                                    <p class="movie-actors">Actors: {movie.actor_2_name}, {movie.actor_3_name}</p>
+                                    <p class="movie-actors">Language: {movie.language}</p>
+                                    
                                 </div>
                             </div>
                         </div>

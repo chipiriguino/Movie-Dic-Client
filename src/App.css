@@ -1608,7 +1608,7 @@ RRSS */
 	 border-radius: 50px;
 }
  
-
+/* CREDITS */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 * {
   margin: 0;
@@ -1839,3 +1839,10 @@ footer {
 	}
   }
   /* END OF CSS OF FOOTER */
+
+  /* BTN PAGINACION */
+
+  /* .btn-paginacion{
+	  display: flex;
+	  
+  } */
