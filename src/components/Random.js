@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import service from '../api/service';
 // import { Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 class Random extends Component {
     state = {
@@ -39,7 +40,7 @@ class Random extends Component {
                             </div>
                             <div class="mr-grid summary-row">
                                 <div class="col2">
-                                    <h5>SUMMARY</h5>
+                                    <h5 className=" h5-details">SUMMARY</h5>
                                 </div>
                                 <div class="col2">
                                     <ul class="movie-likes">

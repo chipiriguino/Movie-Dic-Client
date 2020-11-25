@@ -42,7 +42,7 @@ class DetailsMovie extends Component {
                             </div>
                             <div class="mr-grid summary-row">
                                 <div class="col2">
-                                    <h5>SUMMARY</h5>
+                                    <h5 className="h5-details">SUMMARY</h5>
                                 </div>
                                 <div class="col2">
                                     <ul class="movie-likes">
@@ -69,7 +69,7 @@ class DetailsMovie extends Component {
                 </div>
                 <div className="align-delete">
                     <button className="boton rojo" onClick={() => this.deleteMovie(movie._id)}>Delete</button>
-                    <button className="boton azul"><a href="/credits">View</a></button>
+                    <a href="/credits"><button className="boton azul">View</button></a>
                 </div>
             </div>
         );
