@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Credits() {
     return (
-        <div>
+        <div className="container2">
             <div class='wrapper'>
 <div class='movie'>
 MOVIE DICK</div><br></br><br></br><br></br>
@@ -76,7 +76,7 @@ sin vosotros esto no hubiera sido posible:</div>
 <div class='name'>Cristina</div>
 <div class='name'>Samantha</div>
 
-</div>
+            </div>
         </div>
     )
 }

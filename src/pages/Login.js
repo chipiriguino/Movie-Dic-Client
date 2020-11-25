@@ -21,32 +21,32 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div class="container">
-        <div class="img">
+      <div className="container">
+        <div className="img">
           <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/82b8d8efd3b0ac6382b9d0d71a99c6cf9dcefa23/img/bg.svg" />
         </div>
-        <div class="login-content">
+        <div className="login-content">
           <form action="index.html" onSubmit={this.handleFormSubmit}>
             <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/82b8d8efd3b0ac6382b9d0d71a99c6cf9dcefa23/img/avatar.svg" />
-              <h2 class="title">Welcome</h2>
-              <div class="input-div one">
-                <div class="i">
-                  <i class="fas fa-user"></i>
+              <h2 className="title">LOG IN</h2>
+              <div className="input-div one">
+                <div className="i">
+                  <i className="fas fa-user"></i>
                 </div>
-                <div class="div">
-                  <input type="text" class="input" type="text" name="username" value={username} onChange={this.handleChange} placeholder="Username" />
+                <div className="div">
+                  <input type="text" className="input" type="text" name="username" value={username} onChange={this.handleChange} placeholder="Username" />
                 </div>
               </div>
-              <div class="input-div pass">
-                <div class="i">
-                  <i class="fas fa-lock"></i>
+              <div className="input-div pass">
+                <div className="i">
+                  <i className="fas fa-lock"></i>
                 </div>
-                <div class="div">
-                  <input type="password" class="input" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password" />
+                <div className="div">
+                  <input type="password" className="input" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password" />
                 </div>
               </div>
               <a href="/signup">You don't have an account? Sign In!!</a>
-              <input type="submit" class="btn" type="submit" value="Log in" />
+              <input type="submit" className="btn" type="submit" value="Log in" />
             </form>
             </div>
           </div>

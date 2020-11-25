@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service';
+import Button from 'react-bootstrap/Button';
 
 
 class DetailsMovie extends Component {
@@ -24,6 +25,7 @@ class DetailsMovie extends Component {
         const { movie } = this.state
         return (
             <div classname="background-details" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                <div className="padding-top-details"> </div>
                 <div class="cellphone-container">
                     <div class="movie2">
                         <div class="movie-img" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `cover`, backgroundRepeat: `no-repeat`}}></div>
@@ -51,7 +53,7 @@ class DetailsMovie extends Component {
                             </div>
                             <div class="mr-grid">
                                 <div class="col1">
-                                    <p class="movie-description">{movie.description} </p>
+                                    <p class="movie-description">{movie.description}</p>
                                 </div>
                             </div>
                             <div class="mr-grid actors-row">
@@ -64,6 +66,10 @@ class DetailsMovie extends Component {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="align-delete">
+                    <button className="boton rojo" onClick={() => this.deleteMovie(movie._id)}>Delete</button>
+                    <button className="boton azul"><a href="/credits">View</a></button>
                 </div>
             </div>
         );
