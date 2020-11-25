@@ -11,7 +11,7 @@ class Private extends Component {
     user: []
   }
   getProfileUser = async () => {
-    let res = await service.getProfileUser(this.props.user._id);
+    await service.getProfileUser(this.props.user._id);
     this.setState({ user: this.props.user })
   }
 

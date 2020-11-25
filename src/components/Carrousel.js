@@ -23,7 +23,7 @@ class Carrousel extends Component {
         <div className="title-carrousel">
           <h1 className="home-txt-carrousel">Most rated:</h1>
         </div>
-        {this.state.movies.map((allMovie) => {
+        {this.state.movies && this.state.movies.map((allMovie) => {
           return(
           <div className="tile" key={allMovie._id}>
             <div className="tile__media">

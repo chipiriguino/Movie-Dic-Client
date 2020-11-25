@@ -4,7 +4,7 @@ class Service {
   constructor() {
     this.service = axios.create({
       baseURL: process.env.REACT_APP_API_URL,
-      //withCredentials: true
+      withCredentials: true
     });
   }
 
@@ -12,7 +12,7 @@ class Service {
     console.log("file in service: ", theFile);
 
     try {
-      const res = await this.service.post("/upload", theFile);
+      const res = await this.service.post("/movies/upload", theFile);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -23,7 +23,7 @@ class Service {
     console.log("file in service: ", theFile);
 
     try {
-      const res = await this.service.post("/upload2", theFile);
+      const res = await this.service.post("/movies/upload2", theFile);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ class Service {
     console.log("new thing is: ", newMovie);
 
     try {
-      const res = await this.service.post("/create", newMovie);
+      const res = await this.service.post("/movies/create", newMovie);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ class Service {
     console.log("updated movie is: ", updatedMovie);
 
     try {
-      const res = await this.service.post("/upload/" + id, {updatedMovie});
+      const res = await this.service.post("/movies/upload/" + id, {updatedMovie});
       return res.data;
     } catch (error) {
       console.log(error);
@@ -54,7 +54,7 @@ class Service {
 
   getMostPopular = async (pagina= 0) => {
     try {
-      const res = await this.service.get(`/popular?page=` + pagina);
+      const res = await this.service.get(`/movies/popular?page=` + pagina);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -63,7 +63,7 @@ class Service {
 
   getAllMovies = async (pagina= 0) => {
     try {
-      const res = await this.service.get(`/allmovies?page=` + pagina );
+      const res = await this.service.get(`/movies/allmovies?page=` + pagina );
       return res.data;
     } catch (error) {
       console.log(error);
@@ -72,7 +72,7 @@ class Service {
 
   searchMovie = async (query) => {
     try {
-      const res = await this.service.get("/search?find=" + query);
+      const res = await this.service.get("/movies/search?find=" + query);
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -92,7 +92,7 @@ class Service {
 
   getRandom = async () => {
     try {
-      const res = await this.service.get("/random");
+      const res = await this.service.get("/movies/random");
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -102,7 +102,7 @@ class Service {
 
   getDetailsMovie = async (id) => {
     try {
-      const res = await this.service.get("/details/"+ id);
+      const res = await this.service.get("/movies/details/"+ id);
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -112,7 +112,7 @@ class Service {
 
   deleteMovie = async (id) => {
     try {
-      const res = await this.service.post("/delete/"+ id);
+      const res = await this.service.post("/movies/delete/"+ id);
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -122,7 +122,7 @@ class Service {
 
   getProfileUser = async (id) => {
     try {
-      const res = await this.service.get("/private");
+      const res = await this.service.get("/auth/private");
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -132,7 +132,7 @@ class Service {
 
   getFavId = async (id) => {
     try {
-      const res = await this.service.get(`/private/favorite/${id}`);
+      const res = await this.service.get(`/movies/private/favorite/${id}`);
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -142,7 +142,7 @@ class Service {
 
   addToFavourite = async (movieId, userId) => {
     try {
-      const res = await this.service.post("/private/favorite", {movieId, userId});
+      const res = await this.service.post("/movies/private/favorite", {movieId, userId});
       console.log('AÑADIDO A FAVORITO? CONSOLE LOG RES.DATA DE SERVICE CLIENT', res.data);
       return res.data;
     } catch (error) {

@@ -29,10 +29,8 @@ class MostPopular extends Component {
 
     addToFavourite = async (movieId) => {
         let userId = this.props.user._id;
-        console.log('USERID DE MOSTPOPULAAARRRRRR', userId)
         let res = await service.addToFavourite(movieId, userId);
         this.setState({ favorite: res })
-        console.log('FAVORITO STATE MOSTPOPULAR!!!!', this.state)
     }
 
     componentDidMount = () => {
@@ -46,7 +44,7 @@ class MostPopular extends Component {
     render() {
         return(
             <div className="container2">
-                {this.state.movies.map((eachMovie) => {
+                {this.state.movies && this.state.movies.map((eachMovie) => {
                     return(
                         <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat` }}>
                             <div className="info_section">

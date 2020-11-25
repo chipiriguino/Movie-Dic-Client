@@ -9,7 +9,7 @@ class Favorites extends Component {
     }
 
     getProfileUser = async () => {
-        let res = await service.getProfileUser(this.props.user);
+        await service.getProfileUser(this.props.user);
         this.setState({ user: this.props.user })
         console.log("THIS STATE USER ID", this.state.user)
     }
@@ -29,7 +29,7 @@ class Favorites extends Component {
         return (
             <div className="row__inner">
 
-                {this.state.favorites.map((eachFav) => {
+                {this.state.favorites && this.state.favorites.map((eachFav) => {
                     return (
                         <div className="tile" key={eachFav._id}>
                             <div className="tile__media">
