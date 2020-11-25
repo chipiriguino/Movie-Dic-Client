@@ -16,7 +16,8 @@ class AddMovie extends Component {
     imdb_score:  "",
     actor_1_name:  "",
     actor_2_name:  "",
-    actor_3_name:  ""
+    actor_3_name:  "",
+    fan_art: ""
   };
 
   handleChange = (e) => {
@@ -44,6 +45,26 @@ class AddMovie extends Component {
     }
   };
 
+  handleFileUpload2 = async (e) => {
+    console.log("the file to be uploaded is: ", e.target.files[0]);
+
+    // creamos un nuevo objeto FormData
+    const uploadData = new FormData();
+
+    // poster (este nombre tiene que ser igual que en el modelo, ya que usaremos req.body como argumento del método .create() cuando creemos una nueva movie en la ruta POST '/api/movies/create')
+    uploadData.append("fan_art", e.target.files[0]);
+
+    try {
+      const res = await service.handleUpload2(uploadData);
+
+      console.log("response is", res);
+
+      this.setState({ fan_art: res.secure_url });
+    } catch (error) {
+      console.log("Error while uploading the file: ", error);
+    }
+  };
+
   handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -65,7 +86,8 @@ class AddMovie extends Component {
         imdb_score:  "",
         actor_1_name:  "",
         actor_2_name:  "",
-        actor_3_name:  ""
+        actor_3_name:  "",
+        fan_art: ""
       });
 
       // this.props.getMovies()
@@ -197,7 +219,11 @@ class AddMovie extends Component {
             onChange={(e) => this.handleChange(e)}
           />
 
+          <label htmlFor="">Select poster:</label>
           <input type="file" onChange={(e) => this.handleFileUpload(e)} />
+
+          <label htmlFor="">Select fan art:</label>
+          <input type="file" onChange={(e) => this.handleFileUpload2(e)} />
           <button className="boton azul" type="submit">Save new movie</button>
         </form>
       </div>

@@ -19,6 +19,17 @@ class Service {
     }
   };
 
+  handleUpload2 = async (theFile) => {
+    console.log("file in service: ", theFile);
+
+    try {
+      const res = await this.service.post("/upload2", theFile);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   saveNewMovie = async (newMovie) => {
     console.log("new thing is: ", newMovie);
 
@@ -41,9 +52,27 @@ class Service {
     }
   };
 
-  getMostPopular = async () => {
+  getMostPopular = async (pagina= 0) => {
     try {
-      const res = await this.service.get("/popular");
+      const res = await this.service.get(`/popular?page=` + pagina);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getAllMovies = async (pagina= 0) => {
+    try {
+      const res = await this.service.get(`/allmovies?page=` + pagina );
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  searchMovie = async (query) => {
+    try {
+      const res = await this.service.get("/search?find=" + query);
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -51,7 +80,7 @@ class Service {
     }
   };
 
-  getAllMovies = async () => {
+  getDBmovies = async () => {
     try {
       const res = await this.service.get("/movies");
       console.log(res.data);
@@ -59,7 +88,7 @@ class Service {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; 
 
   getRandom = async () => {
     try {
@@ -130,8 +159,28 @@ class Service {
       console.log(error);
     }
   };
-}
 
+
+getCarrouselMovies2 = async () => {
+  try {
+    const res = await this.service.get("/movies/carrousel2");
+    console.log(res.data);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+getCarrouselMovies3 = async () => {
+  try {
+    const res = await this.service.get("/movies/carrousel3");
+    console.log(res.data);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+}
 
 const axiosRequestFunctions = new Service();
 
