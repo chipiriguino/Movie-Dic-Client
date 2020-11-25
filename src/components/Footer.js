@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="footer-distributed">
             <div className="footer-left">
                 <h3>Movie<span>Dic</span></h3>
-                <p className="footer-company-name">José Blasco & Carlos Curtido&reg; 2020</p>
+                <p className="footer-company-name">José Luis Blasco & Carlos Curtido&reg; 2020</p>
             </div>
 
             <div className="footer-center">
