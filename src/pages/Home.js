@@ -37,8 +37,11 @@ class Home extends Component {
 				{this.state.filterMovies && this.state.filterMovies.map((oneMovie, index) => {
 					return <SearchResult key={index} theMovie={oneMovie} />
 				})}
+				<h1 className="home-txt-carrousel">Most rated:</h1>
 				<Carrousel />
+				<h1 className="home-txt-carrousel">Most popular:</h1>
 				<Carrousel2 />
+				<h1 className="home-txt-carrousel">Most voted:</h1>
 				<Carrousel3 />
 			</div>
 		)

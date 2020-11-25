@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service';
-import {withAuth} from '../lib/AuthProvider';
+import { withAuth } from '../lib/AuthProvider';
 import Paginacion from './Paginacion';
 
 class MostPopular extends Component {
@@ -16,14 +16,14 @@ class MostPopular extends Component {
 
     paginaAnterior = () => {
         let pagina = this.state.pagina
-        if(pagina === 0) return null;
-        pagina --;
+        if (pagina === 0) return null;
+        pagina--;
         this.setState({ pagina: pagina })
-      }
-    
+    }
+
     paginaSiguiente = () => {
         let pagina = this.state.pagina
-        pagina ++;
+        pagina++;
         this.setState({ pagina: pagina })
     }
 
@@ -45,18 +45,14 @@ class MostPopular extends Component {
 
     render() {
         return (
-        <div className="container2">
+            <div className="container2">
                 <h2>MOST POPULAR PAGE</h2>
-                <Paginacion 
-                        paginaAnterior= {this.paginaAnterior}
-                        paginaSiguiente= {this.paginaSiguiente}
-                    />
-            {this.state.movies.map((eachMovie) => {
-                return (
-                    <div key={eachMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                {this.state.movies.map((eachMovie) => {
+                    return (
+                        <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat` }}>
                             <div className="info_section">
                                 <div className="movie_header">
-                                    <img className="locandina" src={eachMovie.poster} alt={eachMovie.movie_title}/>
+                                    <img className="locandina" src={eachMovie.poster} alt={eachMovie.movie_title} />
                                     <h4>{eachMovie.movie_title}</h4>
                                     <h4>{eachMovie.title_year}, {eachMovie.director_name}</h4>
                                     <span className="minutes">{eachMovie.duration} min</span>
@@ -69,15 +65,20 @@ class MostPopular extends Component {
                                     <ul>
                                         <li><a href={`/upload/${eachMovie._id}`} className="material-icons">Update movie</a></li>
                                         <li><a href={`/details/${eachMovie._id}`} className="material-icons">More Details</a></li>
-                                       <li><a onClick={()=> this.addToFavourite(eachMovie._id)} className="material-fav">Add to fav</a></li>
+                                        <li><a onClick={() => this.addToFavourite(eachMovie._id)} className="material-fav">Add to fav</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className="blur_back bright_back"></div>
                         </div>
                     );
                 })}
-        </div>
+                <div className="align-delete">
+                    <Paginacion
+                        paginaAnterior={this.paginaAnterior}
+                        paginaSiguiente={this.paginaSiguiente}
+                    />
+                </div>
+            </div>
         );
     }
 }

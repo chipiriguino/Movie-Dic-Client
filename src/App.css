@@ -1315,11 +1315,15 @@ RRSS */
   width: 100%;
 }
 .row__inner {
-  transition: 550ms transform;
-  font-size: 18px;
-  white-space: wrap;
-  padding-bottom: 10px;
-  margin: 20px;
+	transition: 550ms transform;
+	font-size: 18px;
+	white-space: wrap;
+	padding-bottom: 10px;
+	margin: 20px 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .tile {
   position: relative;
@@ -1366,8 +1370,15 @@ RRSS */
 .tile__title {
   position: absolute;
   bottom: 0;
-  padding: 10px;
+  padding: 10px 50px;
 }
+
+.tile_title a{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 .row__inner:hover {
   transform: translate3d(20px, 5, 50);
 }

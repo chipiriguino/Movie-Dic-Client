@@ -20,7 +20,6 @@ class Carrousel extends Component {
   render() {
     return (
       <div className="row__inner">
-        <h1 className="home-txt-carrousel">Most rated:</h1>
         {this.state.movies.map((allMovie) => {
           return(
           <div className="tile" key={allMovie._id}>

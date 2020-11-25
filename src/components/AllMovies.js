@@ -81,12 +81,12 @@ class AllMovies extends Component {
                         </div>
                     );
                 })}
-                <div>
-                </div>
-                <Paginacion 
-                        paginaAnterior= {this.paginaAnterior}
-                        paginaSiguiente= {this.paginaSiguiente}
-                    /> 
+                <div className="align-delete">
+                    <Paginacion
+                        paginaAnterior={this.paginaAnterior}
+                        paginaSiguiente={this.paginaSiguiente}
+                    />
+                </div> 
             </div>
         );
     }
