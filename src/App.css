@@ -1634,14 +1634,14 @@ RRSS */
 }
 
 .wrapper {
-	position: relative;
+	position: absolute;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
   top: 100%;
   left: 50%;
   width: 100%;
-  padding: 2px;
+  margin-left: -200px;
   font: 300 30px/1 'Open Sans Condensed', sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -1649,7 +1649,7 @@ RRSS */
   animation: 60s credits linear infinite;
 }
 
-.movie {
+.movie1 {
   margin-bottom: 50px;
   font-size: 50px;
 }

@@ -4,12 +4,14 @@ export default function Credits() {
     return (
         <div className="container2">
             <div class='wrapper'>
-<div class='movie'>
-MOVIE DICK</div><br></br><br></br><br></br>
+<div class='movie1'>
+MOVIE DICK</div>
 <div class='job'>
 Directed By : </div>
 <div class='name'>
-CARLOS CURTIDO AND JOSE LUIS BLASCO</div>
+CARLOS CURTIDO</div>
+<div class='name'>
+ AND JOSE LUIS BLASCO</div>
 <div class='job'>
 Code master:</div>
 <div class='name'>
