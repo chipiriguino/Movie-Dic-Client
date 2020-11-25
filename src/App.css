@@ -1674,20 +1674,6 @@ RRSS */
 }
 
 
-/* MEDIA QUERY FORMS */
-@media (min-width: 800px ){
-	.edit-form{
-		width: 280%;
-	}
-	.edit-form input{
-		padding: 30px;
-	}
-	
-	.edit-form h2{
-		font-size: 50px;
-	}
-}
-
 /* BTN FAV */
 .material-fav{
 	color: gold;
