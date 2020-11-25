@@ -268,7 +268,7 @@
 	margin: 0;
 	font-family: Helvetica, sans-serif;
 	background-color: #F4F4F4;
-	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://www.desktopbackground.org/download/o/2012/08/22/440874_silent-hill-movie-dark-house-wallpapers-horror-movies-wallpapers_1024x768_h.jpg");
+	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://cdn.hipwallpaper.com/i/55/60/7wXdiD.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: repeat;
@@ -332,7 +332,7 @@ form{
 
 .login-content h2{
 	margin: 15px 0;
-	color: #333;
+	color: rgb(255, 255, 255);
 	text-transform: uppercase;
 	font-size: 2.9rem;
 }
@@ -371,7 +371,7 @@ form{
 	left: 10px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #999;
+	color: rgb(255, 255, 255);
 	font-size: 18px;
 	transition: .3s;
 }
@@ -1381,7 +1381,21 @@ RRSS */
 
 /* DETAILS PAGE */
 
- .background-details {
+.padding-top-details{
+	width: 100%;
+	height: 50px;
+}
+
+.align-delete{
+	width: 100%;
+	margin: auto;
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.background-details {
 	 padding-bottom: 5px;
 }
  .container2 {
@@ -1433,7 +1447,7 @@ RRSS */
 	/* IE6-9 */
 	 background-size: cover;
 	 z-index: 1 !important;
-	 height: 660px;
+	 /* height: 660px; */
 	 display: block;
 	 border-radius: 4px;
 }
@@ -1617,11 +1631,14 @@ RRSS */
 }
 
 .wrapper {
-  position: absolute;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
   top: 100%;
   left: 50%;
-  width: 390px;
-  margin-left: -200px;
+  width: 100%;
+  padding: 2px;
   font: 300 30px/1 'Open Sans Condensed', sans-serif;
   text-align: center;
   text-transform: uppercase;

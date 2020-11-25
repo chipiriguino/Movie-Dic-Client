@@ -22,6 +22,7 @@ class Random extends Component {
 
         return (
             <div classname="background-details" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                <div className="padding-top-details"> </div>
                 <div class="cellphone-container">
                     <div class="movie2">
                         <div class="movie-img" style={{backgroundImage: `url(${this.state.movies.poster})`, backgroundSize: `cover`, backgroundRepeat: `no-repeat`}}></div>
@@ -60,9 +61,12 @@ class Random extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="button-random">
+                <div className="align-delete">
                 <button className="boton verde" onClick={() => this.getRandom(movie._id)}>Another please!</button>
                 </div>
+                {/* <div className="button-random">
+                <button className="boton verde" onClick={() => this.getRandom(movie._id)}>Another please!</button>
+                </div> */}
             </div>
         );
     }
