@@ -80,15 +80,15 @@ class Service {
     }
   };
 
-  getDBmovies = async () => {
-    try {
-      const res = await this.service.get("/movies");
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }; 
+  // getDBmovies = async () => {
+  //   try {
+  //     const res = await this.service.get("/movies");
+  //     console.log(res.data);
+  //     return res.data;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }; 
 
   getRandom = async () => {
     try {
