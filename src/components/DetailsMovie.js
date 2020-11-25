@@ -34,20 +34,19 @@ class DetailsMovie extends Component {
                                 <div class="coll1">
                                     <h1>{movie.movie_title}</h1>
                                     <ul class="movie-gen">
-                                        <li>PG-13  /</li>
-                                        <li>{movie.duration}min  /</li>
+                                        <li>{movie.content_rating}  /</li>
+                                        <li>{movie.duration} min  /</li>
                                         <li>{movie.genres}</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="mr-grid summary-row">
                                 <div class="col2">
-                                    <h5 className="h5-details">SUMMARY</h5>
+                                    <h5 className=" h5-details">SUMMARY</h5>
                                 </div>
                                 <div class="col2">
                                     <ul class="movie-likes">
-                                        <li><i class="material-icons">&#xE813;</i>124</li>
-                                        <li><i class="material-icons">&#xE813;</i>3</li>
+                                        <li>Likes: {movie.num_voted_users}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -59,17 +58,16 @@ class DetailsMovie extends Component {
                             <div class="mr-grid actors-row">
                                 <div class="col1">
                                 <p class="movie-actors">Director: {movie.director_name}</p>
-                                    <p class="movie-actors">Actors: {movie.actor_2_name}, {movie.actor_3_name}</p>
-                                    <p class="movie-actors">Language: {movie.language}</p>
-                                    
+                                    <p class="movie-actors">Actors: {movie.actor_1_name}, {movie.actor_2_name}, {movie.actor_3_name}</p>
+                                    <p class="movie-actors">Imdb Score: {movie.imdb_score}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="align-delete">
-                    <button className="boton rojo" onClick={() => this.deleteMovie(movie._id)}>Delete</button>
-                    <a href="/credits"><button className="boton azul">View</button></a>
+                    <Button onClick={() => this.deleteMovie(movie._id)} className="primary" variant="primary" size="sm" active>Delete</Button>
+                    <Button className="primary" variant="primary" size="sm" active><a href="/credits">View...</a></Button>
                 </div>
             </div>
         );

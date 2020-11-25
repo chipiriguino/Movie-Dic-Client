@@ -3,6 +3,23 @@
   padding: 0;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+    width: 214px;
+	margin: 10px auto;
+}
+
+@media(max-width: 600px){
+	.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+		color: #fff;
+		background-color: #0062cc;
+		border-color: #005cbf;
+		width: 153px;
+		margin: 10px auto;
+	}
+}
 
 .edit-form {
 	color: white;
@@ -10,18 +27,33 @@
 	padding: 10px;
 }
 
-.edit-form input{
+.edit-form label{
+	margin: 10px;
+}
+
+.edit-form .input{
 	width: 100%;
+	max-width: 800px;
 	border: unset;
-	border-bottom: 2px solid red;
-	border-radius: 8px;
-	color: #454747;
+	border-bottom: 2px solid rgb(253, 253, 253);
+	color: #ffffff;
+	background-color: #32be8f00;
 	height: 30px;
 }
 
 .edit-form textarea{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: space-around;
 	width: 94%;
 	margin: 10px;
+	color: white;
+	background-color: #32be8f00;
+	border: none;
+	border-bottom: 2px solid white;
 }
 
 .edit-form h2 {
@@ -112,18 +144,18 @@
 	max-width: 600px;
 	height: 39px;
 	border-radius: 10px;
-	border: 1px solid gray;
-	margin: 20px auto;
+	border: 2px solid rgb(54, 54, 180);
+	margin: 40px auto;
 	display: flex;
 	align-items: center;
-	box-shadow: rgb(184, 12, 12);
+	padding: 2px 10px;
 }
 
 /* HOME */
 
 .home-section{
 	width: 100%;
-	height: 200px;
+	height: 300px;
 	background-image: url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/2lBOQK06tltt8SQaswgb8d657Mv.jpg');
 	background-position: center;
 	background-size: cover;
@@ -133,6 +165,8 @@
 
 .home-section > h1,h3 {
 	-webkit-text-fill-color: white;
+	text-align: center;
+	padding: 10px;
 }
 
 /* NAVBAR */
@@ -249,7 +283,7 @@
 	  }
 	.header li {
 	  float: left;
-	}
+	} 
 	.header li a {
 	  padding: 20px 30px;
 	}
@@ -733,7 +767,7 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 .movie_card .info_section .movie_social {
 	height: 10%;
 	padding-left: 15px;
-	padding-bottom: 20px;
+	padding-bottom: 5px;
 }
 .movie_card .info_section .movie_social ul {
 	list-style: none;
@@ -771,6 +805,7 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 
 .coll1 h1{
 	color: white;
+	text-align: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -824,6 +859,14 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 #tomb:hover {
 	box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
 }
+
+@media(min-width: 750px){
+	#bright {
+		box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+		height: 452px;
+	}
+}
+
 /* 
 RRSS */
 
@@ -922,6 +965,13 @@ RRSS */
 
 
 /* STYLE CARROUSEL HOME */
+
+.title-carrousel{
+	width: 100%;
+	height: 80px;
+}
+
+
 /* CARDS MOST POPULAR */
 
  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
@@ -1315,11 +1365,15 @@ RRSS */
   width: 100%;
 }
 .row__inner {
-  transition: 550ms transform;
-  font-size: 18px;
-  white-space: wrap;
-  padding-bottom: 10px;
-  margin: 20px;
+	transition: 550ms transform;
+	font-size: 18px;
+	white-space: wrap;
+	padding-bottom: 10px;
+	margin: 20px 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .tile {
   position: relative;
@@ -1366,8 +1420,15 @@ RRSS */
 .tile__title {
   position: absolute;
   bottom: 0;
-  padding: 10px;
+  padding: 10px 50px;
 }
+
+.tile_title a{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 .row__inner:hover {
   transform: translate3d(20px, 5, 50);
 }
@@ -1396,6 +1457,23 @@ RRSS */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+@media(max-width:365px){
+	.align-delete{
+		width: 100%;
+		margin: 5px auto;
+		padding: 5px 100px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+
+.primary a{
+	padding: 5px 62px;
+	color: white;
+	padding: auto;
 }
 
 .background-details {
@@ -1672,7 +1750,6 @@ RRSS */
     top: -500%;
   }
 }
-
 
 /* BTN FAV */
 .material-fav{

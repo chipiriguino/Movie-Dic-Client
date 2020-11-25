@@ -19,8 +19,6 @@ import DetailsMovie from "./components/DetailsMovie";
 import Credits from "./components/Credits";
 import Footer from "./components/Footer";
 
-
-
 class App extends Component {
   state = {
     movies: [],

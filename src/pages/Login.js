@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-
+import {fas} from '@fortawesome/fontawesome-free';
 
 class Login extends Component {
   state = { username: "", password: "" };
@@ -31,7 +31,6 @@ class Login extends Component {
               <h2 className="title">LOG IN</h2>
               <div className="input-div one">
                 <div className="i">
-                  <i className="fas fa-user"></i>
                 </div>
                 <div className="div">
                   <input type="text" className="input" type="text" name="username" value={username} onChange={this.handleChange} placeholder="Username" />
@@ -39,7 +38,6 @@ class Login extends Component {
               </div>
               <div className="input-div pass">
                 <div className="i">
-                  <i className="fas fa-lock"></i>
                 </div>
                 <div className="div">
                   <input type="password" className="input" type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password" />

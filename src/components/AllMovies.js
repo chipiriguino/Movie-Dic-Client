@@ -81,17 +81,15 @@ class AllMovies extends Component {
                         </div>
                     );
                 })}
-                <div>
-                </div>
-                <div className="btn-paginacion">
-                <Paginacion 
-                        paginaAnterior= {this.paginaAnterior}
-                        paginaSiguiente= {this.paginaSiguiente}
-                    /> 
-                    </div>
+                <div className="align-delete">
+                    <Paginacion
+                        paginaAnterior={this.paginaAnterior}
+                        paginaSiguiente={this.paginaSiguiente}
+                    />
+                </div> 
             </div>
         );
     }
 }
 
-export default AllMovies;
+export default withAuth(AllMovies);
