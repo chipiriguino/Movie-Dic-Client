@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import service from "../api/service";
-import Footer from "./Footer";
 
 class UpdateMovie extends Component {
   state = {
@@ -49,7 +48,7 @@ componentDidMount = () => {
 
   handleFileUpload = async (e) => {
     console.log("the file to be uploaded is: ", );
-    let poster = e.target.files[0]
+    // let poster = e.target.files[0]
     // creamos un nuevo objeto FormData
     const uploadData = new FormData();
     // poster (este nombre tiene que ser igual que en el modelo, ya que usaremos req.body como argumento del método .create() cuando creemos una nueva movie en la ruta POST '/api/movies/create')
@@ -85,10 +84,8 @@ componentDidMount = () => {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await service.updatedMovie(this.state, this.props.match.params.id);
-
+      await service.updatedMovie(this.state, this.props.match.params.id);
       this.setState({
         movie_title: "",
         description: "",
@@ -107,7 +104,6 @@ componentDidMount = () => {
         fan_art: ""
       });
 
-      // this.props.getMovies()
     } catch (error) {
       console.log("Error while adding the movie: ", error);
     }

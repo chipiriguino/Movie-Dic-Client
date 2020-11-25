@@ -28,16 +28,14 @@ class App extends Component {
 
 
   render() {
-    console.log('STATE PAGINA DESPUÉS', this.state.pagina)
     return (
-      // Envolvemos los componentes con AuthProvider
       <div className="appjs">
         <AuthProvider>
           <>
             <Navbar />
             <Switch>
-              <AnonRoute path="/signup" component={Signup} /> {/* UPDATE <Route> to <AnonRoute> */}
-              <AnonRoute path="/login" component={Login} />	{/* UPDATE <Route> to <AnonRoute> */}
+              <AnonRoute path="/signup" component={Signup} />
+              <AnonRoute path="/login" component={Login} />	
               <PrivateRoute
                 user={this.props.user}
                 path="/popular" component={MostPopular} />
@@ -58,7 +56,6 @@ class App extends Component {
         </AuthProvider>
           <Footer/>
       </div>
-      // Envolvemos los componentes con AuthProvider
     );
   }
 }

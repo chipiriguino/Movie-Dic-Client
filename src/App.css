@@ -867,6 +867,22 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 	}
 }
 
+.link-button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	text-decoration: underline;
+	display: inline;
+	margin: 0;
+	color: rgb(52, 99, 230);
+	padding: 0;
+  }
+  
+  .link-button:hover,
+  .link-button:focus {
+  text-decoration: none;
+  }
+
 /* 
 RRSS */
 

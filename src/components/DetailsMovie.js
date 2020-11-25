@@ -24,42 +24,42 @@ class DetailsMovie extends Component {
     render() {
         const { movie } = this.state
         return (
-            <div classname="background-details" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+            <div className="background-details" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
                 <div className="padding-top-details"> </div>
-                <div class="cellphone-container">
-                    <div class="movie2">
-                        <div class="movie-img" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `cover`, backgroundRepeat: `no-repeat`}}></div>
-                        <div class="text-movie-cont">
-                            <div class="mr-grid">
-                                <div class="coll1">
+                <div className="cellphone-container">
+                    <div className="movie2">
+                        <div className="movie-img" style={{backgroundImage: `url(${movie.poster})`, backgroundSize: `cover`, backgroundRepeat: `no-repeat`}}></div>
+                        <div className="text-movie-cont">
+                            <div className="mr-grid">
+                                <div className="coll1">
                                     <h1>{movie.movie_title}</h1>
-                                    <ul class="movie-gen">
+                                    <ul className="movie-gen">
                                         <li>{movie.content_rating}  /</li>
                                         <li>{movie.duration} min  /</li>
                                         <li>{movie.genres}</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mr-grid summary-row">
-                                <div class="col2">
+                            <div className="mr-grid summary-row">
+                                <div className="col2">
                                     <h5 className=" h5-details">SUMMARY</h5>
                                 </div>
-                                <div class="col2">
-                                    <ul class="movie-likes">
+                                <div className="col2">
+                                    <ul className="movie-likes">
                                         <li>Likes: {movie.num_voted_users}</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mr-grid">
-                                <div class="col1">
-                                    <p class="movie-description">{movie.description}</p>
+                            <div className="mr-grid">
+                                <div className="col1">
+                                    <p className="movie-description">{movie.description}</p>
                                 </div>
                             </div>
-                            <div class="mr-grid actors-row">
-                                <div class="col1">
-                                <p class="movie-actors">Director: {movie.director_name}</p>
-                                    <p class="movie-actors">Actors: {movie.actor_1_name}, {movie.actor_2_name}, {movie.actor_3_name}</p>
-                                    <p class="movie-actors">Imdb Score: {movie.imdb_score}</p>
+                            <div className="mr-grid actors-row">
+                                <div className="col1">
+                                <p className="movie-actors">Director: {movie.director_name}</p>
+                                    <p className="movie-actors">Actors: {movie.actor_1_name}, {movie.actor_2_name}, {movie.actor_3_name}</p>
+                                    <p className="movie-actors">Imdb Score: {movie.imdb_score}</p>
                                 </div>
                             </div>
                         </div>

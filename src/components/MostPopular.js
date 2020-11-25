@@ -44,12 +44,11 @@ class MostPopular extends Component {
     }
 
     render() {
-        return (
+        return(
             <div className="container2">
-                <h2>MOST POPULAR PAGE</h2>
                 {this.state.movies.map((eachMovie) => {
-                    return (
-                        <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat` }}>
+                    return(
+                        <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat` }}>
                             <div className="info_section">
                                 <div className="movie_header">
                                     <img className="locandina" src={eachMovie.poster} alt={eachMovie.movie_title} />
@@ -65,13 +64,13 @@ class MostPopular extends Component {
                                     <ul>
                                         <li><a href={`/upload/${eachMovie._id}`} className="material-icons">Update movie</a></li>
                                         <li><a href={`/details/${eachMovie._id}`} className="material-icons">More Details</a></li>
-                                        <li><a onClick={() => this.addToFavourite(eachMovie._id)} className="material-fav">Add to fav</a></li>
+                                        <li><button onClick={() => this.addToFavourite(eachMovie._id)} className="link-button" type="button">Add to fav</button></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     );
-                })}
+                })};
                 <div className="align-delete">
                     <Paginacion
                         paginaAnterior={this.paginaAnterior}

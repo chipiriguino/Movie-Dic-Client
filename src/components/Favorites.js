@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import service from '../api/service';
-import { withAuth } from '../lib/AuthProvider'
 
 class Favorites extends Component {
     state = {
@@ -12,7 +11,7 @@ class Favorites extends Component {
     getProfileUser = async () => {
         let res = await service.getProfileUser(this.props.user);
         this.setState({ user: this.props.user })
-        // console.log("THIS STATE USER ID", this.state.user)
+        console.log("THIS STATE USER ID", this.state.user)
     }
 
     getFavId = async () => {
@@ -27,10 +26,9 @@ class Favorites extends Component {
 
 
     render() {
-        console.log('ARRAY FAVORITEEEEEEEEEEEEEEEEESSSSS', this.state.favorites)
         return (
             <div className="row__inner">
-                <br/>
+
                 {this.state.favorites.map((eachFav) => {
                     return (
                         <div className="tile" key={eachFav._id}>
