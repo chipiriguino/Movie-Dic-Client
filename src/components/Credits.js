@@ -5,7 +5,7 @@ export default function Credits() {
         <div className="container2">
             <div class='wrapper'>
 <div class='movie1'>
-MOVIE DICK</div>
+MOVIE DIC</div>
 <div class='job'>
 Directed By : </div>
 <div class='name'>
