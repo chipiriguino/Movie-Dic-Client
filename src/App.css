@@ -3,6 +3,23 @@
   padding: 0;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+    width: 214px;
+	margin: 10px auto;
+}
+
+@media(max-width: 600px){
+	.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+		color: #fff;
+		background-color: #0062cc;
+		border-color: #005cbf;
+		width: 153px;
+		margin: 10px auto;
+	}
+}
 
 .edit-form {
 	color: white;
@@ -10,18 +27,33 @@
 	padding: 10px;
 }
 
-.edit-form input{
+.edit-form label{
+	margin: 10px;
+}
+
+.edit-form .input{
 	width: 100%;
+	max-width: 800px;
 	border: unset;
-	border-bottom: 2px solid red;
-	border-radius: 8px;
-	color: #454747;
+	border-bottom: 2px solid rgb(253, 253, 253);
+	color: #ffffff;
+	background-color: #32be8f00;
 	height: 30px;
 }
 
 .edit-form textarea{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: space-around;
 	width: 94%;
 	margin: 10px;
+	color: white;
+	background-color: #32be8f00;
+	border: none;
+	border-bottom: 2px solid white;
 }
 
 .edit-form h2 {
@@ -1391,6 +1423,9 @@ RRSS */
 }
 
 /* DETAILS PAGE */
+.h5-details{
+	color: white;
+}
 
 .padding-top-details{
 	width: 100%;
@@ -1404,6 +1439,23 @@ RRSS */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+@media(max-width:365px){
+	.align-delete{
+		width: 100%;
+		margin: 5px auto;
+		padding: 5px 100px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+
+.primary a{
+	padding: 5px 62px;
+	color: white;
+	padding: auto;
 }
 
 .background-details {
@@ -1633,7 +1685,7 @@ RRSS */
 	 border-radius: 50px;
 }
  
-
+/* CREDITS */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 * {
   margin: 0;
@@ -1642,14 +1694,14 @@ RRSS */
 }
 
 .wrapper {
-	position: relative;
+	position: absolute;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
   top: 100%;
   left: 50%;
   width: 100%;
-  padding: 2px;
+  margin-left: -200px;
   font: 300 30px/1 'Open Sans Condensed', sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -1657,7 +1709,7 @@ RRSS */
   animation: 60s credits linear infinite;
 }
 
-.movie {
+.movie1 {
   margin-bottom: 50px;
   font-size: 50px;
 }
@@ -1679,21 +1731,6 @@ RRSS */
   100% {
     top: -500%;
   }
-}
-
-
-/* MEDIA QUERY FORMS */
-@media (min-width: 800px ){
-	.edit-form{
-		width: 280%;
-	}
-	.edit-form input{
-		padding: 30px;
-	}
-	
-	.edit-form h2{
-		font-size: 50px;
-	}
 }
 
 /* BTN FAV */
@@ -1867,3 +1904,11 @@ footer {
 	}
   }
   /* END OF CSS OF FOOTER */
+
+  /* BTN PAGINACION */
+
+  /* .btn-paginacion{
+	  display: flex;
+	  
+  } */
+  

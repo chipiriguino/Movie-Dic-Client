@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import service from "../api/service";
+import Button from 'react-bootstrap/Button';
+
 
 class AddMovie extends Component {
   state = {
@@ -103,6 +105,7 @@ class AddMovie extends Component {
           <h2>New Movie</h2>
           <label htmlFor="">Name</label>
           <input
+            className="input"
             type="text"
             name="movie_title"
             value={this.state.movie_title}
@@ -111,6 +114,7 @@ class AddMovie extends Component {
           
           <label htmlFor="">Genre</label>
           <input
+            className="input"
             type="text"
             name="genres"
             value={this.state.genres}
@@ -120,6 +124,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">Director Name: </label>
           <input
+            className="input"
             type="text"
             name="director_name"
             value={this.state.director_name}
@@ -140,6 +145,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">Rating: </label>
           <input
+            className="input"
             type="text"
             name="content_rating"
             value={this.state.content_rating}
@@ -149,6 +155,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">Country: </label>
           <input
+            className="input"
             type="text"
             name="country"
             value={this.state.country}
@@ -158,6 +165,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">Language: </label>
           <input
+            className="input"
             type="text"
             name="language"
             value={this.state.language}
@@ -167,6 +175,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">IMDB Link:</label>
           <input
+            className="input"
             type="text"
             name="movie_imdb_link"
             value={this.state.movie_imdb_link}
@@ -176,6 +185,7 @@ class AddMovie extends Component {
           
           <label htmlFor="">Actor 1 name:</label>
           <input
+            className="input"
             type="text"
             name="actor_1_name"
             value={this.state.actor_1_name}
@@ -185,6 +195,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">Actor 2 name:</label>
           <input
+            className="input"
             type="text"
             name="actor_2_name"
             value={this.state.actor_2_name}
@@ -194,6 +205,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">Actor 3 name:</label>
           <input
+            className="input"
             type="text"
             name="actor_3_name"
             value={this.state.actor_3_name}
@@ -203,6 +215,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">IMDB Score:</label>
           <input
+            className="input"
             type="text"
             name="imdb_score"
             value={this.state.imdb_score}
@@ -212,6 +225,7 @@ class AddMovie extends Component {
 
           <label htmlFor="">Year:</label>
           <input
+            className="input"
             type="text"
             name="title_year"
             value={this.state.title_year}
@@ -220,11 +234,12 @@ class AddMovie extends Component {
           />
 
           <label htmlFor="">Select poster:</label>
-          <input type="file" onChange={(e) => this.handleFileUpload(e)} />
+          <input className="input" type="file" onChange={(e) => this.handleFileUpload(e)} />
 
           <label htmlFor="">Select fan art:</label>
-          <input type="file" onChange={(e) => this.handleFileUpload2(e)} />
-          <button className="boton azul" type="submit">Save new movie</button>
+          <input className="input" type="file" onChange={(e) => this.handleFileUpload2(e)} />
+          <Button variant="primary" size="sm" active type="submit">Save new movie</Button>
+          {/* <button className="boton azul" type="submit">Save new movie</button> */}
         </form>
       </div>
     );

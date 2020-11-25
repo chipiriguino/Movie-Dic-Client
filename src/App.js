@@ -9,7 +9,6 @@ import Private from "./pages/Private";
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import service from './api/service';
 import Home from './pages/Home';
 import MostPopular from "./components/MostPopular";
 import Random from "./components/Random";
@@ -19,8 +18,6 @@ import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
 import Credits from "./components/Credits";
 import Footer from "./components/Footer";
-
-
 
 class App extends Component {
   state = {

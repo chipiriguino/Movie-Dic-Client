@@ -3,7 +3,7 @@
 <h1>Movie Dick</h1>
 
 <h3>Description</h3>
-Movie dick is an application created where you can find the best movies, where as a user you can add more movies, and as a user you have the possibility of getting a random movie to watch, depending on the genre you prefer.
+Movie dic is an application created where you can find the best movies, where as a user you can add more movies, and as a user you have the possibility of getting a random movie to watch, depending on the genre you prefer.
 
 <h3>User Stories</h3>
 404: As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault.<br><br>
@@ -94,7 +94,7 @@ Fav-movies{
 <h3>LINKS</h3>
 
 <h4>Trello</h4>
-<a href="https://trello.com/b/IFqK337r/movie-dick">Trello Movie Dick</a>
+<a href="https://trello.com/b/IFqK337r/movie-dick">Trello Movie Dic</a>
 <h4>Git</h4>
 <h4>Slides</h4>
  

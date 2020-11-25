@@ -57,7 +57,7 @@ class AllMovies extends Component {
             <h2>All Movies</h2>
                 {this.state.movies.map((allMovie) => {
                     return (
-                        <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>
+                        <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat`}}>
                             <div className="info_section">
                                 <div className="movie_header">
                                     <img className="locandina" src={allMovie.poster} />
@@ -92,4 +92,4 @@ class AllMovies extends Component {
     }
 }
 
-export default AllMovies;
+export default withAuth(AllMovies);

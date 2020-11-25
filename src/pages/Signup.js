@@ -26,7 +26,7 @@ class Signup extends Component {
         <div class="login-content">
           <form action="index.html" onSubmit={this.handleFormSubmit}>
             <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/82b8d8efd3b0ac6382b9d0d71a99c6cf9dcefa23/img/avatar.svg" />
-              <h2 class="title">Welcome</h2>
+              <h2 class="title">SIGN UP</h2>
               <div class="input-div one">
                 <div class="i">
                   <i class="fas fa-user"></i>
@@ -44,7 +44,7 @@ class Signup extends Component {
                 </div>
               </div>
               <a href="/login">Already have an account? Log In!!</a>
-              <input type="submit" class="btn" type="submit" value="Log in" />
+              <input type="submit" class="btn" type="submit" value="SIGN UP" />
             </form>
             </div>
           </div>

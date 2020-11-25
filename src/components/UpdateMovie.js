@@ -120,10 +120,11 @@ componentDidMount = () => {
         <form onSubmit={(e) => this.handleSubmit(e)} className="edit-form">
         <h2>Update the Movie</h2>
           <label htmlFor="">Name</label>
-          <input type="text" name="movie_title" value={this.state.movie_title} placeholder={this.state.movie_title} onChange={(e) => this.handleChange(e)}/>
+          <input className="input" type="text" name="movie_title" value={this.state.movie_title} placeholder={this.state.movie_title} onChange={(e) => this.handleChange(e)}/>
           
           <label htmlFor="">Genre</label>
           <input
+            className="input"
             type="text"
             name="genres"
             value={this.state.genres}
@@ -133,6 +134,7 @@ componentDidMount = () => {
 
           <label htmlFor="">Director Name: </label>
           <input
+            className="input"
             type="text"
             name="director_name"
             value={this.state.director_name}
@@ -153,6 +155,7 @@ componentDidMount = () => {
 
           <label htmlFor="">Rating: </label>
           <input
+            className="input"
             type="text"
             name="content_rating"
             value={this.state.content_rating}
@@ -162,6 +165,7 @@ componentDidMount = () => {
 
           <label htmlFor="">Country: </label>
           <input
+            className="input"
             type="text"
             name="country"
             value={this.state.country}
@@ -171,6 +175,7 @@ componentDidMount = () => {
 
           <label htmlFor="">Language: </label>
           <input
+            className="input"
             type="text"
             name="language"
             value={this.state.language}
@@ -180,6 +185,7 @@ componentDidMount = () => {
 
           <label htmlFor="">IMDB Link:</label>
           <input
+            className="input"
             type="text"
             name="movie_imdb_link"
             value={this.state.movie_imdb_link}
@@ -189,6 +195,7 @@ componentDidMount = () => {
           
           <label htmlFor="">Actor 1 name:</label>
           <input
+            className="input"
             type="text"
             name="actor_1_name"
             value={this.state.actor_1_name}
@@ -198,6 +205,7 @@ componentDidMount = () => {
 
           <label htmlFor="">Actor 2 name:</label>
           <input
+            className="input"
             type="text"
             name="actor_2_name"
             value={this.state.actor_2_name}
@@ -207,6 +215,7 @@ componentDidMount = () => {
 
           <label htmlFor="">Actor 3 name:</label>
           <input
+            className="input"
             type="text"
             name="actor_3_name"
             value={this.state.actor_3_name}
@@ -216,6 +225,7 @@ componentDidMount = () => {
 
           <label htmlFor="">IMDB Score:</label>
           <input
+            className="input"
             type="text"
             name="imdb_score"
             value={this.state.imdb_score}
@@ -225,6 +235,7 @@ componentDidMount = () => {
 
           <label htmlFor="">Year:</label>
           <input
+            className="input"
             type="text"
             name="title_year"
             value={this.state.title_year}
@@ -233,10 +244,10 @@ componentDidMount = () => {
           />
 
           <label htmlFor="">Select poster:</label>
-          <input type="file" onChange={(e) => this.handleFileUpload(e)} />
+          <input className="input" type="file" onChange={(e) => this.handleFileUpload(e)} />
 
           <label htmlFor="">Select fan art:</label>
-          <input type="file" onChange={(e) => this.handleFileUpload2(e)} />
+          <input className="input" type="file" onChange={(e) => this.handleFileUpload2(e)} />
           <button className="boton azul" type="submit">Update the movie</button>
         </form>
       </div>

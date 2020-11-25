@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import service from '../api/service';
 import Favorites from '../components/Favorites';
+import Button from 'react-bootstrap/Button';
+
 
 class Private extends Component {
   state = {
@@ -35,8 +37,8 @@ class Private extends Component {
           <p className="p-align">Again around here <strong>{this.props.user.username} </strong>we are glad to see you again, you can now search our sea of ​​movies. Don't forget the wellies. </p>
           <article className="btn-myrpfile">
             <div className="align-btn-profile">
-              <a href="/create"><button className="boton azul">Add movie</button></a>
-              <a href="/random"><button className="boton azul">Random</button></a>
+              <a href="/create"><Button variant="primary" size="sm" active>Add movie</Button></a>
+              <a href="/random"><Button variant="primary" size="sm" active>Random movie</Button></a>
             </div>
           </article>
         </div>

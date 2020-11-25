@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import service from '../api/service';
+import Button from 'react-bootstrap/Button';
 
 
 class DetailsMovie extends Component {
@@ -34,14 +35,14 @@ class DetailsMovie extends Component {
                                     <h1>{movie.movie_title}</h1>
                                     <ul class="movie-gen">
                                         <li>PG-13  /</li>
-                                        <li>2h 49min  /</li>
-                                        <li>Adventure, Drama, Sci-Fi,</li>
+                                        <li>{movie.duration}min  /</li>
+                                        <li>{movie.genres}</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="mr-grid summary-row">
                                 <div class="col2">
-                                    <h5>SUMMARY</h5>
+                                    <h5 className="h5-details">SUMMARY</h5>
                                 </div>
                                 <div class="col2">
                                     <ul class="movie-likes">
@@ -57,15 +58,18 @@ class DetailsMovie extends Component {
                             </div>
                             <div class="mr-grid actors-row">
                                 <div class="col1">
-                                    <p class="movie-actors">Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
+                                <p class="movie-actors">Director: {movie.director_name}</p>
+                                    <p class="movie-actors">Actors: {movie.actor_2_name}, {movie.actor_3_name}</p>
+                                    <p class="movie-actors">Language: {movie.language}</p>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="align-delete">
-                    <button className="boton rojo" onClick={() => this.deleteMovie(movie._id)}>Delete</button>
-                    <button className="boton azul"><a href="/credits">View</a></button>
+                    <Button onClick={() => this.deleteMovie(movie._id)} className="primary" variant="primary" size="sm" active>Delete</Button>
+                    <Button className="primary" variant="primary" size="sm" active><a href="/credits">View...</a></Button>
                 </div>
             </div>
         );
