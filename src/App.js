@@ -45,7 +45,7 @@ class App extends Component {
               <PrivateRoute path="/upload/:id" component={UpdateMovie} />
               <PrivateRoute
                 user={this.props.user}
-                path='/movies'component={() => <AllMovies/>}
+                path='/allmovies'component={() => <AllMovies/>}
               />
               <PrivateRoute path="/details/:id" component={DetailsMovie} />
               <PrivateRoute
@@ -54,7 +54,7 @@ class App extends Component {
             </Switch>
           </>
         </AuthProvider>
-          <Footer/>
+        <Footer/>
       </div>
     );
   }

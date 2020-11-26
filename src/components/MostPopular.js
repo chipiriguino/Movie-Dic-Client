@@ -14,17 +14,24 @@ class MostPopular extends Component {
         this.setState({ movies: res })
     }
 
+    scroll = () => {
+        const elemento = document.querySelector('.popular-section');
+        elemento.scrollIntoView('smooth', 'start');
+    }
+
     paginaAnterior = () => {
         let pagina = this.state.pagina
         if (pagina === 0) return null;
         pagina--;
         this.setState({ pagina: pagina })
+        this.scroll();
     }
 
     paginaSiguiente = () => {
         let pagina = this.state.pagina
         pagina++;
         this.setState({ pagina: pagina })
+        this.scroll();
     }
 
     addToFavourite = async (movieId) => {
@@ -44,9 +51,13 @@ class MostPopular extends Component {
     render() {
         return(
             <div className="container2">
+                <div className="popular-section">
+					<h1>Most popular</h1>
+					<h3>Browse the most popular movies among users, find the one you are looking for and add it to favorites to have your list of movies! Hope you enjoy!</h3>
+				</div>
                 {this.state.movies && this.state.movies.map((eachMovie) => {
                     return(
-                        <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat` }}>
+                        <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `top`, backgroundRepeat: `no-repeat` }}>
                             <div className="info_section">
                                 <div className="movie_header">
                                     <img className="locandina" src={eachMovie.poster} alt={eachMovie.movie_title} />

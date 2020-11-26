@@ -68,6 +68,7 @@ class DetailsMovie extends Component {
                 <div className="align-delete">
                     <Button onClick={() => this.deleteMovie(movie._id)} className="primary" variant="primary" size="sm" active>Delete</Button>
                     <Button className="primary" variant="primary" size="sm" active><a href="/credits">View...</a></Button>
+                    <Button className="primary" variant="primary" size="sm" active><a href={`/upload/${movie._id}`}>Edit</a></Button>
                 </div>
             </div>
         );

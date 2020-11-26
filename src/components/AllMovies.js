@@ -9,6 +9,11 @@ class AllMovies extends Component {
         pagina: ""
     }
 
+    scroll = () => {
+        const elemento = document.querySelector('.allmovies-section');
+        elemento.scrollIntoView('smooth', 'start');
+    }
+
     getAllMovies = async () => {
         let res = await service.getAllMovies(this.state.pagina);
         this.setState({
@@ -22,6 +27,7 @@ class AllMovies extends Component {
         if(pagina === 0) return null;
         pagina --;
         this.setState({ pagina: pagina })
+        this.scroll();
       }
     
     paginaSiguiente = () => {
@@ -29,6 +35,7 @@ class AllMovies extends Component {
         let pagina = this.state.pagina
         pagina ++;
         this.setState({ pagina: pagina })
+        this.scroll();
     }
 
     addToFavourite = async (movieId) => {
@@ -48,7 +55,10 @@ class AllMovies extends Component {
     render() {
         return (
             <div className="container2">  
-            <h2>All Movies</h2>
+            <div className="allmovies-section">
+					<h1>All movies</h1>
+					<h3>Find the movie you are looking for, add it to your favorites list and enjoy!</h3>
+				</div>
                 {this.state.movies && this.state.movies.map((allMovie) => {
                     return (
                         <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat`}}>

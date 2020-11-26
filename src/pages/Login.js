@@ -8,8 +8,8 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
-    //  console.log('Signup -> form submit', { username, password });		
     this.props.login({ username, password });			//	<-- UPDATE HERE
+    this.props.history.push("/");	
   };
 
   handleChange = event => {

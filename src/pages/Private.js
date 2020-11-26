@@ -30,6 +30,10 @@ class Private extends Component {
 
     return (
       <div className="container2">
+        <div className="profile-section">
+					<h1>WELCOME!</h1>
+					<h2>The best movies in the world are now within your reach!</h2>
+				</div>
         <div className="container3">
           <div className="hola"></div>
           <h1 className="h1-align">Welcome {this.props.user.username}</h1>
