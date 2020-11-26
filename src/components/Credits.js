@@ -4,6 +4,9 @@ export default function Credits() {
     return (
         <div className="container2">
             <div class='wrapper'>
+            <div class='movie1'>
+In memory of:</div>
+<img src="./Logos/maradona.jpeg" width="120" height="120"></img><br></br>
 <div class='movie1'>
 MOVIE DIC</div>
 <div class='job'>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import {fas} from '@fortawesome/fontawesome-free';
+
 
 class Login extends Component {
   state = { username: "", password: "" };
