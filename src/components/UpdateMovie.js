@@ -107,7 +107,7 @@ componentDidMount = () => {
     } catch (error) {
       console.log("Error while adding the movie: ", error);
     }
-    this.props.history.push("/");
+    this.props.history.goBack();
   };
 
   render() {
