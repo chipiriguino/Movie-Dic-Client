@@ -3,9 +3,7 @@ import React, { Component } from 'react'
 class SearchBar extends Component {
 
     handleChange = (event) => {
-        // desestructuramos el name y el value de event.target
         let { value } = event.target
-        console.log('EVENT TARGET SERACHBAR JSSSSS', event.target)
         if(value){
             this.props.filterSearch(value)
         }else{
@@ -25,5 +23,3 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;  
-
-// onChange={this.handleChange}

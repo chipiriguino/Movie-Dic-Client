@@ -48,9 +48,9 @@ class App extends Component {
                 path='/allmovies'component={() => <AllMovies/>}
               />
               <PrivateRoute path="/details/:id" component={DetailsMovie} />
-              <PrivateRoute
-                path="/private" component={Private} />
-              <Route path="/" component={Home} />
+              <PrivateRoute path="/private" component={Private} />
+              <PrivateRoute path="/" component={Home}
+              />
             </Switch>
           </>
         </AuthProvider>

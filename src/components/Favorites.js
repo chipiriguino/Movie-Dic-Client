@@ -28,7 +28,6 @@ class Favorites extends Component {
     render() {
         return (
             <div className="row__inner">
-
                 {this.state.favorites && this.state.favorites.map((eachFav) => {
                     return (
                         <div className="tile" key={eachFav._id}>

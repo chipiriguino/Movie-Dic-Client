@@ -13,17 +13,16 @@ class Private extends Component {
   getProfileUser = async () => {
     await service.getProfileUser(this.props.user._id);
     this.setState({ user: this.props.user })
+    console.log('USER PRIVATE JS', this.props.user._id)
   }
 
-  getAllMovies = async () => {
-    let res = await service.getAllMovies();
-    this.setState({ movies: res })
-    console.log('MOVIES PRIVATE JS', this.state.movies)
-  }
+  getFavId = async () => {
+    let res = await service.getFavId(this.props.user._id);
+    this.setState({ favorites: res.favorites })
+}
 
   componentDidMount = () => {
     this.getProfileUser();
-    this.getAllMovies();
   }
 
   render() {
@@ -50,9 +49,7 @@ class Private extends Component {
         <h1 className="home-txt-carrousel">Your favourites: </h1>
           <Favorites
             user={this.props.user}
-          // movies={this.state.movies}
           />
-
         </div>
       </div>
     );

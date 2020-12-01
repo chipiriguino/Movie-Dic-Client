@@ -80,16 +80,6 @@ class Service {
     }
   };
 
-  // getDBmovies = async () => {
-  //   try {
-  //     const res = await this.service.get("/movies");
-  //     console.log(res.data);
-  //     return res.data;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }; 
-
   getRandom = async () => {
     try {
       const res = await this.service.get("/movies/random");
@@ -123,7 +113,6 @@ class Service {
   getProfileUser = async (id) => {
     try {
       const res = await this.service.get("/auth/private");
-      console.log(res.data);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -150,9 +139,9 @@ class Service {
     }
   };
 
-  getCarrouselMovies = async () => {
+  getFeed = async () => {
     try {
-      const res = await this.service.get("/movies/carrousel");
+      const res = await this.service.get(`/movies/feed`);
       console.log(res.data);
       return res.data;
     } catch (error) {
@@ -160,25 +149,43 @@ class Service {
     }
   };
 
+  addToFeed = async (movieId, userId) => {
+    try {
+      const res = await this.service.post(`/movies/feed/share`, {movieId, userId});
+      console.log('AÑADIDO A FEED?', res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-getCarrouselMovies2 = async () => {
-  try {
-    const res = await this.service.get("/movies/carrousel2");
-    console.log(res.data);
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-getCarrouselMovies3 = async () => {
-  try {
-    const res = await this.service.get("/movies/carrousel3");
-    console.log(res.data);
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
+  getCarrouselMovies = async () => {
+    try {
+      const res = await this.service.get("/movies/carrousel");
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  getCarrouselMovies2 = async () => {
+    try {
+      const res = await this.service.get("/movies/carrousel2");
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getCarrouselMovies3 = async () => {
+    try {
+      const res = await this.service.get("/movies/carrousel3");
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 }
 

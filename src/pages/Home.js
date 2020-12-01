@@ -5,12 +5,20 @@ import Carrousel3 from '../components/Carrousel3';
 import SearchBar from "../components/SearchBar";
 import SearchResult from "../components/SearchResult";
 import service from '../api/service';
+import { withAuth } from "../lib/AuthProvider";
+import Feed from '../components/Feed';
 
 class Home extends Component {
 	state = {
 		movies: [],
 		user: [],
 		filterMovies: []
+	}
+
+	getProfileUser = async () => {
+		await service.getProfileUser(this.props.user._id);
+		this.setState({ user: this.props.user })
+		console.log('USER HOME', this.props.user._id)
 	}
 
 	filterSearch = async (searchTerm) => {
@@ -25,6 +33,10 @@ class Home extends Component {
 	clearSearch = ()=>{
 		this.setState({ filterMovies: [] })
 	}
+	
+	componentDidMount = () => {
+		this.getProfileUser();
+	  }
 
 	render() {
 		return (
@@ -57,9 +69,10 @@ class Home extends Component {
 						</ul>
 					</div>
 				</div>
+				<Feed />
 			</div>
 		)
 	}
 }
 
-export default Home;
+export default withAuth(Home);

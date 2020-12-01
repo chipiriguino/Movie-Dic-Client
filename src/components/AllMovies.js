@@ -44,6 +44,12 @@ class AllMovies extends Component {
         this.setState({ favorite: res })
     }
 
+    addToFeed = async (movieId) => {
+        let userId = this.props.user._id;
+        let res = await service.addToFeed(movieId, userId);
+        this.setState({ feed: res })
+    }
+
     componentDidMount = () => {
         this.getAllMovies();
     }
@@ -78,6 +84,7 @@ class AllMovies extends Component {
                                         <li><a href={`/upload/${allMovie._id}`} className="material-icons">Edit Movie</a></li>
                                         <li><a href={`/details/${allMovie._id}`} >More Details</a></li>
                                         <li><button className="link-button" type="button" onClick={()=> this.addToFavourite(allMovie._id)}>Add to fav</button></li>
+                                        <li><button className="link-button" type="button" onClick={()=> this.addToFeed(allMovie._id)}>Share!</button></li>
                                     </ul>
                                 </div>
                             </div>

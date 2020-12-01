@@ -5,7 +5,7 @@ export default function Footer() {
         <>
         <footer className="footer-distributed">
             <div className="footer-left">
-                <h3>Movie<span>Dic</span></h3>
+                <h3>Iron<span>Movies</span></h3>
                 <p className="footer-company-name">José Blasco & Carlos Curtido&reg; 2020</p>
             </div>
 
@@ -22,7 +22,7 @@ export default function Footer() {
 
                 <div>
                     <i className="fa fa-envelope"></i>
-                    <p><a href="mailto:support@company.com">MovieDic@j&c.com</a></p>
+                    <p><a href="mailto:support@company.com">IronMovies@j&c.com</a></p>
                 </div>
 
             </div>
