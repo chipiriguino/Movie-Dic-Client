@@ -5,7 +5,6 @@ import Carrousel3 from '../components/Carrousel3';
 import SearchBar from "../components/SearchBar";
 import SearchResult from "../components/SearchResult";
 import service from '../api/service';
-import { withAuth } from "../lib/AuthProvider";
 import Feed from '../components/Feed';
 
 class Home extends Component {
@@ -15,11 +14,11 @@ class Home extends Component {
 		filterMovies: []
 	}
 
-	getProfileUser = async () => {
-		await service.getProfileUser(this.props.user._id);
-		this.setState({ user: this.props.user })
-		console.log('USER HOME', this.props.user._id)
-	}
+	// getProfileUser = async () => {
+	// 	await service.getProfileUser(this.props.user._id);
+	// 	this.setState({ user: this.props.user })
+	// 	console.log('USER HOME', this.props.user._id)
+	// }
 
 	filterSearch = async (searchTerm) => {
 		const searchedTerm = searchTerm.toLowerCase();
@@ -34,9 +33,9 @@ class Home extends Component {
 		this.setState({ filterMovies: [] })
 	}
 	
-	componentDidMount = () => {
-		this.getProfileUser();
-	  }
+	// componentDidMount = () => {
+	// 	this.getProfileUser();
+	// }
 
 	render() {
 		return (
@@ -75,4 +74,4 @@ class Home extends Component {
 	}
 }
 
-export default withAuth(Home);
+export default Home;

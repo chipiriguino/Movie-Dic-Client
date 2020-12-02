@@ -49,7 +49,7 @@ class App extends Component {
               />
               <PrivateRoute path="/details/:id" component={DetailsMovie} />
               <PrivateRoute path="/private" component={Private} />
-              <PrivateRoute path="/" component={Home}
+              <Route path="/" component={Home}
               />
             </Switch>
           </>

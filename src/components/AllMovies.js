@@ -61,7 +61,7 @@ class AllMovies extends Component {
     render() {
         return (
             <div className="container2">  
-            <div className="allmovies-section">
+                <div className="allmovies-section">
 					<h1>All movies</h1>
 					<h3>Find the movie you are looking for, add it to your favorites list and enjoy!</h3>
 				</div>

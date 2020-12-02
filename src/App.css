@@ -130,6 +130,16 @@
 	margin-left: 0;
 }
 
+.feed-container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	width: 100%;
+}
+
 .poster-random{
 	max-width: 500px;
 	height: 300px;
@@ -206,12 +216,12 @@
 
 .popular-section{
 	width: 100%;
-	height: 350px;
+	height: 380px;
 	background-image: url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/mn9k8zapebAbCqsiKf24juhXjjx.jpg');
 	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding-top: 30px;
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
 }
 
 .popular-section >  h1, h3{
@@ -238,12 +248,13 @@
 
 .allmovies-section{
 	width: 100%;
-	height: 350px;
+	height: 380px;
 	background-image: url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg');
 	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding-top: 30px;
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
 }
 
 .allmovies-section  h1, h3{
@@ -266,10 +277,12 @@
 }
 
 /* header */
+
 .header {
 	background-color: #fff;
 	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
 	width: 100%;
+	margin-bottom: 0;
   }
   .header ul {
 	margin: 0;
@@ -2069,3 +2082,184 @@ footer {
 	}
   }
   /* END OF CSS OF FOOTER */
+
+  /* FEED CARDS FACEBOOK */
+
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+  background-color:#e9ebee;
+}
+
+.feed-section{
+	width: 100%;
+	height: 380px;
+	padding-top: 10px;
+	background-image: url('https://s.studiobinder.com/wp-content/uploads/2019/09/Movie-Genres-Types-of-Movies-List-of-Genres-and-Categories-Header-StudioBinder.jpg');
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 30px;
+	margin-bottom: 30px;
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
+}
+
+.feed-section h1, h3{
+	text-align: center;
+	color: white;
+}
+
+.f-card {
+  background-color:white;
+  border: 1px solid #d0d1d5;
+  border-radius: 10px;
+  margin: 10px;
+  margin-bottom:10px;
+  padding: 12px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, .30); /* Not original, just a test */
+}
+
+.f-card .header {
+  margin-bottom:17px;
+  float: left;
+}
+
+.co-logo {
+  /*display:block;*/
+  float:left;
+  margin-right:8px;
+  
+  width:40px;
+  height:40px;
+}
+
+.co-name > a {
+  font-family: Helvetica;
+  font-size:14px;
+  font-weight: bold;
+  line-height: 1.38;
+  color: #365899;
+  text-decoration:none;
+  
+  margin-bottom:2px;
+}
+
+.co-name > a:hover {
+  text-decoration:underline;
+}
+
+.time {
+  font-family: Helvetica;
+  font-size:12px;
+  color: #90949c;
+}
+
+.time > a {
+  color: #90949c;
+  text-decoration:none;
+}
+
+.time > a:hover {
+  text-decoration:underline;
+}
+
+.options {
+  font-family: Helvetica;
+  font-size:12px;
+  color: #e5e5e5;
+  float:right;
+}
+
+.options:hover {
+  color: black; /* Fallback */
+  color: rgba(0, 0, 0, .30);
+}
+
+.content {
+  clear:both;
+  font-family: Helvetica, sans-serif;
+  font-size:14px;
+  height: 80px;
+  line-height: 1.38;
+}
+
+.reference {
+  width: 100%;
+}
+.reference-thumb {
+	display: block;
+	width: 100%;
+	height: 250px;
+	border-radius: 10px;
+}
+
+.reference-content {
+  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, .1);
+  border-top: 0;
+  padding: 10px 12px 10px 12px;
+}
+
+.reference:hover .reference-content {
+  border-color: black; /* Fallback */
+  border-color: rgba(0, 0, 0, .15);
+}
+
+.reference-title {
+  font-family: Georgia;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  
+  margin-bottom:5px;
+}
+
+.reference-subtitle {
+  font-family: Helvetica;
+  font-size:12px;
+  line-height: 16px; 
+}
+
+.reference-font {
+  color: #90949c;
+  font-family: Helvetica;
+  font-size: 11px;
+  line-height: 11px;
+  text-transform: uppercase;
+
+  padding-top:9px; 
+}
+
+.social {
+  margin-top:12px;
+}
+.social-buttons {
+  color: #7f7f7f;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight:bold;
+  line-height:14px;
+  
+  border-top:1px solid #e5e5e5;
+  padding-top:4px;
+  
+}
+
+.social-buttons span {
+  font-size: 12px;
+  margin-right:20px;
+  padding:4px 4px 4px 0;
+}
+
+.social-buttons span:hover {
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.social-buttons span i {
+  padding-right:4px;
+}
