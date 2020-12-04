@@ -30,6 +30,17 @@ class Service {
     }
   };
 
+  handleUpload3 = async (theFile) => {
+    console.log("file in service: ", theFile);
+
+    try {
+      const res = await this.service.post("/auth/updateprofile", theFile);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   saveNewMovie = async (newMovie) => {
     console.log("new thing is: ", newMovie);
 
@@ -46,6 +57,16 @@ class Service {
 
     try {
       const res = await this.service.post("/movies/upload/" + id, {updatedMovie});
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  updateProfile = async ( id ) => {
+    console.log("updated Profile CLIENT IS: ", id);
+    try {
+      const res = await this.service.post(`/auth/updateprofile/${id}`);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -112,7 +133,7 @@ class Service {
 
   getProfileUser = async (id) => {
     try {
-      const res = await this.service.get("/auth/private");
+      const res = await this.service.get("/auth/private/");
       return res.data;
     } catch (error) {
       console.log(error);
@@ -139,6 +160,17 @@ class Service {
     }
   };
 
+  deleteFavourite = async (id) => {
+    try {
+      const res = await this.service.post(`/movies/private/favorite/delete/${id}`);
+      console.log(res.data);
+      console.log(res.data, "ELIMINADO?¿?¿?")
+      return res.data;
+    } catch (error) {
+      console.log(error, "Error borrando de Feed, comprueba tu código");
+    }
+  };
+
   getFeed = async () => {
     try {
       const res = await this.service.get(`/movies/feed`);
@@ -159,6 +191,18 @@ class Service {
     }
   };
 
+  deleteFromFeed = async (id) => {
+    try {
+      const res = await this.service.post(`/movies/feed/delete/${id}`);
+      console.log(res.data);
+      console.log(res, "ELIMINADO?¿?¿?")
+      return res.data;
+    } catch (error) {
+      console.log(error, "Error borrando de Feed, comprueba tu código");
+    }
+  };
+
+  //MÉTODOS SERVICE DE CARROUSELS
   getCarrouselMovies = async () => {
     try {
       const res = await this.service.get("/movies/carrousel");

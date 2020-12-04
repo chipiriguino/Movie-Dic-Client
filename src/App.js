@@ -18,6 +18,7 @@ import UpdateMovie from "./components/UpdateMovie";
 import DetailsMovie from "./components/DetailsMovie";
 import Credits from "./components/Credits";
 import Footer from "./components/Footer";
+import UpdateProfile from "./components/UpdateProfile";
 
 class App extends Component {
   state = {
@@ -49,6 +50,7 @@ class App extends Component {
               />
               <PrivateRoute path="/details/:id" component={DetailsMovie} />
               <PrivateRoute path="/private" component={Private} />
+              <PrivateRoute path="/updateprofile/:id" component={UpdateProfile} />
               <Route path="/" component={Home}
               />
             </Switch>

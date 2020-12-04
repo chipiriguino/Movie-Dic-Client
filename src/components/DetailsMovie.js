@@ -22,6 +22,7 @@ class DetailsMovie extends Component {
     }
 
     render() {
+        console.log(this.props.match.params.id, 'PROPS?????')
         const { movie } = this.state
         return (
             <div className="background-details" style={{backgroundImage: `url(${movie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`}}>

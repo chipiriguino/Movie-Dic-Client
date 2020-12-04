@@ -134,10 +134,16 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	align-content: center;
+	align-content: space-around;
 	width: 100%;
+	background-image: url('https://www.deloittedigital.com/content/dam/deloittedigital/us/images/landscape-2x1/hero-images/alliance-20180222-facebook-hero.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: initial;
+	padding-bottom: 20px;
 }
 
 .poster-random{
@@ -192,6 +198,7 @@
 	flex-direction: column;
 	background-position: center;
 	background-size: cover;
+	box-shadow: 0 0 10px rgba(-100, -100, -100, 10.7);
 	background-image: url('https://image.tmdb.org/t/p/w1920_and_h800_multi_faces_filter(duotone,190235,ad47dd)/lMnoYqPIAVL0YaLP5YjRy7iwaYv.jpg');
 	padding: 10px;
 }
@@ -238,6 +245,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding-top: 30px;
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
 }
 
 .profile-section >  h1, h3{
@@ -264,6 +272,34 @@
 }
 
 .home-section > h1, h2 {
+	color: white;
+	text-align: center;
+	padding: 10px;
+}
+
+.favourites-section{
+	width: 100%;
+	height: 300px;
+	background-image: url('https://media.revistagq.com/photos/5d9c491d70f1c50008759c7f/master/pass/joker%20homenaje%20heath%20ledger%20.jpg');
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 30px;
+	clip-path: polygon(0 0, 100% 0, 100% 70%, 0 90%);
+}
+
+.favourites-section2{
+	width: 100%;
+	height: 200px;
+	background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2015/12/12/858715/38ab8700ce1051a9b2311504d06f8289-700.jpg');
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
+	position: sticky;
+}
+
+.favourites-section > h1, h2{
 	color: white;
 	text-align: center;
 	padding: 10px;
@@ -404,10 +440,10 @@
 	margin: 0;
 	font-family: Helvetica, sans-serif;
 	background-color: #F4F4F4;
-	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url("https://cdn.hipwallpaper.com/i/55/60/7wXdiD.jpg");
+	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95));
 	background-position: center;
 	background-size: cover;
-	background-repeat: repeat;
+	background-repeat: no-repeat;
   }
   a {
 	color: #000;
@@ -573,6 +609,14 @@ a{
 
 a:hover{
 	color: #38d39f;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+    border-radius: 10px;
+	margin: 10px;
 }
 
 .btn{
@@ -759,10 +803,22 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 
 .align-btn-profile{
 	display: flex;
+	flex-direction: row;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 	margin-bottom: 40px;
 	margin-top:-10px
+}
+
+@media(max-width: 500px){
+	.align-btn-profile{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 40px;
+		margin-top:-10px
+	}
 }
 
 @media (min-width: 800px ){
@@ -771,10 +827,7 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 		justify-content: center;
 		align-items: center;
 		margin-left:18rem;
-		flex-direction: column;
-		
-
-		
+		flex-direction: column;	
 	}
 	.media-profile2{
 		display: flex;
@@ -966,14 +1019,15 @@ box-shadow: 0px 2px 0px 0px #2980B9;
 @media(min-width: 769px){
 	.movie_card {
 		width: 100%;
-		margin: 15px 80px;
+		margin: 10px 60px;
+		height: auto;
    }
    .text {
 	color: #cfd6e1;
-	text-overflow: clip;
-	overflow: hidden;
-	height: 1210px;
 	width: 350px;
+	white-space: initial;
+    text-overflow: ellipsis;
+    overflow: hidden;
 	}
 }
 
@@ -1550,6 +1604,7 @@ RRSS */
   width: 150px;
   height: 250px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .tile__details:after {
@@ -2121,6 +2176,65 @@ body {
   margin-bottom:10px;
   padding: 12px; 
   box-shadow: 0 0 5px rgba(0, 0, 0, .30); /* Not original, just a test */
+  max-width: auto;
+  height: auto;
+}
+
+@media(min-width:500px){
+	.f-card {
+		background-color:white;
+		border: 1px solid #d0d1d5;
+		border-radius: 10px;
+		margin: 10px;
+		margin-bottom:10px;
+		padding: 12px; 
+		box-shadow: 0 0 5px rgba(0, 0, 0, .30); /* Not original, just a test */
+		width: 500px;
+		height: auto;
+	}
+}
+
+@media(max-width: 500px){
+	.f-card {
+		background-color:white;
+		border: 1px solid #d0d1d5;
+		border-radius: 10px;
+		margin: 10px;
+		margin-bottom:10px;
+		padding: 12px; 
+		box-shadow: 0 0 5px rgba(0, 0, 0, .30); /* Not original, just a test */
+		width: 95%;
+		height: auto;
+	}
+	.social-buttons {
+		color: #7f7f7f;
+		font-family: Helvetica;
+		font-size: 12px;
+		font-weight:bold;
+		line-height:14px;
+		justify-content: center;
+		display: flex;
+		border-top: 1px solid #e5e5e5;
+		padding-top: 8px;
+	  }
+	  .social-buttons span {
+		font-size: 12px;
+		margin-right:20px;
+		padding:4px 4px 4px 0;
+	  }
+	  .social-buttons span:hover {
+		text-decoration:underline;
+		cursor:pointer;
+	  }
+	  .social-buttons span i {
+		padding-right:4px;
+	  }
+	  .reference-subtitle2 {
+		font-family: Helvetica;
+		font-size: 12px;
+		margin-bottom: 5px;
+		height: 200px;
+	  }
 }
 
 .f-card .header {
@@ -2198,8 +2312,6 @@ body {
 }
 
 .reference-content {
-  border: 2px solid black;
-  border: 2px solid rgba(0, 0, 0, .1);
   border-top: 0;
   padding: 10px 12px 10px 12px;
 }
@@ -2210,18 +2322,16 @@ body {
 }
 
 .reference-title {
-  font-family: Georgia;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
-  
-  margin-bottom:5px;
+	font-family: Georgia;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
 }
 
-.reference-subtitle {
-  font-family: Helvetica;
-  font-size:12px;
-  line-height: 16px; 
+.reference-subtitle2 {
+	font-family: Helvetica;
+	font-size: 12px;
+	margin-bottom: 5px;
 }
 
 .reference-font {
@@ -2243,10 +2353,10 @@ body {
   font-size: 12px;
   font-weight:bold;
   line-height:14px;
-  
-  border-top:1px solid #e5e5e5;
-  padding-top:4px;
-  
+  justify-content: center;
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 8px;
 }
 
 .social-buttons span {

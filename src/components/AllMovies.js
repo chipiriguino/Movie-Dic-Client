@@ -21,6 +21,10 @@ class AllMovies extends Component {
         })
     }
 
+    // getMoviesFromApi = async () => {
+    //     axios.get("")
+    // }
+
     paginaAnterior = () => {
         console.log('Anterior....')
         let pagina = this.state.pagina
@@ -67,7 +71,7 @@ class AllMovies extends Component {
 				</div>
                 {this.state.movies && this.state.movies.map((allMovie) => {
                     return (
-                        <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `100%`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat`}}>
+                        <div key={allMovie._id} className="movie_card" id="bright" style={{backgroundImage: `url(${allMovie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `cover`, backgroundRepeat: `no-repeat`}}>
                             <div className="info_section">
                                 <div className="movie_header">
                                     <img className="locandina" src={allMovie.poster} alt="Poster"/>
