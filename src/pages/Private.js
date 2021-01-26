@@ -25,9 +25,7 @@ class Private extends Component {
     this.getProfileUser();
   }
 
-
   render() {
-
     return (
       <div className="container2">
         <div className="profile-section">
@@ -42,7 +40,7 @@ class Private extends Component {
             <div className="align-btn-profile">
               <a href="/create"><Button variant="primary" size="sm" active>Add movie</Button></a>
               <a href="/random"><Button variant="primary" size="sm" active>Random movie</Button></a>
-              <a href={`/updateprofile/${this.props.user._id}`}><Button variant="primary" size="sm" active>Edit Profile</Button></a>
+              <a href={`/update/${this.props.user._id}`}><Button variant="primary" size="sm" active>Edit Profile</Button></a>
             </div>
         </div>
         <div className="container3">
@@ -53,7 +51,8 @@ class Private extends Component {
           <Favorites
             user={this.props.user}
           />
-          <div className="favourites-section2"></div>
+          <div className="favourites-section2">
+          </div>
         </div>
       </div>
     );

@@ -8,16 +8,16 @@ class Auth {
     });
   }
 
-  signup({ username, password }) {
+  signup({ username, password, mail }) {
     return this.auth
-      .post("/auth/signup", { username, password })
+      .post("/auth/signup", { username, password, mail })
       .then(({ data }) => data);
     // .then((response) => response.data);
   }
 
-  login({ username, password }) {
+  login({ username, password, mail }) {
     return this.auth
-      .post("/auth/login", { username, password })
+      .post("/auth/login", { username, password, mail })
       .then(({ data }) => data);
     // .then((response) => response.data);
   }

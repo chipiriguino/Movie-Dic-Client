@@ -6,12 +6,15 @@ import Paginacion from './Paginacion';
 class MostPopular extends Component {
     state = {
         movies: [],
-        pagina: ""
+        pagina: 0,
+        changer: 'movie',
+        image: 'https://image.tmdb.org/t/p/w500'
     }
 
     getMostPopular = async () => {
-        let res = await service.getMostPopular(this.state.pagina);
+        let res = await service.getTmdbApi2();
         this.setState({ movies: res })
+        console.log(this.state.movies, "MOVIES TMDB?¿?")
     }
 
     scroll = () => {
@@ -49,25 +52,26 @@ class MostPopular extends Component {
     }
 
     render() {
+        const movies = this.state.movies;
         return(
             <div className="container2">
                 <div className="popular-section">
 					<h1>Most popular</h1>
 					<h3>Browse the most popular movies among users, find the one you are looking for and add it to favorites to have your list of movies! Hope you enjoy!</h3>
 				</div>
-                {this.state.movies && this.state.movies.map((eachMovie) => {
+                {movies?.map((eachMovie) => {
                     return(
-                        <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${eachMovie.fan_art})`, backgroundSize: `cover`, backgroundPosition: `top`, backgroundRepeat: `no-repeat` }}>
+                        <div key={eachMovie._id} className="movie_card" id="bright" style={{ backgroundImage: `url(${this.state.image}${eachMovie.backdrop_path})`, backgroundSize: `cover`, backgroundPosition: `top`, backgroundRepeat: `no-repeat` }}>
                             <div className="info_section">
                                 <div className="movie_header">
-                                    <img className="locandina" src={eachMovie.poster} alt={eachMovie.movie_title} />
-                                    <h4>{eachMovie.movie_title}</h4>
+                                    <img className="locandina" src={`${this.state.image}${eachMovie.poster_path}`} alt={eachMovie.name} />
+                                    <h4>{eachMovie.name}</h4>
                                     <h4>{eachMovie.title_year}, {eachMovie.director_name}</h4>
                                     <span className="minutes">{eachMovie.duration} min</span>
                                     <p className="type">{eachMovie.genres}</p>
                                 </div>
                                 <div className="movie_desc">
-                                    <p className="text">{eachMovie.description}</p>
+                                    <p className="text">{eachMovie.overview}</p>
                                 </div>
                                 <div className="movie_social">
                                     <ul>

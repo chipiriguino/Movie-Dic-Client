@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import service from "../api/service";
+import {Form} from 'react-bootstrap';
 
 class UpdateMovie extends Component {
   state = {
@@ -12,34 +13,35 @@ class UpdateMovie extends Component {
     country: "",
     language: "",
     movie_imdb_link: "",
-    title_year:  "",
-    imdb_score:  "",
+    title_year: "",
+    imdb_score: "",
     fan_art: ""
   };
 
   getDetailsMovie = async () => {
     let res = await service.getDetailsMovie(this.props.match.params.id);
-    this.setState({ movie_title: res.movie_title,
-    description: res.description,
-    poster: res.poster,
-    genres: res.genres,
-    director_name: res.director_name,
-    content_rating: res.content_rating,
-    country: res.country,
-    language: res.language,
-    movie_imdb_link: res.movie_imdb_link,
-    actor_1_name: res.actor_1_name,
-    actor_2_name: res.actor_2_name,
-    actor_3_name: res.actor_3_name,
-    title_year: res.title_year,
-    imdb_score: res.imdb_score,
-    fan_art: res.fan_art,
-  })
-}
+    this.setState({
+      movie_title: res.movie_title,
+      description: res.description,
+      poster: res.poster,
+      genres: res.genres,
+      director_name: res.director_name,
+      content_rating: res.content_rating,
+      country: res.country,
+      language: res.language,
+      movie_imdb_link: res.movie_imdb_link,
+      actor_1_name: res.actor_1_name,
+      actor_2_name: res.actor_2_name,
+      actor_3_name: res.actor_3_name,
+      title_year: res.title_year,
+      imdb_score: res.imdb_score,
+      fan_art: res.fan_art,
+    })
+  }
 
-componentDidMount = () => {
+  componentDidMount = () => {
     this.getDetailsMovie();
-}
+  }
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,7 +49,7 @@ componentDidMount = () => {
   };
 
   handleFileUpload = async (e) => {
-    console.log("the file to be uploaded is: ", );
+    console.log("the file to be uploaded is: ",);
     // let poster = e.target.files[0]
     // creamos un nuevo objeto FormData
     const uploadData = new FormData();
@@ -113,12 +115,35 @@ componentDidMount = () => {
   render() {
     console.log('estas en updatemovieee', this.state)
     return (
-      <div>
+      <>
+        <div className="form-css">
+          <Form>
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label>Title</Form.Label>
+              <Form.Control type="text" name="movie_title"
+                value={this.state.movie_title} placeholder={this.state.movie_title}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label>Director</Form.Label>
+              <Form.Control type="email" placeholder="Add director's name" />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Description</Form.Label>
+              <Form.Control as="textarea" rows={3} placeholder="Add description" name="description"
+                value={this.state.description}
+                textarea={this.state.description}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </Form.Group>
+          </Form>
+        </div>
         <form onSubmit={(e) => this.handleSubmit(e)} className="edit-form">
-        <h2>Update the Movie</h2>
+          <h2>Update the Movie</h2>
           <label htmlFor="">Name</label>
-          <input className="input" type="text" name="movie_title" value={this.state.movie_title} placeholder={this.state.movie_title} onChange={(e) => this.handleChange(e)}/>
-          
+          <input className="input" type="text" name="movie_title" value={this.state.movie_title} placeholder={this.state.movie_title} onChange={(e) => this.handleChange(e)} />
+
           <label htmlFor="">Genre</label>
           <input
             className="input"
@@ -137,7 +162,7 @@ componentDidMount = () => {
             value={this.state.director_name}
             placeholder={this.state.director_name}
             onChange={(e) => this.handleChange(e)}
-            
+
           />
 
           <label htmlFor="">Description: </label>
@@ -189,7 +214,7 @@ componentDidMount = () => {
             placeholder={this.movie_imdb_link}
             onChange={(e) => this.handleChange(e)}
           />
-          
+
           <label htmlFor="">Actor 1 name:</label>
           <input
             className="input"
@@ -247,7 +272,7 @@ componentDidMount = () => {
           <input className="input" type="file" onChange={(e) => this.handleFileUpload2(e)} />
           <button className="boton azul" type="submit">Update the movie</button>
         </form>
-      </div>
+      </>
     );
   }
 }

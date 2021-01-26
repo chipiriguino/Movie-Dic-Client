@@ -8,6 +8,10 @@ class Service {
     });
   }
 
+  API_KEY=process.env.REACT_APP_API_KEY
+
+  // <----------- CLOUDINARY ------------>
+
   handleUpload = async (theFile) => {
     console.log("file in service: ", theFile);
 
@@ -34,12 +38,14 @@ class Service {
     console.log("file in service: ", theFile);
 
     try {
-      const res = await this.service.post("/auth/updateprofile", theFile);
+      const res = await this.service.post("/movies/private/update/", theFile);
       return res.data;
     } catch (error) {
       console.log(error);
     }
   };
+
+  // <----------- MOVIES ------------>
 
   saveNewMovie = async (newMovie) => {
     console.log("new thing is: ", newMovie);
@@ -63,19 +69,10 @@ class Service {
     }
   };
 
-  updateProfile = async ( id ) => {
-    console.log("updated Profile CLIENT IS: ", id);
-    try {
-      const res = await this.service.post(`/auth/updateprofile/${id}`);
-      return res.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   getMostPopular = async (pagina= 0) => {
     try {
       const res = await this.service.get(`/movies/popular?page=` + pagina);
+      console.log(res.data, "res data service")
       return res.data;
     } catch (error) {
       console.log(error);
@@ -131,9 +128,34 @@ class Service {
     }
   };
 
+  //PROFILE USER
+
   getProfileUser = async (id) => {
     try {
       const res = await this.service.get("/auth/private/");
+      console.log(res, "RES USERID")
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getProfileUser2 = async (id) => {
+    try {
+      const res = await this.service.get(`/movies/private/update/${id}`);
+      console.log(res.data, "RES USERID")
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  updateProfile = async ( id,  updatedUser ) => {
+    console.log("updated profile is: ", updatedUser);
+
+    try {
+      const res = await this.service.put(`/movies/private/update/`, + id, {updatedUser});
+      console.log(res, "RES DATA UPDATEPROFILE");
       return res.data;
     } catch (error) {
       console.log(error);
@@ -153,28 +175,27 @@ class Service {
   addToFavourite = async (movieId, userId) => {
     try {
       const res = await this.service.post("/movies/private/favorite", {movieId, userId});
-      console.log('AÑADIDO A FAVORITO? CONSOLE LOG RES.DATA DE SERVICE CLIENT', res.data);
+      console.log('AÑADIDO A FAVORITO', res.data);
       return res.data;
     } catch (error) {
       console.log(error);
     }
   };
 
-  deleteFavourite = async (id) => {
+  deleteFavourite = async (movieId, userId) => {
     try {
-      const res = await this.service.post(`/movies/private/favorite/delete/${id}`);
-      console.log(res.data);
-      console.log(res.data, "ELIMINADO?¿?¿?")
+      const res = await this.service.post(`/movies/private/favorite/delete/${userId}`, {movieId});
+      console.log(res.data, "ELIMINADO")
       return res.data;
     } catch (error) {
-      console.log(error, "Error borrando de Feed, comprueba tu código");
+      console.log(error, "Error borrando de Favoritos, comprueba tu código");
     }
   };
 
   getFeed = async () => {
     try {
       const res = await this.service.get(`/movies/feed`);
-      console.log(res.data);
+      console.log(res, "AQUIIII");
       return res.data;
     } catch (error) {
       console.log(error);
@@ -230,6 +251,30 @@ class Service {
       console.log(error);
     }
   };
+
+
+  //tmdb api
+  getTmdbApi = async (query, changer) => {
+    try {
+      const res = await this.service.get(`https://api.themoviedb.org/3/trending/${changer}/${query}?api_key=7ce566a9d36bbc6542be89e8fee7397a`);
+      console.log(res, "service!!!")
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //tmdb api 2
+  getTmdbApi2 = async () => {
+    try{
+      const movies = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=7ce566a9d36bbc6542be89e8fee7397a&language=en-US&page=1`)
+      console.log(movies.data.results, "MOVIES!!!")
+      return movies.data.results;
+    }catch(error){
+      console.log(error);
+    }
+  };
+
 
 }
 

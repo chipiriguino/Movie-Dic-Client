@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";	
 
 class Signup extends Component {
-  state = { username: "", password: "" };
+  state = {
+    username: "",
+    password: "",
+    mail: ""
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
-    this.props.signup({ username, password });
+    const { username, password, mail } = this.state;
+    this.props.signup({ username, password, mail });
     this.props.history.push("/");			
   };
 
@@ -18,7 +22,8 @@ class Signup extends Component {
   };
 
   render() {
-    const { username, password } = this.state;
+    const { username, password, mail } = this.state;
+    console.log(this.state, "Estado SignUp")
     return (
       <div className="container">
         <div className="img">
@@ -34,6 +39,14 @@ class Signup extends Component {
                 </div>
                 <div className="div">
                   <input type="text" className="input"  name="username" value={username} onChange={this.handleChange} placeholder="Username" />
+                </div>
+              </div>
+              <div className="input-div one">
+                <div className="i">
+                  <i className="fas fa-user"></i>
+                </div>
+                <div className="div">
+                  <input type="text" className="input"  name="mail" value={mail} onChange={this.handleChange} placeholder="Enter your Mail" />
                 </div>
               </div>
               <div className="input-div pass">

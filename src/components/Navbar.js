@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";			//	<-- UPDATE HERE
-
+import {Button} from 'react-bootstrap';
 
 class Navbar extends Component {
   render() {
@@ -18,7 +18,8 @@ class Navbar extends Component {
               <li><a href="/popular">Most Popular</a></li>
               <li><a href="/allmovies">All Movies</a></li>
               <li><a href="/private">My profile</a></li>
-              <li><button className="link-button" type="button" onClick={logout}>Logout</button ></li>
+              <li><a href="/api/tmdb">TMDB</a></li>
+              <li><a className="link-button" type="button" onClick={logout}>Logout</a></li>
               </>) :
               (
                 <>

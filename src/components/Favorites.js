@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import service from '../api/service';
-import Button from 'react-bootstrap/Button';
-
 
 class Favorites extends Component {
     state = {
@@ -20,15 +18,16 @@ class Favorites extends Component {
         this.setState({ favorites: res.favorites })
     }
 
-    deleteFavourite = async (id) => {
-        await service.deleteFavourite(id);
+    deleteFavourite = async (movieId) => {
+        const userId = this.props.user_id;
+        await service.deleteFavourite(userId, movieId);
+        this.getFavId();
     }
 
     componentDidMount = () => {
         this.getProfileUser();
         this.getFavId();
     }
-
 
     render() {
         console.log("THIS STATE FAVOURITES", this.state.favorites)
@@ -43,7 +42,7 @@ class Favorites extends Component {
                             </div>
                             <div className="tile__title">
                                 <a href={`/details/${eachFav._id}`}>Details</a>
-                                <a onClick={() => this.deleteFavourite(eachFav._id)}>Delete</a>
+                                <button onClick={() => this.deleteFavourite(eachFav._id)}>Delete</button>
                             </div>
                         </div>
                     );

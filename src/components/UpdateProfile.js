@@ -10,17 +10,18 @@ class UpdateProfile extends Component {
     };
 
 
-    getProfileUser = async () => {
-        await service.getProfileUser(this.props.match.params.id);
-        this.setState({ 
-            username: this.props.username,
-            mail: this.props.mail,
-            image: this.props.image,
-        })
-    };
+    getProfileUser2 = async () => {
+      await service.getProfileUser2(this.props.user._id);
+      this.setState({
+        username: this.props.user.username,
+        mail: this.props.user.mail,
+        image: this.props.user.image
+      })
+      console.log('USER PRIVATE JS', this.state)
+    }
 
     componentDidMount = () => {
-        this.getProfileUser();
+        this.getProfileUser2();
     }
 
     handleChange = (e) => {
@@ -28,7 +29,7 @@ class UpdateProfile extends Component {
         this.setState({ [name]: value});
     }
 
-    handleFileUpload3 = async (e) => {
+    handleUpload3 = async (e) => {
         console.log("the file to be uploaded is: ", );
         // let poster = e.target.files[0]
         // creamos un nuevo objeto FormData
@@ -57,14 +58,16 @@ class UpdateProfile extends Component {
         } catch (error) {
           console.log("Error while adding the User: ", error);
         }
-        this.props.history.goBack();
+        // this.props.history.goBack();
       };
 
       render() {
-        console.log('estas en UPDATEPROFILE!!!!', this.state.username)
         return (
           <div>
             <form onSubmit={(e) => this.handleSubmit(e)} className="edit-form">
+            <div className="img-align-profile" >
+              <img src={this.state.image} style={{ borderRadius: '120px' }} alt="imagen" width="250" height="250" />
+            </div>
             <h2>Update your Profile!</h2>
               <label htmlFor="">Name</label>
               <input className="input" type="text" name="username" value={this.state.username} placeholder={this.state.username} onChange={(e) => this.handleChange(e)}/>
@@ -80,7 +83,7 @@ class UpdateProfile extends Component {
               />
     
               <label htmlFor="">Select image:</label>
-              <input className="input" type="file" onChange={(e) => this.handleFileUpload3(e)} />
+              <input className="input" type="file" onChange={(e) => this.handleUpload3(e)} />
 
               <button className="boton azul" type="submit">Update profile</button>
             </form>

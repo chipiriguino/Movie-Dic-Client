@@ -3,22 +3,23 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";
 import Navbar from "./components/Navbar";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Private from "./pages/Private";
-import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
-import MostPopular from "./components/MostPopular";
-import Random from "./components/Random";
-import AllMovies from "./components/AllMovies";
-import AddMovie from "./components/AddMovie";
-import UpdateMovie from "./components/UpdateMovie";
-import DetailsMovie from "./components/DetailsMovie";
-import Credits from "./components/Credits";
-import Footer from "./components/Footer";
-import UpdateProfile from "./components/UpdateProfile";
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import AllMovies from './components/AllMovies';
+import AddMovie from './components/AddMovie';
+import Random from './components/Random';
+import UpdateMovie from './components/UpdateMovie';
+import DetailsMovie from './components/DetailsMovie'; 
+import Private from '../src/pages/Private';
+import UpdateProfile from './components/UpdateProfile';
+import Footer from './components/Footer'
+import MostPopular from './components/MostPopular';
+import MovieTmdb from "./components/MovieTmdb";
+
 
 class App extends Component {
   state = {
@@ -27,37 +28,34 @@ class App extends Component {
     filterMovies: [],
   }
 
-
   render() {
     return (
-      <div className="appjs">
+      <>
         <AuthProvider>
           <>
             <Navbar />
             <Switch>
-              <AnonRoute path="/signup" component={Signup} />
-              <AnonRoute path="/login" component={Login} />	
-              <PrivateRoute
+              <Route exacth path="/create" component={AddMovie} />
+              <Route exact path="/random" component={Random} />
+              <Route exact path="/upload/:id" component={UpdateMovie} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/popular" component={MostPopular} />
+              <Route exact path="/api/tmdb" component={MovieTmdb} />
+              <Route
                 user={this.props.user}
-                path="/popular" component={MostPopular} />
-              <PrivateRoute path="/credits" component={Credits} />
-              <PrivateRoute path="/create" component={AddMovie} />
-              <PrivateRoute path="/random" component={Random} />
-              <PrivateRoute path="/upload/:id" component={UpdateMovie} />
-              <PrivateRoute
-                user={this.props.user}
-                path='/allmovies'component={() => <AllMovies/>}
+                exact path='/allmovies'component={() => <AllMovies/>}
               />
-              <PrivateRoute path="/details/:id" component={DetailsMovie} />
-              <PrivateRoute path="/private" component={Private} />
-              <PrivateRoute path="/updateprofile/:id" component={UpdateProfile} />
-              <Route path="/" component={Home}
+              <PrivateRoute exact path="/details/:id" component={DetailsMovie} />
+              <PrivateRoute exact path="/private" component={Private} />
+              <PrivateRoute exact path="/update/:id" component={UpdateProfile} />
+              <Route exact path="/" component={Home}
               />
             </Switch>
           </>
         </AuthProvider>
         <Footer/>
-      </div>
+      </>
     );
   }
 }

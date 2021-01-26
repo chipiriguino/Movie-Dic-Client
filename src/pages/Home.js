@@ -5,20 +5,16 @@ import Carrousel3 from '../components/Carrousel3';
 import SearchBar from "../components/SearchBar";
 import SearchResult from "../components/SearchResult";
 import service from '../api/service';
-import Feed from '../components/Feed';
+//import Feed from '../components/Feed';
+//import CarouselTmdb from '../components/CarouselTmdb';
 
 class Home extends Component {
 	state = {
 		movies: [],
 		user: [],
-		filterMovies: []
+		filterMovies: [],
+		feed: []
 	}
-
-	// getProfileUser = async () => {
-	// 	await service.getProfileUser(this.props.user._id);
-	// 	this.setState({ user: this.props.user })
-	// 	console.log('USER HOME', this.props.user._id)
-	// }
 
 	filterSearch = async (searchTerm) => {
 		const searchedTerm = searchTerm.toLowerCase();
@@ -28,14 +24,9 @@ class Home extends Component {
 			this.setState({ filterMovies: filteredList})
 		}
 	}
-
 	clearSearch = ()=>{
 		this.setState({ filterMovies: [] })
 	}
-	
-	// componentDidMount = () => {
-	// 	this.getProfileUser();
-	// }
 
 	render() {
 		return (
@@ -48,6 +39,7 @@ class Home extends Component {
 				{this.state.filterMovies && this.state.filterMovies.map((oneMovie, index) => {
 					return <SearchResult key={index} theMovie={oneMovie} />
 				})}
+				{/* <CarouselTmdb /> */}
 				<Carrousel />
 				<Carrousel2 />
 				<Carrousel3 />
@@ -68,7 +60,7 @@ class Home extends Component {
 						</ul>
 					</div>
 				</div>
-				<Feed />
+				{/* <Feed /> */}
 			</div>
 		)
 	}
